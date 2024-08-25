@@ -1,0 +1,548 @@
+2024-08-24 12:40:09,392 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 12:40:09,392 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 12:40:09,393 - INFO -  * Restarting with stat
+2024-08-24 12:40:10,137 - WARNING -  * Debugger is active!
+2024-08-24 12:40:10,141 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:41:44,100 - INFO - Fetching all products
+2024-08-24 12:41:44,314 - ERROR - Error fetching products: (psycopg2.errors.UndefinedTable) relation "products" does not exist
+LINE 2: FROM products
+             ^
+
+[SQL: SELECT products.uuid AS products_uuid, products.type AS products_type, products.brand AS products_brand, products.model AS products_model, products.price AS products_price, products.discounts AS products_discounts, products.specs AS products_specs 
+FROM products]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-24 12:41:44,315 - INFO - 127.0.0.1 - - [24/Aug/2024 12:41:44] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2024-08-24 12:44:39,560 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 12:44:39,561 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 12:44:39,563 - INFO -  * Restarting with stat
+2024-08-24 12:44:40,421 - WARNING -  * Debugger is active!
+2024-08-24 12:44:40,425 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:44:43,731 - INFO - Fetching all products
+2024-08-24 12:44:43,821 - ERROR - Error fetching products: (psycopg2.errors.UndefinedTable) relation "products" does not exist
+LINE 2: FROM products
+             ^
+
+[SQL: SELECT products.uuid AS products_uuid, products.type AS products_type, products.brand AS products_brand, products.model AS products_model, products.price AS products_price, products.discounts AS products_discounts, products.specs AS products_specs 
+FROM products]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-24 12:44:43,822 - INFO - 127.0.0.1 - - [24/Aug/2024 12:44:43] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2024-08-24 12:45:18,906 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 12:45:19,077 - INFO -  * Restarting with stat
+2024-08-24 12:47:02,469 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 12:47:02,470 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 12:47:02,473 - INFO -  * Restarting with stat
+2024-08-24 12:47:03,474 - WARNING -  * Debugger is active!
+2024-08-24 12:47:03,478 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:47:06,407 - INFO - Fetching all products
+2024-08-24 12:47:06,532 - ERROR - Error fetching products: (psycopg2.errors.UndefinedTable) relation "products" does not exist
+LINE 2: FROM products
+             ^
+
+[SQL: SELECT products.uuid AS products_uuid, products.type AS products_type, products.brand AS products_brand, products.model AS products_model, products.price AS products_price, products.discounts AS products_discounts, products.specs AS products_specs 
+FROM products]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-24 12:47:06,533 - INFO - 127.0.0.1 - - [24/Aug/2024 12:47:06] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2024-08-24 12:53:04,037 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 12:53:04,037 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 12:53:04,038 - INFO -  * Restarting with stat
+2024-08-24 12:53:04,937 - WARNING -  * Debugger is active!
+2024-08-24 12:53:04,940 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:53:07,578 - INFO - Fetching all products
+2024-08-24 12:53:07,587 - INFO - 127.0.0.1 - - [24/Aug/2024 12:53:07] "GET /products HTTP/1.1" 200 -
+2024-08-24 12:53:10,714 - INFO - Fetching all products
+2024-08-24 12:53:10,717 - INFO - 127.0.0.1 - - [24/Aug/2024 12:53:10] "GET /products HTTP/1.1" 200 -
+2024-08-24 12:53:34,149 - INFO - Fetching all products
+2024-08-24 12:53:34,153 - INFO - 127.0.0.1 - - [24/Aug/2024 12:53:34] "GET /products HTTP/1.1" 200 -
+2024-08-24 12:53:49,432 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 12:53:49,598 - INFO -  * Restarting with stat
+2024-08-24 12:53:50,574 - WARNING -  * Debugger is active!
+2024-08-24 12:53:50,578 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:57:43,210 - INFO - Fetching all products
+2024-08-24 12:57:43,223 - INFO - 127.0.0.1 - - [24/Aug/2024 12:57:43] "GET /products HTTP/1.1" 200 -
+2024-08-24 12:57:58,819 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 12:57:58,820 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 12:57:58,822 - INFO -  * Restarting with stat
+2024-08-24 12:57:59,645 - WARNING -  * Debugger is active!
+2024-08-24 12:57:59,648 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 12:58:02,309 - INFO - Fetching all products
+2024-08-24 12:58:02,321 - INFO - 127.0.0.1 - - [24/Aug/2024 12:58:02] "GET /products HTTP/1.1" 200 -
+2024-08-24 12:58:32,580 - INFO - Filtering products
+2024-08-24 12:58:32,582 - INFO - 127.0.0.1 - - [24/Aug/2024 12:58:32] "GET /products/filter HTTP/1.1" 200 -
+2024-08-24 13:02:21,211 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:02:21,415 - INFO -  * Restarting with stat
+2024-08-24 13:02:22,724 - WARNING -  * Debugger is active!
+2024-08-24 13:02:22,729 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:02:22,898 - INFO - Fetching all products
+2024-08-24 13:02:22,913 - INFO - 127.0.0.1 - - [24/Aug/2024 13:02:22] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:02:35,953 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:02:35,953 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:02:35,956 - INFO -  * Restarting with stat
+2024-08-24 13:02:37,239 - WARNING -  * Debugger is active!
+2024-08-24 13:02:37,243 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:02:37,284 - INFO - Fetching all products
+2024-08-24 13:02:37,290 - INFO - 127.0.0.1 - - [24/Aug/2024 13:02:37] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:03:35,317 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:03:35,482 - INFO -  * Restarting with stat
+2024-08-24 13:03:36,524 - WARNING -  * Debugger is active!
+2024-08-24 13:03:36,527 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:04:37,429 - INFO - Fetching all products
+2024-08-24 13:04:37,440 - INFO - 127.0.0.1 - - [24/Aug/2024 13:04:37] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:08:25,070 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:08:25,274 - INFO -  * Restarting with stat
+2024-08-24 13:08:26,551 - WARNING -  * Debugger is active!
+2024-08-24 13:08:26,554 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:08:26,597 - INFO - Fetching all products
+2024-08-24 13:08:26,603 - INFO - 127.0.0.1 - - [24/Aug/2024 13:08:26] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:08:49,037 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:08:49,232 - INFO -  * Restarting with stat
+2024-08-24 13:08:50,321 - WARNING -  * Debugger is active!
+2024-08-24 13:08:50,324 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:08:52,242 - INFO - Fetching all products
+2024-08-24 13:08:52,252 - INFO - 127.0.0.1 - - [24/Aug/2024 13:08:52] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:10:10,170 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:10:10,170 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:10:10,172 - INFO -  * Restarting with stat
+2024-08-24 13:10:11,029 - WARNING -  * Debugger is active!
+2024-08-24 13:10:11,032 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:10:13,385 - INFO - Fetching all products
+2024-08-24 13:10:13,401 - INFO - 127.0.0.1 - - [24/Aug/2024 13:10:13] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:12:27,209 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:12:27,209 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:12:27,212 - INFO -  * Restarting with stat
+2024-08-24 13:12:28,050 - WARNING -  * Debugger is active!
+2024-08-24 13:12:28,054 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:12:30,213 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:12:30,346 - INFO -  * Restarting with stat
+2024-08-24 13:12:31,390 - WARNING -  * Debugger is active!
+2024-08-24 13:12:31,395 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:12:31,805 - INFO - Fetching all products
+2024-08-24 13:12:31,812 - DEBUG - Products retrieved: []
+2024-08-24 13:12:31,812 - INFO - No products found in the database
+2024-08-24 13:12:31,813 - INFO - 127.0.0.1 - - [24/Aug/2024 13:12:31] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:12:38,501 - INFO - Fetching all products
+2024-08-24 13:12:38,503 - DEBUG - Products retrieved: []
+2024-08-24 13:12:38,504 - INFO - No products found in the database
+2024-08-24 13:12:38,505 - INFO - 127.0.0.1 - - [24/Aug/2024 13:12:38] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:19:29,861 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 13:19:30,037 - INFO -  * Restarting with stat
+2024-08-24 13:19:31,254 - WARNING -  * Debugger is active!
+2024-08-24 13:19:31,263 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:22:45,380 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 13:22:45,516 - INFO -  * Restarting with stat
+2024-08-24 13:28:00,245 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:28:00,245 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:28:00,246 - INFO -  * Restarting with stat
+2024-08-24 13:28:01,035 - WARNING -  * Debugger is active!
+2024-08-24 13:28:01,039 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:28:03,936 - INFO - Fetching all products
+2024-08-24 13:28:03,946 - DEBUG - Products retrieved: []
+2024-08-24 13:28:03,946 - INFO - No products found in the database
+2024-08-24 13:28:03,947 - INFO - 127.0.0.1 - - [24/Aug/2024 13:28:03] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:30:26,345 - INFO - Creating product with data: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}
+2024-08-24 13:30:26,345 - DEBUG - New product object created: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}
+2024-08-24 13:30:26,370 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174000
+2024-08-24 13:30:26,372 - INFO - 127.0.0.1 - - [24/Aug/2024 13:30:26] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-24 13:31:52,192 - INFO - Fetching all products
+2024-08-24 13:31:52,193 - DEBUG - Products retrieved: [{'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}]
+2024-08-24 13:31:52,194 - INFO - 127.0.0.1 - - [24/Aug/2024 13:31:52] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:34:10,401 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:34:10,401 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:34:10,403 - INFO -  * Restarting with stat
+2024-08-24 13:34:11,268 - WARNING -  * Debugger is active!
+2024-08-24 13:34:11,272 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:39:36,335 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:39:36,335 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:39:36,337 - INFO -  * Restarting with stat
+2024-08-24 13:39:37,050 - WARNING -  * Debugger is active!
+2024-08-24 13:39:37,054 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:39:40,066 - INFO - Fetching all products
+2024-08-24 13:39:40,265 - DEBUG - Products retrieved: [<Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:39:40,265 - INFO - 127.0.0.1 - - [24/Aug/2024 13:39:40] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:40:17,313 - INFO - Creating product with data: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}
+2024-08-24 13:40:17,314 - DEBUG - New product object created: <Product (transient 1591957953808)>
+2024-08-24 13:40:17,327 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "products_pkey"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+[SQL: INSERT INTO products (uuid, type, brand, model, price, discounts, specs) VALUES (%(uuid)s, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s)]
+[parameters: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': '{"color": "Black", "weight": "1.5kg"}'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-24 13:40:17,327 - INFO - 127.0.0.1 - - [24/Aug/2024 13:40:17] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-24 13:40:26,798 - INFO - Fetching all products
+2024-08-24 13:40:26,799 - DEBUG - Products retrieved: [<Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:40:26,800 - INFO - 127.0.0.1 - - [24/Aug/2024 13:40:26] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:46:53,319 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 13:46:53,513 - INFO -  * Restarting with stat
+2024-08-24 13:46:54,412 - WARNING -  * Debugger is active!
+2024-08-24 13:46:54,416 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:47:58,576 - INFO - Fetching all products
+2024-08-24 13:47:58,663 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>]
+2024-08-24 13:47:58,664 - INFO - 127.0.0.1 - - [24/Aug/2024 13:47:58] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:48:11,751 - INFO - Creating product with data: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}
+2024-08-24 13:48:11,752 - DEBUG - New product object created: <Product (transient 2122281556944)>
+2024-08-24 13:48:11,764 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174000
+2024-08-24 13:48:11,765 - INFO - 127.0.0.1 - - [24/Aug/2024 13:48:11] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-24 13:48:17,020 - INFO - Fetching all products
+2024-08-24 13:48:17,021 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:48:17,023 - INFO - 127.0.0.1 - - [24/Aug/2024 13:48:17] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:50:43,032 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:50:43,189 - INFO -  * Restarting with stat
+2024-08-24 13:50:44,021 - WARNING -  * Debugger is active!
+2024-08-24 13:50:44,024 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:51:36,824 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:51:37,000 - INFO -  * Restarting with stat
+2024-08-24 13:51:37,810 - WARNING -  * Debugger is active!
+2024-08-24 13:51:37,815 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:51:38,208 - INFO - Starting fetch all products.
+2024-08-24 13:51:38,290 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:51:38,290 - INFO - Fetched all products successfully.
+2024-08-24 13:51:38,292 - INFO - 127.0.0.1 - - [24/Aug/2024 13:51:38] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:53:13,749 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 13:53:13,749 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 13:53:13,751 - INFO -  * Restarting with stat
+2024-08-24 13:53:14,471 - WARNING -  * Debugger is active!
+2024-08-24 13:53:14,474 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:53:17,011 - INFO - Starting fetch all products.
+2024-08-24 13:53:17,105 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:53:17,105 - INFO - Fetched all products successfully.
+2024-08-24 13:53:20,920 - INFO - 127.0.0.1 - - [24/Aug/2024 13:53:20] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:54:37,352 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:54:37,522 - INFO -  * Restarting with stat
+2024-08-24 13:54:38,511 - WARNING -  * Debugger is active!
+2024-08-24 13:54:38,514 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:54:38,764 - INFO - Starting fetch all products.
+2024-08-24 13:54:38,882 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:54:38,883 - INFO - Fetched all products successfully.
+2024-08-24 13:54:42,322 - INFO - 127.0.0.1 - - [24/Aug/2024 13:54:42] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:58:05,470 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:58:05,639 - INFO -  * Restarting with stat
+2024-08-24 13:58:07,010 - WARNING -  * Debugger is active!
+2024-08-24 13:58:07,013 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:58:07,056 - INFO - Starting fetch all products.
+2024-08-24 13:58:07,144 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:58:07,144 - INFO - Fetched all products successfully.
+2024-08-24 13:58:10,616 - INFO - 127.0.0.1 - - [24/Aug/2024 13:58:10] "GET /products HTTP/1.1" 200 -
+2024-08-24 13:58:55,778 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 13:58:56,005 - INFO -  * Restarting with stat
+2024-08-24 13:58:56,937 - WARNING -  * Debugger is active!
+2024-08-24 13:58:56,944 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 13:58:57,216 - INFO - Starting fetch all products.
+2024-08-24 13:58:57,297 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 13:58:57,297 - INFO - Fetched all products successfully.
+2024-08-24 13:59:00,633 - INFO - 127.0.0.1 - - [24/Aug/2024 13:59:00] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:00:07,291 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 14:00:07,433 - INFO -  * Restarting with stat
+2024-08-24 14:00:08,398 - WARNING -  * Debugger is active!
+2024-08-24 14:00:08,403 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 14:00:08,442 - INFO - Starting fetch all products.
+2024-08-24 14:00:08,524 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>]
+2024-08-24 14:00:08,524 - INFO - Fetched all products successfully.
+2024-08-24 14:00:11,954 - INFO - 127.0.0.1 - - [24/Aug/2024 14:00:11] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:00:52,929 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}.
+2024-08-24 14:00:52,929 - DEBUG - New product object created: <Product (transient 2037166957264)>
+2024-08-24 14:00:52,932 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "productss_pkey"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+[SQL: INSERT INTO productss (uuid, type, brand, model, price, discounts, specs) VALUES (%(uuid)s, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s)]
+[parameters: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': '{"color": "Black", "weight": "1.5kg"}'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-24 14:00:56,558 - INFO - 127.0.0.1 - - [24/Aug/2024 14:00:56] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-24 14:01:12,271 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174001', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}.
+2024-08-24 14:01:12,271 - DEBUG - New product object created: <Product (transient 2037166964176)>
+2024-08-24 14:01:12,278 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174001
+2024-08-24 14:01:15,707 - INFO - 127.0.0.1 - - [24/Aug/2024 14:01:15] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-24 14:30:14,118 - INFO - Starting fetch product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47.
+2024-08-24 14:30:14,124 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:30:14,124 - INFO - Product with UUID f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 fetched successfully.
+2024-08-24 14:30:18,403 - INFO - 127.0.0.1 - - [24/Aug/2024 14:30:18] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:32:25,886 - INFO - 127.0.0.1 - - [24/Aug/2024 14:32:25] "[31m[1mGET /create-tables HTTP/1.1[0m" 405 -
+2024-08-24 14:32:31,779 - INFO - 127.0.0.1 - - [24/Aug/2024 14:32:31] "[31m[1mGET /create-tables HTTP/1.1[0m" 405 -
+2024-08-24 14:32:51,096 - INFO - Starting table creation process.
+2024-08-24 14:32:51,115 - INFO - Tables created successfully
+2024-08-24 14:32:54,578 - INFO - 127.0.0.1 - - [24/Aug/2024 14:32:54] "POST /create-tables HTTP/1.1" 200 -
+2024-08-24 14:34:34,307 - INFO - Starting filter products.
+2024-08-24 14:34:34,308 - INFO - Filtering by type: Electronics
+2024-08-24 14:34:34,308 - INFO - Filtering by brand: Sony
+
+2024-08-24 14:34:34,315 - DEBUG - Filtered products: []
+2024-08-24 14:34:34,315 - INFO - No products match the filter criteria
+2024-08-24 14:34:34,316 - INFO - Products filtered successfully.
+2024-08-24 14:34:37,801 - INFO - 127.0.0.1 - - [24/Aug/2024 14:34:37] "GET /products/filter?type=Electronics&brand=Sony%0A HTTP/1.1" 200 -
+2024-08-24 14:37:03,989 - INFO - Starting filter products.
+2024-08-24 14:37:03,990 - INFO - Filtering by brand: Apple
+
+2024-08-24 14:37:03,996 - DEBUG - Filtered products: []
+2024-08-24 14:37:03,996 - INFO - No products match the filter criteria
+2024-08-24 14:37:03,997 - INFO - Products filtered successfully.
+2024-08-24 14:37:07,347 - INFO - 127.0.0.1 - - [24/Aug/2024 14:37:07] "GET /products/filter?brand=Apple%0A HTTP/1.1" 200 -
+2024-08-24 14:37:41,156 - INFO - Starting filter products.
+2024-08-24 14:37:41,157 - INFO - Filtering by type: mob
+2024-08-24 14:37:41,157 - INFO - Filtering by brand: Apple
+2024-08-24 14:37:41,160 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:37:41,160 - INFO - Products filtered successfully.
+2024-08-24 14:37:44,520 - INFO - 127.0.0.1 - - [24/Aug/2024 14:37:44] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-24 14:37:56,674 - INFO - Starting filter products.
+2024-08-24 14:37:56,674 - INFO - Filtering by type: mob
+2024-08-24 14:37:56,678 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>]
+2024-08-24 14:37:56,678 - INFO - Products filtered successfully.
+2024-08-24 14:38:00,389 - INFO - 127.0.0.1 - - [24/Aug/2024 14:38:00] "GET /products/filter?type=mob HTTP/1.1" 200 -
+2024-08-24 14:38:10,320 - INFO - Starting filter products.
+2024-08-24 14:38:10,321 - INFO - Filtering by type: mob
+2024-08-24 14:38:10,321 - INFO - Filtering by brand: Apple
+2024-08-24 14:38:10,323 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:38:10,324 - INFO - Products filtered successfully.
+2024-08-24 14:38:13,627 - INFO - 127.0.0.1 - - [24/Aug/2024 14:38:13] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-24 14:40:35,234 - INFO - Starting fetch all products.
+2024-08-24 14:40:35,236 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>]
+2024-08-24 14:40:35,237 - INFO - Fetched all products successfully.
+2024-08-24 14:40:38,814 - INFO - 127.0.0.1 - - [24/Aug/2024 14:40:38] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:40:53,347 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2', 'type': 'mob', 'brand': 'Samsung', 'model': 'Galaxy S21', 'price': 69999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-24 14:40:53,347 - DEBUG - New product object created: <Product (transient 2037167437968)>
+2024-08-24 14:40:53,353 - INFO - Product created successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2
+2024-08-24 14:40:56,784 - INFO - 127.0.0.1 - - [24/Aug/2024 14:40:56] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-24 14:43:32,417 - INFO - Starting fetch product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1.
+2024-08-24 14:43:32,419 - DEBUG - Product retrieved: <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>
+2024-08-24 14:43:32,420 - INFO - Product with UUID 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 fetched successfully.
+2024-08-24 14:43:35,844 - INFO - 127.0.0.1 - - [24/Aug/2024 14:43:35] "GET /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1" 200 -
+2024-08-24 14:43:59,539 - INFO - Starting update for product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1.
+2024-08-24 14:43:59,541 - DEBUG - Existing product data before update: {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 79900.0, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}}
+2024-08-24 14:43:59,552 - INFO - Product updated successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1
+2024-08-24 14:44:02,965 - INFO - 127.0.0.1 - - [24/Aug/2024 14:44:02] "PUT /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1" 200 -
+2024-08-24 14:45:30,892 - INFO - Starting delete for product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2.
+2024-08-24 14:45:30,898 - INFO - Product deleted successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2
+2024-08-24 14:45:34,248 - INFO - 127.0.0.1 - - [24/Aug/2024 14:45:34] "DELETE /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2 HTTP/1.1" 200 -
+2024-08-24 14:48:31,991 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 14:48:31,991 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 14:48:31,995 - INFO -  * Restarting with stat
+2024-08-24 14:48:32,820 - WARNING -  * Debugger is active!
+2024-08-24 14:48:32,825 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 14:48:37,283 - INFO - Deleting product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2.
+2024-08-24 14:48:37,424 - INFO - Product with UUID 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2 not found.
+2024-08-24 14:48:37,425 - INFO - 127.0.0.1 - - [24/Aug/2024 14:48:37] "[33mDELETE /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d2 HTTP/1.1[0m" 404 -
+2024-08-24 14:48:44,283 - INFO - Fetching all products from the database.
+2024-08-24 14:48:44,288 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:48:44,290 - INFO - 127.0.0.1 - - [24/Aug/2024 14:48:44] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:48:59,764 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-24 14:48:59,766 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:48:59,767 - INFO - 127.0.0.1 - - [24/Aug/2024 14:48:59] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:53:43,996 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 14:53:43,996 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 14:53:43,998 - INFO -  * Restarting with stat
+2024-08-24 14:53:44,795 - WARNING -  * Debugger is active!
+2024-08-24 14:53:44,798 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 14:53:56,323 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 14:53:56,323 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 14:53:56,326 - INFO -  * Restarting with stat
+2024-08-24 14:53:57,092 - WARNING -  * Debugger is active!
+2024-08-24 14:53:57,095 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 14:54:01,828 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-24 14:54:01,952 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:54:01,953 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:01] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:54:10,045 - INFO - Starting to fetch all products.
+2024-08-24 14:54:10,052 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:54:10,052 - INFO - Products fetched successfully.
+2024-08-24 14:54:13,714 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:13] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:54:21,633 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-24 14:54:21,636 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:54:21,637 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:21] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:54:27,626 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174001', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': {'color': 'Black', 'weight': '1.5kg'}}.
+2024-08-24 14:54:27,627 - DEBUG - New product object created: <Product (transient 1771364501200)>
+2024-08-24 14:54:27,634 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "productss_pkey"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174001) already exists.
+
+[SQL: INSERT INTO productss (uuid, type, brand, model, price, discounts, specs) VALUES (%(uuid)s, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s)]
+[parameters: {'uuid': '123e4567-e89b-12d3-a456-426614174001', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 299.99, 'discounts': 10.0, 'specs': '{"color": "Black", "weight": "1.5kg"}'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-24 14:54:31,158 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:31] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-24 14:54:38,070 - INFO - Starting table creation process.
+2024-08-24 14:54:38,083 - INFO - Tables created successfully.
+2024-08-24 14:54:41,251 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:41] "POST /create-tables HTTP/1.1" 200 -
+2024-08-24 14:54:46,020 - INFO - Starting filter products.
+2024-08-24 14:54:46,021 - INFO - Filtering by type: mob
+2024-08-24 14:54:46,021 - INFO - Filtering by brand: Apple
+2024-08-24 14:54:46,025 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:54:46,026 - INFO - Products filtered successfully.
+2024-08-24 14:54:49,378 - INFO - 127.0.0.1 - - [24/Aug/2024 14:54:49] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-24 14:54:58,962 - INFO - Updating product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 using data: {'price': 90000}.
+2024-08-24 14:54:58,964 - DEBUG - Product before update: {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 90000.0, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}}
+2024-08-24 14:54:58,966 - INFO - Product updated successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1
+2024-08-24 14:55:02,318 - INFO - 127.0.0.1 - - [24/Aug/2024 14:55:02] "PUT /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1" 200 -
+2024-08-24 14:55:07,116 - INFO - Starting to fetch all products.
+2024-08-24 14:55:07,121 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 14:55:07,122 - INFO - Products fetched successfully.
+2024-08-24 14:55:10,601 - INFO - 127.0.0.1 - - [24/Aug/2024 14:55:10] "GET /products HTTP/1.1" 200 -
+2024-08-24 14:55:18,122 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-24 14:55:18,125 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:55:18,127 - INFO - 127.0.0.1 - - [24/Aug/2024 14:55:18] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:56:18,182 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 14:56:18,408 - INFO -  * Restarting with stat
+2024-08-24 14:56:19,557 - WARNING -  * Debugger is active!
+2024-08-24 14:56:19,563 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 14:56:19,608 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-24 14:56:19,703 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-24 14:56:23,020 - INFO - 127.0.0.1 - - [24/Aug/2024 14:56:23] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-24 14:59:59,907 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:00:00,048 - INFO -  * Restarting with stat
+2024-08-24 15:00:01,005 - WARNING -  * Debugger is active!
+2024-08-24 15:00:01,008 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:15:33,006 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:15:33,170 - INFO -  * Restarting with stat
+2024-08-24 15:15:34,224 - WARNING -  * Debugger is active!
+2024-08-24 15:15:34,227 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:18:48,736 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-24 15:18:48,739 - DEBUG - New product object created: <Product (transient 2207863452688)>
+2024-08-24 15:18:48,877 - INFO - Product created successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3
+2024-08-24 15:18:53,829 - INFO - 127.0.0.1 - - [24/Aug/2024 15:18:53] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-24 15:24:03,805 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:24:03,995 - INFO -  * Restarting with stat
+2024-08-24 15:24:04,905 - WARNING -  * Debugger is active!
+2024-08-24 15:24:04,908 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:24:10,329 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:24:10,516 - INFO -  * Restarting with stat
+2024-08-24 15:24:11,483 - WARNING -  * Debugger is active!
+2024-08-24 15:24:11,487 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:24:50,647 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:24:50,808 - INFO -  * Restarting with stat
+2024-08-24 15:24:51,687 - WARNING -  * Debugger is active!
+2024-08-24 15:24:51,691 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:26:37,255 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 15:26:37,436 - INFO -  * Restarting with stat
+2024-08-24 15:26:38,350 - WARNING -  * Debugger is active!
+2024-08-24 15:26:38,354 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:26:57,652 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 15:26:57,822 - INFO -  * Restarting with stat
+2024-08-24 15:31:55,402 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 15:31:55,402 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 15:31:55,404 - INFO -  * Restarting with stat
+2024-08-24 15:31:56,162 - WARNING -  * Debugger is active!
+2024-08-24 15:31:56,165 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:32:22,456 - INFO - Fetching latest products.
+2024-08-24 15:32:22,569 - DEBUG - Latest products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>]
+2024-08-24 15:32:22,569 - INFO - Latest products fetched successfully.
+2024-08-24 15:32:27,299 - INFO - 127.0.0.1 - - [24/Aug/2024 15:32:27] "GET /products/latest HTTP/1.1" 200 -
+2024-08-24 15:33:20,948 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:33:21,147 - INFO -  * Restarting with stat
+2024-08-24 15:33:22,245 - WARNING -  * Debugger is active!
+2024-08-24 15:33:22,248 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:33:55,626 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 15:33:55,773 - INFO -  * Restarting with stat
+2024-08-24 15:33:56,786 - WARNING -  * Debugger is active!
+2024-08-24 15:33:56,789 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:34:10,376 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 15:34:10,376 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 15:34:10,378 - INFO -  * Restarting with stat
+2024-08-24 15:34:11,240 - WARNING -  * Debugger is active!
+2024-08-24 15:34:11,243 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 15:34:55,205 - INFO - Fetching latest discounted products.
+2024-08-24 15:34:55,347 - DEBUG - Latest discounted products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>]
+2024-08-24 15:34:55,348 - INFO - Latest discounted products fetched successfully.
+2024-08-24 15:35:00,440 - INFO - 127.0.0.1 - - [24/Aug/2024 15:35:00] "GET /products/latest-discounted HTTP/1.1" 200 -
+2024-08-24 15:36:06,368 - INFO - Fetching highest discounted product.
+2024-08-24 15:36:06,374 - DEBUG - Highest discounted product retrieved: <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>
+2024-08-24 15:36:06,375 - INFO - Highest discounted product fetched successfully.
+2024-08-24 15:36:10,671 - INFO - 127.0.0.1 - - [24/Aug/2024 15:36:10] "GET /products/highest-discounted HTTP/1.1" 200 -
+2024-08-24 16:10:17,848 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:10:18,091 - INFO -  * Restarting with stat
+2024-08-24 16:10:19,475 - WARNING -  * Debugger is active!
+2024-08-24 16:10:19,480 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:11:15,893 - INFO - Starting filter by price range.
+2024-08-24 16:11:16,042 - DEBUG - Products in price range (10000.0, 150000.0): [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-24 16:11:16,042 - INFO - Products filtered by price range successfully.
+2024-08-24 16:11:20,099 - INFO - 127.0.0.1 - - [24/Aug/2024 16:11:20] "GET /products/price-range?min_price=10000&max_price=150000 HTTP/1.1" 200 -
+2024-08-24 16:11:50,426 - INFO - Starting filter by price range.
+2024-08-24 16:11:50,428 - DEBUG - Products in price range (60000.0, 150000.0): [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-24 16:11:50,428 - INFO - Products filtered by price range successfully.
+2024-08-24 16:11:55,118 - INFO - 127.0.0.1 - - [24/Aug/2024 16:11:55] "GET /products/price-range?min_price=60000&max_price=150000 HTTP/1.1" 200 -
+2024-08-24 16:14:13,036 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\db_connections\\configurations.py', reloading
+2024-08-24 16:14:13,165 - INFO -  * Restarting with stat
+2024-08-24 16:14:14,001 - WARNING -  * Debugger is active!
+2024-08-24 16:14:14,005 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:15:44,336 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 16:15:44,479 - INFO -  * Restarting with stat
+2024-08-24 16:15:45,369 - WARNING -  * Debugger is active!
+2024-08-24 16:15:45,374 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:17:23,801 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:17:23,905 - INFO -  * Restarting with stat
+2024-08-24 16:17:24,706 - WARNING -  * Debugger is active!
+2024-08-24 16:17:24,711 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:18:29,856 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:18:29,967 - INFO -  * Restarting with stat
+2024-08-24 16:18:30,976 - WARNING -  * Debugger is active!
+2024-08-24 16:18:30,981 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:19:31,083 - INFO - Starting filter products by specs.
+2024-08-24 16:19:31,085 - INFO - Filtering by spec: color = red
+2024-08-24 16:19:31,085 - ERROR - Error filtering products by specs: Neither 'BinaryExpression' object nor 'Comparator' object has an attribute 'astext'
+2024-08-24 16:19:34,576 - INFO - 127.0.0.1 - - [24/Aug/2024 16:19:34] "[35m[1mGET /products/specs?specs={"color":"red","size":"M"} HTTP/1.1[0m" 500 -
+2024-08-24 16:21:14,229 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:21:14,375 - INFO -  * Restarting with stat
+2024-08-24 16:21:15,157 - WARNING -  * Debugger is active!
+2024-08-24 16:21:15,160 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:21:46,397 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:21:46,512 - INFO -  * Restarting with stat
+2024-08-24 16:21:47,505 - WARNING -  * Debugger is active!
+2024-08-24 16:21:47,508 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:21:47,546 - INFO - Starting filter products by specs.
+2024-08-24 16:21:47,548 - INFO - Filtering by spec: color = red
+2024-08-24 16:21:47,548 - ERROR - Error filtering products by specs: Neither 'BinaryExpression' object nor 'Comparator' object has an attribute 'astext'
+2024-08-24 16:21:50,879 - INFO - 127.0.0.1 - - [24/Aug/2024 16:21:50] "[35m[1mGET /products/specs?specs={"color":"red","size":"M"} HTTP/1.1[0m" 500 -
+2024-08-24 16:22:41,616 - INFO - Starting filter products by specs.
+2024-08-24 16:22:41,617 - INFO - 127.0.0.1 - - [24/Aug/2024 16:22:41] "[31m[1mGET /products/specs HTTP/1.1[0m" 400 -
+2024-08-24 16:22:49,402 - INFO - Starting filter products by specs.
+2024-08-24 16:22:49,402 - INFO - 127.0.0.1 - - [24/Aug/2024 16:22:49] "[31m[1mGET /products/specs HTTP/1.1[0m" 400 -
+2024-08-24 16:23:46,520 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:23:46,656 - INFO -  * Restarting with stat
+2024-08-24 16:23:47,382 - WARNING -  * Debugger is active!
+2024-08-24 16:23:47,385 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:23:57,368 - INFO - Starting filter products by specs.
+2024-08-24 16:23:57,369 - INFO - 127.0.0.1 - - [24/Aug/2024 16:23:57] "[31m[1mGET /products/specs HTTP/1.1[0m" 400 -
+2024-08-24 16:25:05,628 - INFO - Starting filter products by specs.
+2024-08-24 16:25:05,631 - INFO - Filtering by spec: color = red
+2024-08-24 16:25:05,631 - ERROR - Error filtering products by specs: Neither 'BinaryExpression' object nor 'Comparator' object has an attribute 'astext'
+2024-08-24 16:25:09,542 - INFO - 127.0.0.1 - - [24/Aug/2024 16:25:09] "[35m[1mGET /products/specs?specs={"color":%20"red",%20"size":%20"M"} HTTP/1.1[0m" 500 -
+2024-08-24 16:27:28,737 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-24 16:27:28,844 - INFO -  * Restarting with stat
+2024-08-24 16:28:32,109 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 16:28:32,109 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-24 16:28:32,110 - INFO -  * Restarting with stat
+2024-08-24 16:28:32,824 - WARNING -  * Debugger is active!
+2024-08-24 16:28:32,830 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:28:37,281 - INFO - Starting filter products by specs.
+2024-08-24 16:28:37,283 - INFO - Filtering by spec: color = red
+2024-08-24 16:28:37,284 - ERROR - Error filtering products by specs: Neither 'BinaryExpression' object nor 'Comparator' object has an attribute 'astext'
+2024-08-24 16:28:41,483 - INFO - 127.0.0.1 - - [24/Aug/2024 16:28:41] "[35m[1mGET /products/specs?specs={"color":%20"red",%20"size":%20"M"} HTTP/1.1[0m" 500 -
+2024-08-24 16:32:08,268 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:32:08,427 - INFO -  * Restarting with stat
+2024-08-24 16:32:09,285 - WARNING -  * Debugger is active!
+2024-08-24 16:32:09,288 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:32:22,872 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:32:22,977 - INFO -  * Restarting with stat
+2024-08-24 16:32:23,908 - WARNING -  * Debugger is active!
+2024-08-24 16:32:23,912 - INFO -  * Debugger PIN: 131-781-761
+2024-08-24 16:32:23,964 - INFO - Starting filter products by specs.
+2024-08-24 16:32:24,061 - DEBUG - Filtered products by specs: []
+2024-08-24 16:32:24,061 - INFO - No products match the spec criteria.
+2024-08-24 16:32:24,061 - INFO - Products filtered by specs successfully.
+2024-08-24 16:32:27,720 - INFO - 127.0.0.1 - - [24/Aug/2024 16:32:27] "GET /products/specs?specs={"color":%20"red",%20"size":%20"M"} HTTP/1.1" 200 -
+2024-08-24 16:33:44,234 - INFO - Starting filter products by specs.
+2024-08-24 16:33:44,236 - DEBUG - Filtered products by specs: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-24 16:33:44,236 - INFO - Products filtered by specs successfully.
+2024-08-24 16:33:47,448 - INFO - 127.0.0.1 - - [24/Aug/2024 16:33:47] "GET /products/specs?specs={"screen_size":%20"6.1%20inches",%20"battery":%20"3095%20mAh"} HTTP/1.1" 200 -
+2024-08-24 16:34:18,857 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-24 16:34:18,989 - INFO -  * Restarting with stat
