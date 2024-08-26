@@ -674,3 +674,443 @@ DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174001) already exists.
 2024-08-25 10:09:45,399 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
 2024-08-25 10:09:45,399 - INFO - Products fetched successfully.
 2024-08-25 10:09:48,834 - INFO - 127.0.0.1 - - [25/Aug/2024 10:09:48] "GET /products HTTP/1.1" 200 -
+2024-08-26 09:12:11,751 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:12:11,751 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:12:11,754 - INFO -  * Restarting with stat
+2024-08-26 09:12:12,594 - WARNING -  * Debugger is active!
+2024-08-26 09:12:12,603 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:12:22,765 - INFO - Starting to fetch products with filters.
+2024-08-26 09:12:23,050 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:12:23,050 - INFO - Products fetched successfully.
+2024-08-26 09:12:25,852 - ERROR - Error fetching products: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2038560e3e8sm59653825ad.219 - gsmtp')
+2024-08-26 09:12:28,278 - INFO - 127.0.0.1 - - [26/Aug/2024 09:12:28] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2024-08-26 09:13:55,717 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:13:55,717 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:13:55,718 - INFO -  * Restarting with stat
+2024-08-26 09:13:56,609 - WARNING -  * Debugger is active!
+2024-08-26 09:13:56,612 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:13:59,831 - INFO - Starting to fetch products with filters.
+2024-08-26 09:13:59,953 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:13:59,954 - INFO - Products fetched successfully.
+2024-08-26 09:14:03,504 - INFO - 127.0.0.1 - - [26/Aug/2024 09:14:03] "GET /products HTTP/1.1" 200 -
+2024-08-26 09:14:13,786 - INFO - Starting to fetch products with filters.
+2024-08-26 09:14:13,790 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:14:13,790 - INFO - Products fetched successfully.
+2024-08-26 09:14:17,492 - INFO - 127.0.0.1 - - [26/Aug/2024 09:14:17] "GET /products?iphone HTTP/1.1" 200 -
+2024-08-26 09:14:39,303 - INFO - Starting to fetch products with filters.
+2024-08-26 09:14:39,305 - DEBUG - Filtering by brand: iphone
+2024-08-26 09:14:39,321 - DEBUG - Products retrieved: []
+2024-08-26 09:14:39,321 - INFO - No products found with the provided filters.
+2024-08-26 09:14:39,322 - INFO - Products fetched successfully.
+2024-08-26 09:14:43,039 - INFO - 127.0.0.1 - - [26/Aug/2024 09:14:43] "GET /products?brand=iphone HTTP/1.1" 200 -
+2024-08-26 09:14:53,823 - INFO - Starting to fetch products with filters.
+2024-08-26 09:14:53,824 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:14:53,825 - INFO - Products fetched successfully.
+2024-08-26 09:14:57,599 - INFO - 127.0.0.1 - - [26/Aug/2024 09:14:57] "GET /products HTTP/1.1" 200 -
+2024-08-26 09:15:43,505 - INFO - Starting to fetch products with filters.
+2024-08-26 09:15:43,506 - DEBUG - Filtering by brand: apple
+2024-08-26 09:15:43,508 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:15:43,508 - INFO - Products fetched successfully.
+2024-08-26 09:15:46,970 - INFO - 127.0.0.1 - - [26/Aug/2024 09:15:46] "GET /products?brand=apple HTTP/1.1" 200 -
+2024-08-26 09:19:58,896 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-26 09:19:59,038 - INFO -  * Restarting with stat
+2024-08-26 09:19:59,878 - WARNING -  * Debugger is active!
+2024-08-26 09:19:59,882 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:20:04,683 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:20:04,683 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:20:04,684 - INFO -  * Restarting with stat
+2024-08-26 09:20:05,530 - WARNING -  * Debugger is active!
+2024-08-26 09:20:05,533 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:20:09,158 - INFO - Starting to fetch products with filters.
+2024-08-26 09:20:09,163 - DEBUG - Filtering by brand: apple
+2024-08-26 09:20:09,304 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:20:09,304 - INFO - Products fetched successfully.
+2024-08-26 09:20:12,780 - INFO - 127.0.0.1 - - [26/Aug/2024 09:20:12] "GET /products?brand=apple HTTP/1.1" 200 -
+2024-08-26 09:20:29,040 - INFO - Starting to fetch products with filters.
+2024-08-26 09:20:29,045 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:20:29,045 - INFO - Products fetched successfully.
+2024-08-26 09:20:32,740 - INFO - 127.0.0.1 - - [26/Aug/2024 09:20:32] "GET /products?iphone HTTP/1.1" 200 -
+2024-08-26 09:21:28,101 - INFO - Starting to fetch products with filters.
+2024-08-26 09:21:28,102 - DEBUG - Filtering by brand: iphone
+2024-08-26 09:21:28,105 - DEBUG - Products retrieved: []
+2024-08-26 09:21:28,105 - INFO - No products found with the provided filters.
+2024-08-26 09:21:28,105 - INFO - Products fetched successfully.
+2024-08-26 09:21:31,568 - INFO - 127.0.0.1 - - [26/Aug/2024 09:21:31] "GET /products?brand=iphone& HTTP/1.1" 200 -
+2024-08-26 09:21:48,890 - INFO - Starting to fetch products with filters.
+2024-08-26 09:21:48,891 - DEBUG - Filtering by model: iphone
+2024-08-26 09:21:48,894 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:21:48,894 - INFO - Products fetched successfully.
+2024-08-26 09:21:52,227 - INFO - 127.0.0.1 - - [26/Aug/2024 09:21:52] "GET /products?model=iphone& HTTP/1.1" 200 -
+2024-08-26 09:25:36,044 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:25:36,045 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:25:36,048 - INFO -  * Restarting with stat
+2024-08-26 09:25:37,010 - WARNING -  * Debugger is active!
+2024-08-26 09:25:37,013 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:25:46,827 - INFO - Starting to fetch products with filters.
+2024-08-26 09:25:46,922 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:25:46,922 - INFO - Products fetched successfully.
+2024-08-26 09:25:50,267 - INFO - 127.0.0.1 - - [26/Aug/2024 09:25:50] "GET /products?iphone HTTP/1.1" 200 -
+2024-08-26 09:28:27,828 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-26 09:28:28,029 - INFO -  * Restarting with stat
+2024-08-26 09:28:29,462 - WARNING -  * Debugger is active!
+2024-08-26 09:28:29,468 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:28:32,547 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:28:32,547 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:28:32,550 - INFO -  * Restarting with stat
+2024-08-26 09:28:33,461 - WARNING -  * Debugger is active!
+2024-08-26 09:28:33,465 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:28:34,658 - INFO - Starting to fetch products with filters.
+2024-08-26 09:28:34,759 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:28:34,759 - INFO - Products fetched successfully.
+2024-08-26 09:28:38,222 - INFO - 127.0.0.1 - - [26/Aug/2024 09:28:38] "GET /products?iphone HTTP/1.1" 200 -
+2024-08-26 09:28:45,360 - INFO - Starting to fetch products with filters.
+2024-08-26 09:28:45,363 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:28:45,364 - INFO - Products fetched successfully.
+2024-08-26 09:28:48,674 - INFO - 127.0.0.1 - - [26/Aug/2024 09:28:48] "GET /products?model=iphone HTTP/1.1" 200 -
+2024-08-26 09:29:12,923 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-26 09:29:13,179 - INFO -  * Restarting with stat
+2024-08-26 09:29:15,166 - WARNING -  * Debugger is active!
+2024-08-26 09:29:15,171 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:29:17,999 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:29:18,000 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:29:18,001 - INFO -  * Restarting with stat
+2024-08-26 09:29:19,155 - WARNING -  * Debugger is active!
+2024-08-26 09:29:19,160 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:29:19,605 - INFO - Starting to fetch products with filters.
+2024-08-26 09:29:19,728 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:29:19,728 - INFO - Products fetched successfully.
+2024-08-26 09:29:23,152 - INFO - 127.0.0.1 - - [26/Aug/2024 09:29:23] "GET /products?model=iphone HTTP/1.1" 200 -
+2024-08-26 09:29:53,206 - INFO - Starting to fetch products with filters.
+2024-08-26 09:29:53,208 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:29:53,208 - INFO - Products fetched successfully.
+2024-08-26 09:29:56,630 - INFO - 127.0.0.1 - - [26/Aug/2024 09:29:56] "GET /products?type=iphone HTTP/1.1" 200 -
+2024-08-26 09:30:44,461 - INFO - Starting to fetch products with filters.
+2024-08-26 09:30:44,467 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:30:44,467 - INFO - Products fetched successfully.
+2024-08-26 09:30:48,531 - INFO - 127.0.0.1 - - [26/Aug/2024 09:30:48] "GET /products?model=iphone HTTP/1.1" 200 -
+2024-08-26 09:31:59,056 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:31:59,056 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:31:59,058 - INFO -  * Restarting with stat
+2024-08-26 09:31:59,953 - WARNING -  * Debugger is active!
+2024-08-26 09:31:59,959 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:32:02,885 - INFO - Starting to fetch products with filters.
+2024-08-26 09:32:02,890 - DEBUG - Filtering by model: iphone
+2024-08-26 09:32:03,021 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:32:03,021 - INFO - Products fetched successfully.
+2024-08-26 09:32:06,342 - INFO - 127.0.0.1 - - [26/Aug/2024 09:32:06] "GET /products?model=iphone HTTP/1.1" 200 -
+2024-08-26 09:32:27,388 - INFO - Starting to fetch products with filters.
+2024-08-26 09:32:27,389 - DEBUG - Filtering by type: mob
+2024-08-26 09:32:27,393 - DEBUG - Products retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:32:27,393 - INFO - Products fetched successfully.
+2024-08-26 09:32:30,683 - INFO - 127.0.0.1 - - [26/Aug/2024 09:32:30] "GET /products?type=mob HTTP/1.1" 200 -
+2024-08-26 09:32:50,074 - INFO - Starting to fetch products with filters.
+2024-08-26 09:32:50,075 - DEBUG - Filtering by brand: appe
+2024-08-26 09:32:50,078 - DEBUG - Products retrieved: []
+2024-08-26 09:32:50,078 - INFO - No products found with the provided filters.
+2024-08-26 09:32:50,078 - INFO - Products fetched successfully.
+2024-08-26 09:32:53,219 - INFO - 127.0.0.1 - - [26/Aug/2024 09:32:53] "GET /products?brand=appe HTTP/1.1" 200 -
+2024-08-26 09:32:58,577 - INFO - Starting to fetch products with filters.
+2024-08-26 09:32:58,578 - DEBUG - Filtering by brand: app
+2024-08-26 09:32:58,580 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:32:58,581 - INFO - Products fetched successfully.
+2024-08-26 09:33:01,958 - INFO - 127.0.0.1 - - [26/Aug/2024 09:33:01] "GET /products?brand=app HTTP/1.1" 200 -
+2024-08-26 09:33:20,933 - INFO - Starting to fetch products with filters.
+2024-08-26 09:33:20,934 - DEBUG - Filtering by type: laptop
+2024-08-26 09:33:20,936 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-26 09:33:20,936 - INFO - Products fetched successfully.
+2024-08-26 09:33:24,168 - INFO - 127.0.0.1 - - [26/Aug/2024 09:33:24] "GET /products?type=laptop HTTP/1.1" 200 -
+2024-08-26 09:33:31,951 - INFO - Starting to fetch products with filters.
+2024-08-26 09:33:31,953 - DEBUG - Filtering by brand: apple
+2024-08-26 09:33:31,954 - DEBUG - Filtering by type: laptop
+2024-08-26 09:33:31,957 - DEBUG - Products retrieved: []
+2024-08-26 09:33:31,957 - INFO - No products found with the provided filters.
+2024-08-26 09:33:31,958 - INFO - Products fetched successfully.
+2024-08-26 09:33:35,353 - INFO - 127.0.0.1 - - [26/Aug/2024 09:33:35] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:34:17,447 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-26 09:34:17,622 - INFO -  * Restarting with stat
+2024-08-26 09:34:18,507 - WARNING -  * Debugger is active!
+2024-08-26 09:34:18,510 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:37:50,029 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-26 09:37:50,184 - INFO -  * Restarting with stat
+2024-08-26 09:37:51,209 - WARNING -  * Debugger is active!
+2024-08-26 09:37:51,215 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:37:51,263 - INFO - Starting to fetch products with filters.
+2024-08-26 09:37:51,366 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:37:51,367 - INFO - Products fetched successfully.
+2024-08-26 09:37:54,716 - INFO - 127.0.0.1 - - [26/Aug/2024 09:37:54] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:38:25,513 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:38:25,514 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:38:25,515 - INFO -  * Restarting with stat
+2024-08-26 09:38:26,356 - WARNING -  * Debugger is active!
+2024-08-26 09:38:26,359 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:38:29,427 - INFO - Starting to fetch products with filters.
+2024-08-26 09:38:29,534 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:38:29,534 - INFO - Products fetched successfully.
+2024-08-26 09:38:33,072 - INFO - 127.0.0.1 - - [26/Aug/2024 09:38:33] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:40:52,372 - INFO - Starting to fetch products with filters.
+2024-08-26 09:40:52,373 - DEBUG - Filtering by brand: iphone
+2024-08-26 09:40:52,374 - DEBUG - Filtering by type: mobile
+2024-08-26 09:40:52,378 - DEBUG - Products retrieved: []
+2024-08-26 09:40:52,378 - INFO - No products found with the provided filters.
+2024-08-26 09:40:52,378 - INFO - Products fetched successfully.
+2024-08-26 09:40:55,699 - INFO - 127.0.0.1 - - [26/Aug/2024 09:40:55] "GET /products?search=brand=iphone:type=mobile HTTP/1.1" 200 -
+2024-08-26 09:42:07,981 - INFO - Starting to fetch products with filters.
+2024-08-26 09:42:07,981 - DEBUG - Filtering by brand: apple
+2024-08-26 09:42:07,983 - DEBUG - Filtering by type: mobile
+2024-08-26 09:42:07,985 - DEBUG - Products retrieved: []
+2024-08-26 09:42:07,986 - INFO - No products found with the provided filters.
+2024-08-26 09:42:07,986 - INFO - Products fetched successfully.
+2024-08-26 09:42:12,016 - INFO - 127.0.0.1 - - [26/Aug/2024 09:42:12] "GET /products?search=brand=apple:type=mobile HTTP/1.1" 200 -
+2024-08-26 09:42:30,638 - INFO - Starting to fetch products with filters.
+2024-08-26 09:42:30,641 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:42:30,642 - INFO - Products fetched successfully.
+2024-08-26 09:42:34,351 - INFO - 127.0.0.1 - - [26/Aug/2024 09:42:34] "GET /products?brand=apple HTTP/1.1" 200 -
+2024-08-26 09:43:04,204 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:43:04,204 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:43:04,206 - INFO -  * Restarting with stat
+2024-08-26 09:43:04,948 - WARNING -  * Debugger is active!
+2024-08-26 09:43:04,952 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:43:07,580 - INFO - Starting to fetch products with filters.
+2024-08-26 09:43:07,585 - DEBUG - Filtering by brand: apple
+2024-08-26 09:43:07,700 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:43:07,700 - INFO - Products fetched successfully.
+2024-08-26 09:43:11,342 - INFO - 127.0.0.1 - - [26/Aug/2024 09:43:11] "GET /products?brand=apple HTTP/1.1" 200 -
+2024-08-26 09:43:19,193 - INFO - Starting to fetch products with filters.
+2024-08-26 09:43:19,193 - DEBUG - Filtering by type: laptop
+2024-08-26 09:43:19,196 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-26 09:43:19,196 - INFO - Products fetched successfully.
+2024-08-26 09:43:22,692 - INFO - 127.0.0.1 - - [26/Aug/2024 09:43:22] "GET /products?type=laptop HTTP/1.1" 200 -
+2024-08-26 09:43:33,090 - INFO - Starting to fetch products with filters.
+2024-08-26 09:43:33,091 - DEBUG - Filtering by model: iphone
+2024-08-26 09:43:33,096 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 09:43:33,097 - INFO - Products fetched successfully.
+2024-08-26 09:43:36,447 - INFO - 127.0.0.1 - - [26/Aug/2024 09:43:36] "GET /products?model=iphone HTTP/1.1" 200 -
+2024-08-26 09:45:17,171 - INFO - Starting to fetch products with filters.
+2024-08-26 09:45:17,172 - DEBUG - Filtering by type: laptop
+2024-08-26 09:45:17,172 - DEBUG - Filtering by model: iphone
+2024-08-26 09:45:17,175 - DEBUG - Products retrieved: []
+2024-08-26 09:45:17,175 - INFO - No products found with the provided filters.
+2024-08-26 09:45:17,175 - INFO - Products fetched successfully.
+2024-08-26 09:45:21,088 - INFO - 127.0.0.1 - - [26/Aug/2024 09:45:21] "GET /products?model=iphone&type=laptop HTTP/1.1" 200 -
+2024-08-26 09:45:33,999 - INFO - Starting to fetch products with filters.
+2024-08-26 09:45:34,001 - DEBUG - Filtering by type: laptop
+2024-08-26 09:45:34,004 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-26 09:45:34,005 - INFO - Products fetched successfully.
+2024-08-26 09:45:37,226 - INFO - 127.0.0.1 - - [26/Aug/2024 09:45:37] "GET /products?type=laptop HTTP/1.1" 200 -
+2024-08-26 09:50:28,286 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:50:28,287 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:50:28,289 - INFO -  * Restarting with stat
+2024-08-26 09:50:29,248 - WARNING -  * Debugger is active!
+2024-08-26 09:50:29,251 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:50:33,908 - INFO - Starting to fetch products with filters.
+2024-08-26 09:50:33,911 - DEBUG - Filtering by brands: ['apple']
+2024-08-26 09:50:33,912 - DEBUG - Filtering by types: ['laptop']
+2024-08-26 09:50:34,031 - DEBUG - Products retrieved: []
+2024-08-26 09:50:34,031 - INFO - No products found with the provided filters.
+2024-08-26 09:50:34,031 - INFO - Products fetched successfully.
+2024-08-26 09:50:37,394 - INFO - 127.0.0.1 - - [26/Aug/2024 09:50:37] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:56:14,018 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 09:56:14,018 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 09:56:14,020 - INFO -  * Restarting with stat
+2024-08-26 09:56:14,817 - WARNING -  * Debugger is active!
+2024-08-26 09:56:14,821 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 09:56:17,729 - INFO - Starting to fetch products with filters.
+2024-08-26 09:56:17,732 - DEBUG - Filtering by brand: apple
+2024-08-26 09:56:17,733 - DEBUG - Filtering by type: laptop
+2024-08-26 09:56:17,840 - DEBUG - Products retrieved: []
+2024-08-26 09:56:17,840 - INFO - No products found with the provided filters.
+2024-08-26 09:56:17,840 - INFO - Products fetched successfully.
+2024-08-26 09:56:21,435 - INFO - 127.0.0.1 - - [26/Aug/2024 09:56:21] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:56:42,740 - INFO - Starting to fetch products with filters.
+2024-08-26 09:56:42,740 - DEBUG - Filtering by type: laptop
+2024-08-26 09:56:42,744 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-26 09:56:42,744 - INFO - Products fetched successfully.
+2024-08-26 09:56:46,829 - INFO - 127.0.0.1 - - [26/Aug/2024 09:56:46] "GET /products?type=laptop HTTP/1.1" 200 -
+2024-08-26 09:56:53,544 - INFO - Starting to fetch products with filters.
+2024-08-26 09:56:53,545 - DEBUG - Filtering by brand: apple
+2024-08-26 09:56:53,546 - DEBUG - Filtering by type: laptop
+2024-08-26 09:56:53,547 - DEBUG - Products retrieved: []
+2024-08-26 09:56:53,547 - INFO - No products found with the provided filters.
+2024-08-26 09:56:53,548 - INFO - Products fetched successfully.
+2024-08-26 09:56:56,700 - INFO - 127.0.0.1 - - [26/Aug/2024 09:56:56] "GET /products?type=laptop&brand=apple HTTP/1.1" 200 -
+2024-08-26 09:59:18,678 - INFO - Starting to fetch products with filters.
+2024-08-26 09:59:18,679 - DEBUG - Filtering by brand: apple
+2024-08-26 09:59:18,679 - DEBUG - Filtering by type: mobile
+2024-08-26 09:59:18,682 - DEBUG - Products retrieved: []
+2024-08-26 09:59:18,682 - INFO - No products found with the provided filters.
+2024-08-26 09:59:18,682 - INFO - Products fetched successfully.
+2024-08-26 09:59:22,041 - INFO - 127.0.0.1 - - [26/Aug/2024 09:59:22] "GET /products?type=mobile&brand=apple HTTP/1.1" 200 -
+2024-08-26 10:00:07,765 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 10:00:07,766 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 10:00:07,769 - INFO -  * Restarting with stat
+2024-08-26 10:00:08,636 - WARNING -  * Debugger is active!
+2024-08-26 10:00:08,639 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 10:00:14,572 - INFO - Starting to fetch products with filters.
+2024-08-26 10:00:14,577 - DEBUG - Filtering by brands: ['apple']
+2024-08-26 10:00:14,579 - DEBUG - Filtering by types: ['mobile']
+2024-08-26 10:00:14,705 - DEBUG - Products retrieved: []
+2024-08-26 10:00:14,705 - INFO - No products found with the provided filters.
+2024-08-26 10:00:14,705 - INFO - Products fetched successfully.
+2024-08-26 10:00:19,666 - INFO - 127.0.0.1 - - [26/Aug/2024 10:00:19] "GET /products?type=mobile&brand=apple HTTP/1.1" 200 -
+2024-08-26 10:00:28,111 - INFO - Starting to fetch products with filters.
+2024-08-26 10:00:28,114 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:00:28,114 - INFO - Products fetched successfully.
+2024-08-26 10:00:31,517 - INFO - 127.0.0.1 - - [26/Aug/2024 10:00:31] "GET /products?search=brand=apple:type=mobile HTTP/1.1" 200 -
+2024-08-26 10:00:42,292 - INFO - Starting to fetch products with filters.
+2024-08-26 10:00:42,293 - DEBUG - Filtering by brands: ['apple']
+2024-08-26 10:00:42,293 - DEBUG - Filtering by types: ['mobile']
+2024-08-26 10:00:42,294 - DEBUG - Products retrieved: []
+2024-08-26 10:00:42,294 - INFO - No products found with the provided filters.
+2024-08-26 10:00:42,294 - INFO - Products fetched successfully.
+2024-08-26 10:00:45,618 - INFO - 127.0.0.1 - - [26/Aug/2024 10:00:45] "GET /products?type=mobile&brand=apple HTTP/1.1" 200 -
+2024-08-26 10:00:49,871 - INFO - Starting to fetch products with filters.
+2024-08-26 10:00:49,871 - DEBUG - Filtering by brands: ['apple']
+2024-08-26 10:00:49,871 - DEBUG - Filtering by types: ['mobile']
+2024-08-26 10:00:49,871 - DEBUG - Filtering by models: ['iphone']
+2024-08-26 10:00:49,874 - DEBUG - Products retrieved: []
+2024-08-26 10:00:49,874 - INFO - No products found with the provided filters.
+2024-08-26 10:00:49,874 - INFO - Products fetched successfully.
+2024-08-26 10:00:53,196 - INFO - 127.0.0.1 - - [26/Aug/2024 10:00:53] "GET /products?model=iphone&type=mobile&brand=apple HTTP/1.1" 200 -
+2024-08-26 10:01:49,403 - INFO - Starting to fetch products with filters.
+2024-08-26 10:01:49,406 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:01:49,406 - INFO - Products fetched successfully.
+2024-08-26 10:01:52,842 - INFO - 127.0.0.1 - - [26/Aug/2024 10:01:52] "GET /products HTTP/1.1" 200 -
+2024-08-26 10:02:59,672 - INFO - Starting to fetch products with filters.
+2024-08-26 10:02:59,673 - DEBUG - Filtering by brands: ['hp']
+2024-08-26 10:02:59,674 - DEBUG - Filtering by types: ['laptop']
+2024-08-26 10:02:59,674 - DEBUG - Filtering by models: ['Pavilion 15']
+2024-08-26 10:02:59,678 - DEBUG - Products retrieved: []
+2024-08-26 10:02:59,678 - INFO - No products found with the provided filters.
+2024-08-26 10:02:59,678 - INFO - Products fetched successfully.
+2024-08-26 10:03:03,196 - INFO - 127.0.0.1 - - [26/Aug/2024 10:03:03] "GET /products?model=Pavilion%2015&type=laptop&brand=hp HTTP/1.1" 200 -
+2024-08-26 10:03:45,535 - INFO - Starting to fetch products with filters.
+2024-08-26 10:03:45,538 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:03:45,539 - INFO - Products fetched successfully.
+2024-08-26 10:03:48,841 - INFO - 127.0.0.1 - - [26/Aug/2024 10:03:48] "GET /products HTTP/1.1" 200 -
+2024-08-26 10:04:11,433 - INFO - Starting to fetch products with filters.
+2024-08-26 10:04:11,433 - DEBUG - Filtering by models: ['iPhone 13']
+2024-08-26 10:04:11,438 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:04:11,438 - INFO - Products fetched successfully.
+2024-08-26 10:04:14,589 - INFO - 127.0.0.1 - - [26/Aug/2024 10:04:14] "GET /products?model=iPhone%2013 HTTP/1.1" 200 -
+2024-08-26 10:04:38,820 - INFO - Starting to fetch products with filters.
+2024-08-26 10:04:38,821 - DEBUG - Filtering by brands: ['Apple']
+2024-08-26 10:04:38,822 - DEBUG - Filtering by models: ['iPhone 13']
+2024-08-26 10:04:38,825 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:04:38,825 - INFO - Products fetched successfully.
+2024-08-26 10:04:42,183 - INFO - 127.0.0.1 - - [26/Aug/2024 10:04:42] "GET /products?model=iPhone%2013&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:05:04,644 - INFO - Starting to fetch products with filters.
+2024-08-26 10:05:04,644 - DEBUG - Filtering by brands: ['Apple']
+2024-08-26 10:05:04,644 - DEBUG - Filtering by types: ['mob']
+2024-08-26 10:05:04,644 - DEBUG - Filtering by models: ['iPhone 13']
+2024-08-26 10:05:04,647 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:05:04,647 - INFO - Products fetched successfully.
+2024-08-26 10:05:08,102 - INFO - 127.0.0.1 - - [26/Aug/2024 10:05:08] "GET /products?model=iPhone%2013&type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:05:34,236 - INFO - Starting to fetch products with filters.
+2024-08-26 10:05:34,237 - DEBUG - Filtering by brands: ['Apple']
+2024-08-26 10:05:34,237 - DEBUG - Filtering by types: ['mobile']
+2024-08-26 10:05:34,238 - DEBUG - Filtering by models: ['iPhone 13']
+2024-08-26 10:05:34,240 - DEBUG - Products retrieved: []
+2024-08-26 10:05:34,240 - INFO - No products found with the provided filters.
+2024-08-26 10:05:34,240 - INFO - Products fetched successfully.
+2024-08-26 10:05:37,542 - INFO - 127.0.0.1 - - [26/Aug/2024 10:05:37] "GET /products?model=iPhone%2013&type=mobile&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:05:44,691 - INFO - Starting to fetch products with filters.
+2024-08-26 10:05:44,692 - DEBUG - Filtering by brands: ['Apple']
+2024-08-26 10:05:44,693 - DEBUG - Filtering by types: ['mob']
+2024-08-26 10:05:44,693 - DEBUG - Filtering by models: ['iPhone 13']
+2024-08-26 10:05:44,696 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:05:44,696 - INFO - Products fetched successfully.
+2024-08-26 10:05:47,947 - INFO - 127.0.0.1 - - [26/Aug/2024 10:05:47] "GET /products?model=iPhone%2013&type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:06:14,936 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-26 10:06:14,936 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-26 10:06:14,938 - INFO -  * Restarting with stat
+2024-08-26 10:06:15,738 - WARNING -  * Debugger is active!
+2024-08-26 10:06:15,744 - INFO -  * Debugger PIN: 131-781-761
+2024-08-26 10:06:18,514 - INFO - Starting to fetch products with filters.
+2024-08-26 10:06:18,518 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:06:18,519 - DEBUG - Filtering by type: mob
+2024-08-26 10:06:18,519 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:06:18,645 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:06:18,645 - INFO - Products fetched successfully.
+2024-08-26 10:06:22,194 - INFO - 127.0.0.1 - - [26/Aug/2024 10:06:22] "GET /products?model=iPhone%2013&type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:06:29,046 - INFO - Starting to fetch products with filters.
+2024-08-26 10:06:29,046 - DEBUG - Filtering by type: mob
+2024-08-26 10:06:29,047 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:06:29,050 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:06:29,050 - INFO - Products fetched successfully.
+2024-08-26 10:06:32,736 - INFO - 127.0.0.1 - - [26/Aug/2024 10:06:32] "GET /products?model=iPhone%2013&type=mob HTTP/1.1" 200 -
+2024-08-26 10:06:38,611 - INFO - Starting to fetch products with filters.
+2024-08-26 10:06:38,612 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:06:38,616 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:06:38,616 - INFO - Products fetched successfully.
+2024-08-26 10:06:42,010 - INFO - 127.0.0.1 - - [26/Aug/2024 10:06:42] "GET /products?model=iPhone%2013 HTTP/1.1" 200 -
+2024-08-26 10:06:46,748 - INFO - Starting to fetch products with filters.
+2024-08-26 10:06:46,752 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:06:46,752 - INFO - Products fetched successfully.
+2024-08-26 10:06:49,995 - INFO - 127.0.0.1 - - [26/Aug/2024 10:06:49] "GET /products HTTP/1.1" 200 -
+2024-08-26 10:07:02,663 - INFO - Starting to fetch products with filters.
+2024-08-26 10:07:02,667 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:07:02,667 - INFO - Products fetched successfully.
+2024-08-26 10:07:06,047 - INFO - 127.0.0.1 - - [26/Aug/2024 10:07:06] "GET /products?search=brand=apple:type=mob HTTP/1.1" 200 -
+2024-08-26 10:08:02,508 - INFO - Starting to fetch products with filters.
+2024-08-26 10:08:02,508 - DEBUG - Filtering by type: mob
+2024-08-26 10:08:02,515 - DEBUG - Products retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:08:02,515 - INFO - Products fetched successfully.
+2024-08-26 10:08:06,222 - INFO - 127.0.0.1 - - [26/Aug/2024 10:08:06] "GET /products?type=mob HTTP/1.1" 200 -
+2024-08-26 10:08:13,445 - INFO - Starting to fetch products with filters.
+2024-08-26 10:08:13,446 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:08:13,448 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:08:13,448 - INFO - Products fetched successfully.
+2024-08-26 10:08:16,907 - INFO - 127.0.0.1 - - [26/Aug/2024 10:08:16] "GET /products?brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:08:31,341 - INFO - Starting to fetch products with filters.
+2024-08-26 10:08:31,341 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:08:31,341 - DEBUG - Filtering by type: mob
+2024-08-26 10:08:31,344 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-26 10:08:31,344 - INFO - Products fetched successfully.
+2024-08-26 10:08:34,693 - INFO - 127.0.0.1 - - [26/Aug/2024 10:08:34] "GET /products?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:08:40,524 - INFO - Starting to fetch products with filters.
+2024-08-26 10:08:40,524 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:08:40,524 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:08:40,528 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:08:40,528 - INFO - Products fetched successfully.
+2024-08-26 10:08:43,929 - INFO - 127.0.0.1 - - [26/Aug/2024 10:08:43] "GET /products?model=iPhone%2013&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:08:50,272 - INFO - Starting to fetch products with filters.
+2024-08-26 10:08:50,274 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:08:50,274 - DEBUG - Filtering by type: mob
+2024-08-26 10:08:50,274 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:08:50,277 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:08:50,277 - INFO - Products fetched successfully.
+2024-08-26 10:08:53,635 - INFO - 127.0.0.1 - - [26/Aug/2024 10:08:53] "GET /products?model=iPhone%2013&type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:10:14,746 - INFO - Starting to fetch products with filters.
+2024-08-26 10:10:14,747 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:10:14,747 - DEBUG - Filtering by type: mo
+2024-08-26 10:10:14,747 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:10:14,750 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:10:14,750 - INFO - Products fetched successfully.
+2024-08-26 10:10:18,081 - INFO - 127.0.0.1 - - [26/Aug/2024 10:10:18] "GET /products?model=iPhone%2013&type=mo&brand=Apple HTTP/1.1" 200 -
+2024-08-26 10:10:24,489 - INFO - Starting to fetch products with filters.
+2024-08-26 10:10:24,491 - DEBUG - Filtering by brand: Appl
+2024-08-26 10:10:24,491 - DEBUG - Filtering by type: mo
+2024-08-26 10:10:24,492 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:10:24,494 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:10:24,494 - INFO - Products fetched successfully.
+2024-08-26 10:10:28,563 - INFO - 127.0.0.1 - - [26/Aug/2024 10:10:28] "GET /products?model=iPhone%2013&type=mo&brand=Appl HTTP/1.1" 200 -
+2024-08-26 10:10:36,887 - INFO - Starting to fetch products with filters.
+2024-08-26 10:10:36,887 - DEBUG - Filtering by brand: Apple
+2024-08-26 10:10:36,888 - DEBUG - Filtering by type: mob
+2024-08-26 10:10:36,888 - DEBUG - Filtering by model: iPhone 13
+2024-08-26 10:10:36,889 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-26 10:10:36,889 - INFO - Products fetched successfully.
+2024-08-26 10:10:40,052 - INFO - 127.0.0.1 - - [26/Aug/2024 10:10:40] "GET /products?model=iPhone%2013&type=mob&brand=Apple HTTP/1.1" 200 -

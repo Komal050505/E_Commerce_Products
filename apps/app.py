@@ -231,22 +231,47 @@ def create_tables():
 @app.route('/products', methods=['GET'])
 def get_products():
     """
-    Retrieves all products from the database.
+    Retrieves filtered products from the database based on query parameters.
 
-    This route fetches all products and returns them as a JSON array.
+    This route fetches products based on the provided query parameters like brand, type, and model.
 
     Returns:
-        Response: JSON array of all products.
+        Response: JSON array of filtered products.
     """
-    log_info("Starting to fetch all products.")
+    log_info("Starting to fetch products with filters.")
     try:
-        products = db.session.query(Product).all()
+        # Retrieve query parameters
+        brand = request.args.get('brand')
+        types = request.args.get('type')
+        model = request.args.get('model')
+
+        # Start building the query
+        query = db.session.query(Product)
+
+        # Apply filters based on query parameters
+        if brand:
+            query = query.filter(Product.brand.ilike(f"%{brand}%"))
+            log_debug(f"Filtering by brand: {brand}")
+
+        if types:
+            query = query.filter(Product.type.ilike(f"%{types}%"))
+            log_debug(f"Filtering by type: {types}")
+
+        if model:
+            query = query.filter(Product.model.ilike(f"%{model}%"))
+            log_debug(f"Filtering by model: {model}")
+
+        # Execute the query
+        products = query.all()
         log_debug(f"Products retrieved: {products}")
+
         if not products:
-            log_info("No products found in the database.")
+            log_info("No products found with the provided filters.")
+
         log_info("Products fetched successfully.")
-        notify_success("Fetch Products Success", "Successfully fetched all products.")
+        notify_success("Fetch Products Success", "Successfully fetched filtered products.")
         return jsonify([product.to_dict() for product in products])
+
     except Exception as e:
         log_error(f"Error fetching products: {e}")
         notify_failure("Fetch Products Error", f"Error fetching products: {e}")
