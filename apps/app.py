@@ -32,7 +32,8 @@ def get_latest_products():
         if not latest_products:
             log_info("No latest products found.")
         log_info("Latest products fetched successfully.")
-        notify_success("Fetch Latest Products Success", "Successfully fetched latest products.")
+        notify_success("Fetch Latest Products Success",
+                       f"Successfully fetched latest products {latest_products}.")
         return jsonify([product.to_dict() for product in latest_products])
     except Exception as e:
         log_error(f"Error fetching latest products: {e}")
@@ -58,11 +59,13 @@ def get_latest_discounted_products():
         if not latest_discounted_products:
             log_info("No latest discounted products found.")
         log_info("Latest discounted products fetched successfully.")
-        notify_success("Fetch Latest Discounted Products Success", "Successfully fetched latest discounted products.")
+        notify_success("Fetch Latest Discounted Products Success",
+                       f"Successfully fetched latest discounted products {latest_discounted_products}.")
         return jsonify([product.to_dict() for product in latest_discounted_products])
     except Exception as e:
         log_error(f"Error fetching latest discounted products: {e}")
-        notify_failure("Fetch Latest Discounted Products Error", f"Failed to fetch latest discounted products: {e}")
+        notify_failure("Fetch Latest Discounted Products Error",
+                       f"Failed to fetch latest discounted products: {e}")
         return jsonify({"error": "Could not fetch latest discounted products"}), 500
 
 
@@ -84,14 +87,15 @@ def get_products_by_discount():
         if discounted_products:
             log_info("Products sorted by discount fetched successfully.")
             notify_success("Fetch Products by Discount Success",
-                           "Successfully fetched products sorted by discount.")
+                           f"Successfully fetched products {discounted_products}sorted by discount.")
             return jsonify([product.to_dict() for product in discounted_products])
         else:
             log_info("No products with discounts found.")
             return jsonify({"error": "No discounted products found"}), 404
     except Exception as e:
         log_error(f"Error fetching products sorted by discount: {e}")
-        notify_failure("Fetch Products by Discount Error", f"Failed to fetch products sorted by discount: {e}")
+        notify_failure("Fetch Products by Discount Error",
+                       f"Failed to fetch products sorted by discount: {e}")
         return jsonify({"error": "Could not fetch products sorted by discount"}), 500
 
 
@@ -120,57 +124,85 @@ def filter_by_price_range():
         if not products:
             log_info("No products found in the specified price range.")
         log_info("Products filtered by price range successfully.")
-        notify_success("Filter Products by Price Range Success", "Successfully filtered products by price range.")
+        notify_success("Filter Products by Price Range Success",
+                       f"Successfully filtered products {products} by price range.")
         return jsonify([product.to_dict() for product in products])
     except Exception as e:
         log_error(f"Error filtering products by price range: {e}")
-        notify_failure("Filter Products by Price Range Error", f"Error filtering products by price range: {e}")
+        notify_failure("Filter Products by Price Range Error",
+                       f"Error filtering products by price range: {e}")
         return jsonify({"error": "Failed to filter products by price range"}), 500
 
 
-@app.route('/products/specs', methods=['GET'])
+@app.route('/products/specs', methods=['POST'])
 def filter_products_by_specs():
     """
-    Filters products based on specifications provided in the query parameters.
+    Filters products based on specifications provided in the JSON body.
 
-    This route filters products by specifications such as color, size, etc., based on the query parameters.
+    This route filters products by specifications such as color, size, etc., based on the JSON body.
 
-    Query Parameters:
-        specs (str): A JSON string where keys are specification names and values are the desired values.
+    JSON Body:
+        specs (dict): A dictionary where keys are specification names and values are the desired values.
 
     Returns:
         Response: JSON array of products that match the specified criteria.
     """
     log_info("Starting filter products by specs.")
-    specs_query = request.args.get('specs')
-    if specs_query:
-        try:
-            specs = json.loads(specs_query)  # Convert JSON string to dictionary
-            # Fetch all products from the database
-            products = db.session.query(Product).all()
 
-            # Filter products in Python if database JSON querying is not available
-            filtered_products = [
-                product for product in products
-                if all(product.specs.get(key) == value for key, value in specs.items())
-            ]
+    # Capture raw data for debugging
+    raw_data = request.get_data(as_text=True)
+    log_debug(f"Raw data received: {raw_data}")
 
-            log_debug(f"Filtered products by specs: {filtered_products}")
-            if not filtered_products:
-                log_info("No products match the spec criteria.")
-            log_info("Products filtered by specs successfully.")
-            notify_success("Filter Products by Specs Success", "Successfully filtered products by specs.")
-            return jsonify([product.to_dict() for product in filtered_products])
-        except json.JSONDecodeError:
-            log_error("Invalid JSON format for specs.")
-            notify_failure("Filter Products by Specs Error", "Invalid JSON format for specs.")
-            return jsonify({"error": "Invalid JSON format for specs"}), 400
-        except Exception as e:
-            log_error(f"Error filtering products by specs: {e}")
-            notify_failure("Filter Products by Specs Error", f"Error filtering products by specs: {e}")
-            return jsonify({"error": "Failed to filter products by specs"}), 500
-    else:
-        return jsonify({"error": "No specs provided for filtering"}), 400
+    try:
+        # Attempt to parse the JSON data
+        data = json.loads(raw_data)
+        log_debug(f"Parsed data: {data}")
+
+        if "specs" not in data or not isinstance(data["specs"], dict):
+            log_error("No valid specs provided in the request body.")
+            return jsonify({"error": "No valid specs provided for filtering"}), 400
+
+        specs = data["specs"]
+
+        # Fetch all products from the database
+        products = db.session.query(Product).all()
+
+        # Filter products based on the specs
+        filtered_products = []
+        for product in products:
+            try:
+                if isinstance(product.specs, str):
+                    product_specs = json.loads(product.specs)
+                elif isinstance(product.specs, dict):
+                    product_specs = product.specs
+                else:
+                    raise ValueError(f"Invalid type for product specs: {type(product.specs)}")
+
+                if all(product_specs.get(key) == value for key, value in specs.items()):
+                    filtered_products.append(product)
+            except json.JSONDecodeError as e:
+                log_error(f"Failed to parse product specs: {e}")
+                continue
+
+        log_debug(f"Filtered products: {filtered_products}")
+        if not filtered_products:
+            log_info("No products match the spec criteria.")
+            return jsonify({"message": "No products match the specified criteria."}), 200
+
+        log_info("Products filtered by specs successfully.")
+        notify_success("Filter Products by Specs Success",
+                       f"Successfully filtered products {filtered_products} by specs.")
+        return jsonify([product.to_dict() for product in filtered_products])
+
+    except json.JSONDecodeError as e:
+        log_error(f"JSONDecodeError: {e}")
+        return jsonify({"error": f"Invalid JSON format: {e}"}), 400
+    except ValueError as ve:
+        log_error(f"ValueError: {ve}")
+        return jsonify({"error": f"Value error: {ve}"}), 400
+    except Exception as e:
+        log_error(f"Unexpected error: {e}")
+        return jsonify({"error": f"Failed to filter products by specs: {e}"}), 500
 
 
 @app.route('/products/recent/24hrs', methods=['GET'])
@@ -192,13 +224,26 @@ def get_recent_within_last_24hrs_products():
         recent_products = db.session.query(Product).filter(Product.created_at >= time_24_hours_ago).all()
 
         log_debug(f"Recent products retrieved: {recent_products}")
-        if not recent_products:
-            log_info("No products found created in the last 24 hours.")
-        else:
-            log_info("Products created in the last 24 hours fetched successfully.")
 
-        notify_success("Fetch Recent Products Success", "Successfully fetched products created in the last 24 hours.")
-        return jsonify([product.to_dict() for product in recent_products])
+        if recent_products:
+            log_info("Products created in the last 24 hours fetched successfully.")
+            # Generate a formatted message to include product details
+            product_details = "\n".join([str(product.to_dict()) for product in recent_products])
+            email_body = (f"Successfully fetched the following products "
+                          f"created in the last 24 hours:\n\n{product_details}")
+
+            # Notify success with the formatted product details in the email body
+            notify_success("Fetch Recent Products Success", email_body)
+
+            return jsonify([product.to_dict() for product in recent_products])
+        else:
+            log_info("No products found created in the last 24 hours.")
+            # Notify that no recent products were found
+            notify_success(
+                "Fetch Recent Products - No Products Found",
+                "No products were created in the last 24 hours."
+            )
+            return jsonify({"message": "No products found created in the last 24 hours"}), 200
     except Exception as e:
         log_error(f"Error fetching recent products: {e}")
         notify_failure("Fetch Recent Products Error", f"Failed to fetch recent products: {e}")
@@ -269,7 +314,8 @@ def get_products():
             log_info("No products found with the provided filters.")
 
         log_info("Products fetched successfully.")
-        notify_success("Fetch Products Success", "Successfully fetched filtered products.")
+        notify_success("Fetch Products Success",
+                       f"Successfully fetched filtered products {products} .")
         return jsonify([product.to_dict() for product in products])
 
     except Exception as e:
@@ -297,7 +343,8 @@ def get_product_by_uuid(uuid):
         log_debug(f"Product retrieved: {product}")
         if product:
             # Notify success
-            notify_success("Fetch Product Success", f"Product with UUID {uuid} retrieved successfully.")
+            notify_success("Fetch Product Success",
+                           f"Product with UUID {uuid} retrieved successfully.")
             return jsonify(product.to_dict())
         else:
             log_info(f"Product with UUID {uuid} not found.")
@@ -338,7 +385,8 @@ def filter_products():
         if not products:
             log_info("No products match the filter criteria.")
         log_info("Products filtered successfully.")
-        notify_success("Filter Products Success", "Successfully filtered products.")
+        notify_success("Filter Products Success",
+                       f"Successfully filtered products {products}.")
         return jsonify([product.to_dict() for product in products])
     except Exception as e:
         log_error(f"Error filtering products: {e}")
