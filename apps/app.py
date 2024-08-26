@@ -15,6 +15,52 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 db.init_app(app)
 
 
+@app.route('/products/search', methods=['GET'])
+def search_products():
+    """
+    Searches for products based on the provided query string in the URL parameters.
+
+    This route searches for products where the 'type', 'brand', or 'model' fields match the
+    search query string provided by the user in a case-insensitive manner.
+
+    Query Parameters:
+        query (str): A string to search for in the 'type', 'brand', or 'model' fields of the products.
+
+    Returns:
+        Response: JSON array of products that match the search query, or a message indicating no matches found.
+    """
+    log_info("Starting product search.")
+    query = request.args.get('query', '', type=str)
+
+    try:
+        # Perform the search query on the database
+        search_results = db.session.query(Product).filter(
+            Product.type.ilike(f'%{query}%') |
+            Product.brand.ilike(f'%{query}%') |
+            Product.model.ilike(f'%{query}%')
+        ).all()
+
+        log_debug(f"Search results: {search_results}")
+
+        if not search_results:
+            log_info("No products match the search query.")
+            notify_success("Product Search Success", "No products found matching the search criteria.")
+            return jsonify({"message": "No products found matching your search criteria."}), 200
+
+        # Successfully found matching products
+        log_info("Products found matching the search criteria.")
+        notify_success("Product Search Success",
+                       f"Successfully found {len(search_results)} products i.e {search_results} matching the search criteria.")
+        return jsonify([product.to_dict() for product in search_results]), 200
+
+    except Exception as e:
+        # Log the error and send a failure notification email
+        log_error(f"Error during product search: {e}")
+        notify_failure("Product Search Error", f"Error during product search: {e}")
+        return jsonify({"error": "Search failed"}), 500
+
+
+
 @app.route('/products/latest', methods=['GET'])
 def get_latest_products():
     """
