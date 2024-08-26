@@ -546,3 +546,131 @@ DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174001) already exists.
 2024-08-24 16:33:47,448 - INFO - 127.0.0.1 - - [24/Aug/2024 16:33:47] "GET /products/specs?specs={"screen_size":%20"6.1%20inches",%20"battery":%20"3095%20mAh"} HTTP/1.1" 200 -
 2024-08-24 16:34:18,857 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
 2024-08-24 16:34:18,989 - INFO -  * Restarting with stat
+2024-08-25 08:56:19,519 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-25 08:56:19,520 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-25 08:56:19,524 - INFO -  * Restarting with stat
+2024-08-25 08:56:20,637 - WARNING -  * Debugger is active!
+2024-08-25 08:56:20,644 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 08:56:23,512 - INFO - Fetching products created in the last 24 hours.
+2024-08-25 08:56:23,769 - DEBUG - Recent products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-25 08:56:23,770 - INFO - Products created in the last 24 hours fetched successfully.
+2024-08-25 08:56:27,503 - ERROR - Error fetching recent products: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7143422ebc6sm5111352b3a.38 - gsmtp')
+2024-08-25 08:56:29,901 - INFO - 127.0.0.1 - - [25/Aug/2024 08:56:29] "[35m[1mGET /products/recent HTTP/1.1[0m" 500 -
+2024-08-25 08:56:51,130 - INFO - Starting to fetch all products.
+2024-08-25 08:56:51,133 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-25 08:56:51,133 - INFO - Products fetched successfully.
+2024-08-25 08:56:53,502 - ERROR - Error fetching products: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-203855dc2d1sm48365175ad.158 - gsmtp')
+2024-08-25 08:56:55,805 - INFO - 127.0.0.1 - - [25/Aug/2024 08:56:55] "[35m[1mGET /products HTTP/1.1[0m" 500 -
+2024-08-25 08:57:29,564 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-25 08:57:29,564 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-25 08:57:29,567 - INFO -  * Restarting with stat
+2024-08-25 08:57:30,481 - WARNING -  * Debugger is active!
+2024-08-25 08:57:30,484 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 08:57:33,375 - INFO - Starting to fetch all products.
+2024-08-25 08:57:33,499 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-25 08:57:33,499 - INFO - Products fetched successfully.
+2024-08-25 08:57:36,990 - INFO - 127.0.0.1 - - [25/Aug/2024 08:57:36] "GET /products HTTP/1.1" 200 -
+2024-08-25 08:57:41,644 - INFO - Fetching products created in the last 24 hours.
+2024-08-25 08:57:41,649 - DEBUG - Recent products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-25 08:57:41,649 - INFO - Products created in the last 24 hours fetched successfully.
+2024-08-25 08:57:44,929 - INFO - 127.0.0.1 - - [25/Aug/2024 08:57:44] "GET /products/recent HTTP/1.1" 200 -
+2024-08-25 09:12:00,596 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:12:00,782 - INFO -  * Restarting with stat
+2024-08-25 09:12:02,037 - WARNING -  * Debugger is active!
+2024-08-25 09:12:02,043 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:14:44,595 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:14:44,816 - INFO -  * Restarting with stat
+2024-08-25 09:14:46,031 - WARNING -  * Debugger is active!
+2024-08-25 09:14:46,035 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:14:52,427 - INFO - Fetching products created in the last 24 hours.
+2024-08-25 09:14:52,622 - DEBUG - Recent products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>]
+2024-08-25 09:14:52,622 - INFO - Products created in the last 24 hours fetched successfully.
+2024-08-25 09:14:56,203 - INFO - 127.0.0.1 - - [25/Aug/2024 09:14:56] "GET /products/recent/24hrs HTTP/1.1" 200 -
+2024-08-25 09:17:19,016 - INFO - Fetching highest discounted product.
+2024-08-25 09:17:19,032 - DEBUG - Highest discounted product retrieved: <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>
+2024-08-25 09:17:19,032 - INFO - Highest discounted product fetched successfully.
+2024-08-25 09:17:22,509 - INFO - 127.0.0.1 - - [25/Aug/2024 09:17:22] "GET /products/highest-discounted HTTP/1.1" 200 -
+2024-08-25 09:19:28,006 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:19:28,167 - INFO -  * Restarting with stat
+2024-08-25 09:19:29,083 - WARNING -  * Debugger is active!
+2024-08-25 09:19:29,087 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:21:47,614 - INFO - Fetching products sorted by discount.
+2024-08-25 09:21:47,750 - DEBUG - Products sorted by discount retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>]
+2024-08-25 09:21:47,751 - INFO - Products sorted by discount fetched successfully.
+2024-08-25 09:21:51,133 - INFO - 127.0.0.1 - - [25/Aug/2024 09:21:51] "GET /products/discounted HTTP/1.1" 200 -
+2024-08-25 09:33:08,211 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-25 09:33:08,409 - INFO -  * Restarting with stat
+2024-08-25 09:33:09,363 - WARNING -  * Debugger is active!
+2024-08-25 09:33:09,366 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:34:53,113 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:34:53,277 - INFO -  * Restarting with stat
+2024-08-25 09:34:54,270 - WARNING -  * Debugger is active!
+2024-08-25 09:34:54,273 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:35:43,131 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:35:43,304 - INFO -  * Restarting with stat
+2024-08-25 09:35:44,188 - WARNING -  * Debugger is active!
+2024-08-25 09:35:44,191 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:57:03,305 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4', 'type': 'mob', 'brand': ' Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:57:03,326 - INFO - 127.0.0.1 - - [25/Aug/2024 09:57:03] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-25 09:57:28,593 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:57:28,605 - INFO - 127.0.0.1 - - [25/Aug/2024 09:57:28] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-25 09:57:39,547 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:57:39,556 - INFO - 127.0.0.1 - - [25/Aug/2024 09:57:39] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-25 09:58:45,203 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-25 09:58:45,445 - INFO -  * Restarting with stat
+2024-08-25 09:58:47,083 - WARNING -  * Debugger is active!
+2024-08-25 09:58:47,087 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 09:58:47,133 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:58:47,227 - DEBUG - New product object created: <Product (transient 2211958360144)>
+2024-08-25 09:58:47,240 - INFO - Product created successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4
+2024-08-25 09:58:50,970 - INFO - 127.0.0.1 - - [25/Aug/2024 09:58:50] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-25 09:59:04,140 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5', 'type': 'mob', 'brand': ' Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:59:04,144 - ERROR - Invalid product, type, or brand.
+2024-08-25 09:59:07,495 - INFO - 127.0.0.1 - - [25/Aug/2024 09:59:07] "[31m[1mPOST /products HTTP/1.1[0m" 400 -
+2024-08-25 09:59:39,402 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5', 'type': 'mob', 'brand': 'I Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:59:39,406 - ERROR - Invalid product, type, or brand.
+2024-08-25 09:59:43,249 - INFO - 127.0.0.1 - - [25/Aug/2024 09:59:43] "[31m[1mPOST /products HTTP/1.1[0m" 400 -
+2024-08-25 09:59:51,097 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 79999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-25 09:59:51,101 - DEBUG - New product object created: <Product (transient 2211958081872)>
+2024-08-25 09:59:51,108 - INFO - Product created successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5
+2024-08-25 09:59:54,353 - INFO - 127.0.0.1 - - [25/Aug/2024 09:59:54] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-25 10:02:03,571 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-25 10:02:03,571 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-25 10:02:03,573 - INFO -  * Restarting with stat
+2024-08-25 10:02:04,365 - WARNING -  * Debugger is active!
+2024-08-25 10:02:04,370 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 10:02:39,201 - INFO - Updating product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 using data: {'price': 90001}.
+2024-08-25 10:02:39,217 - INFO - 127.0.0.1 - - [25/Aug/2024 10:02:39] "[35m[1mPUT /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1[0m" 500 -
+2024-08-25 10:04:57,429 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-25 10:04:57,429 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-25 10:04:57,430 - INFO -  * Restarting with stat
+2024-08-25 10:04:58,269 - WARNING -  * Debugger is active!
+2024-08-25 10:04:58,274 - INFO -  * Debugger PIN: 131-781-761
+2024-08-25 10:05:01,861 - INFO - Updating product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 using data: {'price': 90001}.
+2024-08-25 10:05:01,980 - ERROR - Invalid product, type, or brand.
+2024-08-25 10:05:05,346 - INFO - 127.0.0.1 - - [25/Aug/2024 10:05:05] "[31m[1mPUT /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1[0m" 400 -
+2024-08-25 10:06:36,120 - INFO - Updating product with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 using data: {'price': 90001}.
+2024-08-25 10:06:36,122 - ERROR - Invalid product, type, or brand.
+2024-08-25 10:06:39,544 - INFO - 127.0.0.1 - - [25/Aug/2024 10:06:39] "[31m[1mPUT /products/5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1[0m" 400 -
+2024-08-25 10:07:46,232 - INFO - Updating product with UUID: "4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1" using data: {'price': 90001}.
+2024-08-25 10:07:46,235 - ERROR - Invalid product, type, or brand.
+2024-08-25 10:07:49,615 - INFO - 127.0.0.1 - - [25/Aug/2024 10:07:49] "[31m[1mPUT /products/"4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1" HTTP/1.1[0m" 400 -
+2024-08-25 10:07:57,773 - INFO - Updating product with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 using data: {'price': 90001}.
+2024-08-25 10:07:57,777 - ERROR - Invalid product, type, or brand.
+2024-08-25 10:08:01,531 - INFO - 127.0.0.1 - - [25/Aug/2024 10:08:01] "[31m[1mPUT /products/4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 HTTP/1.1[0m" 400 -
+2024-08-25 10:09:06,334 - INFO - Updating product with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 using data: {'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10, 'specs': '256GB, Blue'}.
+2024-08-25 10:09:06,347 - DEBUG - Product before update: {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'watch', 'brand': 'Garmin', 'model': 'Fenix 6', 'price': 52000.0, 'discounts': 8.0, 'specs': {'gps': 'Yes', 'battery': '14 days', 'display': '1.3 inches'}, 'created_at': '2024-08-24T15:17:25.420548'}
+2024-08-25 10:09:06,362 - INFO - Product updated successfully with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1
+2024-08-25 10:09:10,165 - INFO - 127.0.0.1 - - [25/Aug/2024 10:09:10] "PUT /products/4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 HTTP/1.1" 200 -
+2024-08-25 10:09:35,208 - INFO - Updating product with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 using data: {'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10, 'specs': '256GB, Blue'}.
+2024-08-25 10:09:35,212 - DEBUG - Product before update: {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548'}
+2024-08-25 10:09:35,214 - INFO - Product updated successfully with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1
+2024-08-25 10:09:38,643 - INFO - 127.0.0.1 - - [25/Aug/2024 10:09:38] "PUT /products/4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 HTTP/1.1" 200 -
+2024-08-25 10:09:45,395 - INFO - Starting to fetch all products.
+2024-08-25 10:09:45,399 - DEBUG - Products retrieved: [<Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-25 10:09:45,399 - INFO - Products fetched successfully.
+2024-08-25 10:09:48,834 - INFO - 127.0.0.1 - - [25/Aug/2024 10:09:48] "GET /products HTTP/1.1" 200 -

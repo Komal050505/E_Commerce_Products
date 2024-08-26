@@ -10,7 +10,7 @@ Functions:
     to_dict: Converts a Product object into a dictionary format.
 """
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import Column, String
 from datetime import datetime
 
 db = SQLAlchemy()
@@ -49,10 +49,12 @@ class Product(db.Model):
         """
         Converts the Product instance into a dictionary.
 
-        This method returns a dictionary where each key corresponds to a product attribute, and the values are the product's details. This is useful for easily converting the product data into JSON format for APIs or other uses.
+        This method returns a dictionary where each key corresponds to a product attribute, and the values are the
+        product's details. This is useful for easily converting the product data into JSON format for APIs or other
+        uses.
 
-        Returns:
-            dict: A dictionary containing the product's details such as UUID, type, brand, model, price, discounts, specs, and creation date.
+        Returns: dict: A dictionary containing the product's details such as UUID, type, brand, model, price,
+        discounts, specs, and creation date.
         """
         return {
             "uuid": self.uuid,
@@ -63,4 +65,21 @@ class Product(db.Model):
             "discounts": self.discounts,
             "specs": self.specs,
             "created_at": self.created_at.isoformat()
+        }
+
+
+class ValidProductDetails(db.Model):
+    __tablename__ = 'valid_product_details'
+
+    id = Column(db.Integer, primary_key=True)
+    product = Column(String(100), nullable=False, unique=True)
+    type = Column(String(100), nullable=False)
+    brand = Column(String(100), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "product": self.product,
+            "type": self.type,
+            "brand": self.brand
         }

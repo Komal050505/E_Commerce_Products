@@ -1,10 +1,11 @@
+import json
 from flask import Flask, jsonify, request
 from db_connections.configurations import DATABASE_URL
 from email_setup.email_operations import notify_success, notify_failure
-from user_models.tables import db, Product
+from user_models.tables import db, Product, ValidProductDetails
 from logging_package.logging_utility import log_info, log_error, log_debug
 from sqlalchemy import desc
-import json
+from datetime import datetime, timedelta
 
 # Create Flask app instance
 app = Flask(__name__)
@@ -65,32 +66,33 @@ def get_latest_discounted_products():
         return jsonify({"error": "Could not fetch latest discounted products"}), 500
 
 
-@app.route('/products/highest-discounted', methods=['GET'])
-def get_highest_discounted_product():
+@app.route('/products/discounted', methods=['GET'])
+def get_products_by_discount():
     """
-    Retrieves the product with the highest discount.
+    Retrieves products sorted by discount, from the highest to the lowest.
 
-    This route fetches the product with the highest discount value.
+    This route fetches all products ordered by discount value in descending order.
 
     Returns:
-        Response: JSON object of the highest discounted product.
+        Response: JSON array of products sorted by discount.
     """
-    log_info("Fetching highest discounted product.")
+    log_info("Fetching products sorted by discount.")
     try:
-        highest_discounted_product = db.session.query(Product).order_by(desc(Product.discounts)).first()
-        log_debug(f"Highest discounted product retrieved: {highest_discounted_product}")
-        if highest_discounted_product:
-            log_info("Highest discounted product fetched successfully.")
-            notify_success("Fetch Highest Discounted Product Success",
-                           "Successfully fetched highest discounted product.")
-            return jsonify(highest_discounted_product.to_dict())
+        discounted_products = db.session.query(Product).order_by(desc(Product.discounts)).all()
+        log_debug(f"Products sorted by discount retrieved: {discounted_products}")
+
+        if discounted_products:
+            log_info("Products sorted by discount fetched successfully.")
+            notify_success("Fetch Products by Discount Success",
+                           "Successfully fetched products sorted by discount.")
+            return jsonify([product.to_dict() for product in discounted_products])
         else:
             log_info("No products with discounts found.")
             return jsonify({"error": "No discounted products found"}), 404
     except Exception as e:
-        log_error(f"Error fetching highest discounted product: {e}")
-        notify_failure("Fetch Highest Discounted Product Error", f"Failed to fetch highest discounted product: {e}")
-        return jsonify({"error": "Could not fetch highest discounted product"}), 500
+        log_error(f"Error fetching products sorted by discount: {e}")
+        notify_failure("Fetch Products by Discount Error", f"Failed to fetch products sorted by discount: {e}")
+        return jsonify({"error": "Could not fetch products sorted by discount"}), 500
 
 
 @app.route('/products/price-range', methods=['GET'])
@@ -169,6 +171,38 @@ def filter_products_by_specs():
             return jsonify({"error": "Failed to filter products by specs"}), 500
     else:
         return jsonify({"error": "No specs provided for filtering"}), 400
+
+
+@app.route('/products/recent/24hrs', methods=['GET'])
+def get_recent_within_last_24hrs_products():
+    """
+    Retrieves products created in the last 24 hours.
+
+    This route fetches products with a creation timestamp within the last 24 hours.
+
+    Returns:
+        Response: JSON array of products created in the last 24 hours.
+    """
+    log_info("Fetching products created in the last 24 hours.")
+    try:
+        # Calculate the timestamp for 24 hours ago
+        time_24_hours_ago = datetime.utcnow() - timedelta(hours=24)
+
+        # Query products created after this timestamp
+        recent_products = db.session.query(Product).filter(Product.created_at >= time_24_hours_ago).all()
+
+        log_debug(f"Recent products retrieved: {recent_products}")
+        if not recent_products:
+            log_info("No products found created in the last 24 hours.")
+        else:
+            log_info("Products created in the last 24 hours fetched successfully.")
+
+        notify_success("Fetch Recent Products Success", "Successfully fetched products created in the last 24 hours.")
+        return jsonify([product.to_dict() for product in recent_products])
+    except Exception as e:
+        log_error(f"Error fetching recent products: {e}")
+        notify_failure("Fetch Recent Products Error", f"Failed to fetch recent products: {e}")
+        return jsonify({"error": "Could not fetch products created in the last 24 hours"}), 500
 
 
 @app.route('/create-tables', methods=['POST'])
@@ -288,7 +322,7 @@ def filter_products():
 
 
 @app.route('/products', methods=['POST'])
-def create_product():
+def create_new_product():
     """
     Creates a new product in the database.
 
@@ -302,6 +336,17 @@ def create_product():
     """
     data = request.json
     log_info(f"Starting product creation with data: {data}.")
+
+    # Fetch valid product details from the database
+    valid_product = db.session.query(ValidProductDetails).filter_by(type=data['type'], brand=data['brand']
+                                                                    ).first()
+
+    # Check if the provided product details are valid
+    if not valid_product:
+        log_error("Invalid product, type, or brand.")
+        notify_failure("Create Product Error", "Invalid product, type, or brand.")
+        return jsonify({"error": "Invalid product, type, or brand"}), 400
+
     try:
         new_product = Product(
             uuid=data['uuid'],
@@ -342,6 +387,19 @@ def update_product(uuid):
     """
     data = request.json
     log_info(f"Updating product with UUID: {uuid} using data: {data}.")
+
+    # Fetch valid product details from the database
+    valid_product = db.session.query(ValidProductDetails).filter_by(
+        type=data.get('type'),
+        brand=data.get('brand')
+    ).first()
+
+    # Check if the provided product details are valid
+    if not valid_product:
+        log_error("Invalid product, type, or brand.")
+        notify_failure("Update Product Error", "Invalid product, type, or brand.")
+        return jsonify({"error": "Invalid product, type, or brand"}), 400
+
     try:
         product = db.session.get(Product, uuid)
         if product:
