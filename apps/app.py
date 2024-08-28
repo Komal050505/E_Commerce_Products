@@ -1,11 +1,14 @@
 import json
 from flask import Flask, jsonify, request
+from sqlalchemy.exc import SQLAlchemyError
+
 from db_connections.configurations import DATABASE_URL
 from email_setup.email_operations import notify_success, notify_failure
 from user_models.tables import db, Product, ValidProductDetails
 from logging_package.logging_utility import log_info, log_error, log_debug
-from sqlalchemy import desc
+from sqlalchemy import desc, and_
 from datetime import datetime, timedelta
+from users_utility.utilities import validate_string_param
 
 # Create Flask app instance
 app = Flask(__name__)
@@ -13,6 +16,342 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 
 # Initialize SQLAlchemy with the Flask app
 db.init_app(app)
+
+
+@app.route('/products/count', methods=['GET'])
+def get_products_count():
+    """
+    Fetch the count of products in stock based on type, brand, or model, with support for case-sensitive and partial
+    matching. Also, includes detailed product information in email notifications.
+
+    Query Parameters:
+        type (str): Filter by product type (case-sensitive).
+        brand (str): Filter by product brand (case-insensitive).
+        model (str): Filter by product model (case-insensitive).
+
+    Returns:
+        JSON: A JSON object containing the count of products and an optional message.
+        HTTP Status Codes:
+            - 200 OK: Success with product count.
+            - 400 Bad Request: Invalid input or missing query parameters.
+            - 500 Internal Server Error: Database or server errors.
+    """
+    log_info("Starting product count retrieval.")
+    try:
+        # Extract query parameters
+        product_type = request.args.get('type')
+        brand = request.args.get('brand')
+        model = request.args.get('model')
+
+        # Enhanced validation for query parameters
+
+        try:
+            validate_string_param(product_type, "type")
+            validate_string_param(brand, "brand")
+            validate_string_param(model, "model")
+        except ValueError as ve:
+            log_error(str(ve))
+            notify_failure("Product Count Error", str(ve))
+            return jsonify({"error": str(ve)}), 400
+
+        # Build filter conditions dynamically
+        conditions = []
+        if product_type:
+            conditions.append(Product.type.ilike(product_type))  # Case-sensitive match
+
+        if brand:
+            conditions.append(Product.brand.ilike(brand))  # Case-insensitive match
+
+        if model:
+            conditions.append(Product.model.ilike(model))  # Case-insensitive match
+
+        if not conditions:
+            error_message = "At least one query parameter (type, brand, or model) must be provided."
+            log_info(error_message)
+            notify_failure("Product Count Error", error_message)
+            return jsonify({"error": error_message}), 400
+
+        # Fetch the products and count of products matching the conditions
+        products = db.session.query(Product).filter(and_(*conditions)).all()
+        count = len(products)
+        log_info(f"Product count retrieved successfully: {count}")
+
+        # Prepare detailed product information
+        product_details = [product.to_dict() for product in products]
+        log_debug(f"Product details: {product_details}")
+
+        # Send success notification with product details
+        notify_success("Product Count Success",
+                       f"Product count retrieved successfully: {count}\n\nProduct Details: {product_details}")
+
+        # Return the count and product details
+        return jsonify({
+            "count": count,
+            "message": "Product count retrieved successfully.",
+            "products": product_details
+        }), 200
+
+    except SQLAlchemyError as e:
+        # Handle database errors and send a failure notification email
+        log_error(f"Database error occurred: {e}")
+        notify_failure("Product Count Error", f"Database error occurred: {e}")
+        return jsonify({"error": str(e)}), 500
+
+    except Exception as e:
+        # Handle general errors and send a failure notification email
+        log_error(f"An unexpected error occurred: {e}")
+        notify_failure("Product Count Error", f"An unexpected error occurred: {e}")
+        return jsonify({"error": "An unexpected error occurred.", "details": str(e)}), 500
+
+
+@app.route('/products/clearance_sale', methods=['PATCH'])
+def clearance_sale():
+    """
+    Applies a discount to old stock based on the provided cutoff date and discount percentage.
+
+    Query Parameters:
+
+    cutoff_date (str): The cutoff date in YYYY-MM-DD format. Products created before this date will
+    have discounts applied.
+
+    discount_percentage (float): The discount percentage to apply to the old products.
+
+    Returns:
+        JSON: A JSON object with the number of products updated and a success message.
+        HTTP Status Codes:
+            - 200 OK: Discounts applied successfully.
+            - 400 Bad Request: Invalid date format or missing parameters.
+            - 500 Internal Server Error: Database or server errors.
+    """
+    log_info("Starting clearance sale for old stock.")
+    try:
+        cutoff_date_str = request.args.get('cutoff_date')
+        discount_percentage_str = request.args.get('discount_percentage')
+
+        if not cutoff_date_str or not discount_percentage_str:
+            return jsonify({"error": "cutoff_date and discount_percentage parameters are required."}), 400
+
+        try:
+            cutoff_date = datetime.strptime(cutoff_date_str, '%Y-%m-%d')
+        except ValueError:
+            log_error(f"Invalid date format: {cutoff_date_str}")
+            return jsonify({"error": "Invalid date format. Expected YYYY-MM-DD."}), 400
+
+        try:
+            discount_percentage = float(discount_percentage_str)
+            if discount_percentage < 0 or discount_percentage > 100:
+                raise ValueError("Discount percentage must be between 0 and 100.")
+        except ValueError:
+            log_error(f"Invalid discount percentage: {discount_percentage_str}")
+            return jsonify({"error": "Invalid discount percentage. Must be a number between 0 and 100."}), 400
+
+        # Fetch and update old products with the discount
+        old_products = db.session.query(Product).filter(Product.created_at < cutoff_date).all()
+        old_product_count = len(old_products)
+
+        if old_product_count == 0:
+            log_info(f"No products found before the cutoff date: {cutoff_date_str}")
+            return jsonify({"message": "No products found before the specified cutoff date."}), 200
+
+        # All discounted products are taken to the list
+        discounted_products = []
+
+        for product in old_products:
+            original_price = product.price
+            discount_amount = product.price * (discount_percentage / 100)
+            product.price -= discount_amount
+            product.discount = discount_percentage
+
+            # Appending the details of the discounted product to the list
+            discounted_products.append({
+                "product_uuid": product.uuid,
+                "product_brand": product.brand,
+                "product_type": product.type,
+                "product_model": product.model,
+                "original_price": original_price,
+                "new_price": product.price,
+                "discount_percentage": discount_percentage
+            })
+        db.session.commit()
+
+        log_info(f"Successfully applied a {discount_percentage}% discount to {old_product_count} old products.")
+        notify_success("Clearance Sale Success",
+                       f"Successfully applied a {discount_percentage}% discount to {old_product_count} products "
+                       f"created before {cutoff_date_str}.\n \n "
+                       f"Products are:\n" + "\n".join([str(product) for product in discounted_products]))
+        return jsonify({
+            "updated_count": old_product_count,
+            "message": "Discounts applied to old products successfully.",
+            "discounted_products": discounted_products
+        }), 200
+
+    except SQLAlchemyError as e:
+        log_error(f"Database error during clearance sale: {e}")
+        notify_failure("Clearance Sale Error", f"Database error during clearance sale: {e}")
+        return jsonify({"error": "Database error occurred.", "details": str(e)}), 500
+
+    except Exception as e:
+        log_error(f"Unexpected error during clearance sale: {e}")
+        notify_failure("Clearance Sale Error", f"Unexpected error during clearance sale: {e}")
+        return jsonify({"error": "An unexpected error occurred.", "details": str(e)}), 500
+
+
+@app.route('/products/bulk/increase-price/by-date-range', methods=['PATCH'])
+def increase_bulk_product_price_by_date_range():
+    """
+    Increases the price of products based on the provided date range and increase percentage.
+
+    Query Parameters:
+    start_date (str): The start date in YYYY-MM-DD format. Products created on or after this date
+    will have price increases applied.
+
+    end_date (str): The end date in YYYY-MM-DD format. Products created on or
+    before this date will have price increases applied.
+
+    increase_percentage (float): The percentage by which to increase the prices of the products.
+
+    Returns:
+        JSON: A JSON object with the number of products updated and a success message.
+        HTTP Status Codes:
+            - 200 OK: Price increases applied successfully.
+            - 400 Bad Request: Invalid date format or missing parameters.
+            - 500 Internal Server Error: Database or server errors.
+    """
+    log_info("Starting to increase product prices.")
+    try:
+        start_date_str = request.args.get('start_date')
+        end_date_str = request.args.get('end_date')
+        increase_percentage_str = request.args.get('increase_percentage')
+
+        if not start_date_str or not end_date_str or not increase_percentage_str:
+            log_error("Missing required parameters: start_date, end_date, and increase_percentage.")
+            return jsonify({"error": "start_date, end_date, and increase_percentage parameters are required."}), 400
+
+        try:
+            start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+            end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
+        except ValueError:
+            log_error(f"Invalid date format: start_date={start_date_str}, end_date={end_date_str}")
+            return jsonify({"error": "Invalid date format. Expected YYYY-MM-DD."}), 400
+
+        try:
+            increase_percentage = float(increase_percentage_str)
+            if increase_percentage < 0:
+                raise ValueError("Increase percentage must be a positive number.")
+        except ValueError as ve:
+            log_error(f"Invalid increase percentage: {increase_percentage_str} - {ve}")
+            return jsonify({"error": "Invalid increase percentage. Must be a positive number."}), 400
+
+        # Fetch and update products within the date range
+        products_to_update = (db.session.query(Product).filter
+                              (Product.created_at >= start_date, Product.created_at <= end_date).all())
+        product_count = len(products_to_update)
+
+        if product_count == 0:
+            log_info(f"No products found between the dates: {start_date_str} and {end_date_str}")
+            return jsonify({"message": "No products found within the specified date range."}), 200
+
+        updated_products = []
+
+        for product in products_to_update:
+            original_price = product.price
+            increase_amount = product.price * (increase_percentage / 100)
+            product.price += increase_amount
+
+            updated_products.append({
+                "product_uuid": product.uuid,
+                "product_brand": product.brand,
+                "product_type": product.type,
+                "product_model": product.model,
+                "original_price": original_price,
+                "new_price": product.price,
+                "increase_percentage": increase_percentage
+            })
+
+        db.session.commit()
+
+        log_info(f"Successfully increased prices by {increase_percentage}% for {product_count} products.")
+
+        # Create the email body
+        notify_success("Increase Product Price Success",
+                       f"Successfully applied a {increase_percentage}% increase % to {updated_products} products "
+                       f"created before start date : {start_date_str} to end date : {end_date_str}.\n \n ")
+        # f"Products are:\n" + "\n".join([str(product) for product in updated_products]))
+
+        return jsonify({
+            "updated_count": product_count,
+            "message": "Prices increased for products successfully.",
+            "updated_products": updated_products
+        }), 200
+
+    except SQLAlchemyError as e:
+        log_error(f"Database error during price increase: {e}")
+        notify_failure("Price Increase Error", f"Database error during price increase: {e}")
+        return jsonify({"error": "Database error occurred.", "details": str(e)}), 500
+
+    except Exception as e:
+        log_error(f"Unexpected error during price increase: {e}")
+        notify_failure("Price Increase Error", f"Unexpected error during price increase: {e}")
+        return jsonify({"error": "An unexpected error occurred.", "details": str(e)}), 500
+
+
+@app.route('/products/clear_old_stock', methods=['DELETE'])
+def clear_old_stock():
+    """
+    Clears old stock based on the provided cutoff date.
+
+    Query Parameters:
+        cutoff_date (str): The cutoff date in YYYY-MM-DD format. Products created before this date will be deleted.
+
+    Returns:
+        JSON: A JSON object with the number of products deleted and a success message.
+        HTTP Status Codes:
+            - 200 OK: Products cleared successfully.
+            - 400 Bad Request: Invalid date format.
+            - 500 Internal Server Error: Database or server errors.
+    """
+    log_info("Starting to clear old stock.")
+    try:
+        cutoff_date_str = request.args.get('cutoff_date')
+        if not cutoff_date_str:
+            return jsonify({"error": "cutoff_date parameter is required."}), 400
+
+        try:
+
+            cutoff_date = datetime.strptime(cutoff_date_str, '%Y-%m-%d')
+        except ValueError:
+            log_error(f"Invalid date format: {cutoff_date_str}")
+            return jsonify({"error": "Invalid date format. Expected YYYY-MM-DD."}), 400
+
+        # Fetch and delete old products
+        old_products = db.session.query(Product).filter(Product.created_at < cutoff_date).all()
+        old_product_count = len(old_products)
+
+        if old_product_count == 0:
+            log_info(f"No products found before the cutoff date: {cutoff_date_str}")
+            notify_failure("Clear Old Stock Error",
+                           f"No products found before the specified cutoff date : Products = {old_product_count}")
+            return jsonify({"message": "No products found before the specified cutoff date."}), 200
+
+        for product in old_products:
+            db.session.delete(product)
+        db.session.commit()
+
+        log_info(f"Successfully cleared {old_product_count} old products.")
+        notify_success("Clear Old Stock Success",
+                       f"Successfully cleared {old_product_count} products created before {cutoff_date_str}.")
+
+        return jsonify({"deleted_count": old_product_count, "message": "Old products cleared successfully."}), 200
+
+    except SQLAlchemyError as e:
+        log_error(f"Database error during old stock clearance: {e}")
+        notify_failure("Clear Old Stock Error", f"Database error during old stock clearance: {e}")
+        return jsonify({"error": "Database error occurred.", "details": str(e)}), 500
+
+    except Exception as e:
+        log_error(f"Unexpected error during old stock clearance: {e}")
+        notify_failure("Clear Old Stock Error", f"Unexpected error during old stock clearance: {e}")
+        return jsonify({"error": "An unexpected error occurred.", "details": str(e)}), 500
 
 
 @app.route('/products/search', methods=['GET'])
@@ -49,8 +388,10 @@ def search_products():
 
         # Successfully found matching products
         log_info("Products found matching the search criteria.")
-        notify_success("Product Search Success",
-                       f"Successfully found {len(search_results)} products i.e {search_results} matching the search criteria.")
+        notify_success("Product Search Success \n \n",
+                       f"Successfully found {len(search_results)} products i.e... "
+                       f"{[product.to_dict() for product in search_results]}"
+                       f"matching the search criteria.")
         return jsonify([product.to_dict() for product in search_results]), 200
 
     except Exception as e:
@@ -58,7 +399,6 @@ def search_products():
         log_error(f"Error during product search: {e}")
         notify_failure("Product Search Error", f"Error during product search: {e}")
         return jsonify({"error": "Search failed"}), 500
-
 
 
 @app.route('/products/latest', methods=['GET'])
@@ -78,8 +418,8 @@ def get_latest_products():
         if not latest_products:
             log_info("No latest products found.")
         log_info("Latest products fetched successfully.")
-        notify_success("Fetch Latest Products Success",
-                       f"Successfully fetched latest products {latest_products}.")
+        notify_success("Fetch Latest Products Success \n \n",
+                       f"Successfully fetched latest products {[product.to_dict() for product in latest_products]}.")
         return jsonify([product.to_dict() for product in latest_products])
     except Exception as e:
         log_error(f"Error fetching latest products: {e}")
@@ -106,7 +446,8 @@ def get_latest_discounted_products():
             log_info("No latest discounted products found.")
         log_info("Latest discounted products fetched successfully.")
         notify_success("Fetch Latest Discounted Products Success",
-                       f"Successfully fetched latest discounted products {latest_discounted_products}.")
+                       f"Successfully fetched latest discounted products \n \n"
+                       f"{[product.to_dict() for product in latest_discounted_products]}.")
         return jsonify([product.to_dict() for product in latest_discounted_products])
     except Exception as e:
         log_error(f"Error fetching latest discounted products: {e}")
@@ -133,7 +474,8 @@ def get_products_by_discount():
         if discounted_products:
             log_info("Products sorted by discount fetched successfully.")
             notify_success("Fetch Products by Discount Success",
-                           f"Successfully fetched products {discounted_products}sorted by discount.")
+                           f"Successfully fetched products \n \n "
+                           f"{[product.to_dict() for product in discounted_products]} sorted by discount.")
             return jsonify([product.to_dict() for product in discounted_products])
         else:
             log_info("No products with discounts found.")
@@ -171,7 +513,8 @@ def filter_by_price_range():
             log_info("No products found in the specified price range.")
         log_info("Products filtered by price range successfully.")
         notify_success("Filter Products by Price Range Success",
-                       f"Successfully filtered products {products} by price range.")
+                       f"Successfully filtered products \n \n"
+                       f"{[product.to_dict() for product in products]} by price range.")
         return jsonify([product.to_dict() for product in products])
     except Exception as e:
         log_error(f"Error filtering products by price range: {e}")
@@ -237,7 +580,8 @@ def filter_products_by_specs():
 
         log_info("Products filtered by specs successfully.")
         notify_success("Filter Products by Specs Success",
-                       f"Successfully filtered products {filtered_products} by specs.")
+                       f"Successfully filtered products \n \n "
+                       f"{[product.to_dict() for product in filtered_products]} by specs.")
         return jsonify([product.to_dict() for product in filtered_products])
 
     except json.JSONDecodeError as e:
@@ -327,14 +671,28 @@ def get_products():
     This route fetches products based on the provided query parameters like brand, type, and model.
 
     Returns:
-        Response: JSON array of filtered products.
+        Response: JSON array of filtered products or an error message if invalid input is provided.
     """
     log_info("Starting to fetch products with filters.")
+
     try:
         # Retrieve query parameters
-        brand = request.args.get('brand')
-        types = request.args.get('type')
-        model = request.args.get('model')
+        brand = request.args.get('brand', default=None, type=str)
+        types = request.args.get('type', default=None, type=str)
+        model = request.args.get('model', default=None, type=str)
+
+        # Validate input parameters
+        if brand is not None and not brand.strip():
+            log_info("Invalid input: brand parameter is empty.")
+            return jsonify({"error": "Invalid brand parameter."}), 400
+
+        if types is not None and not types.strip():
+            log_info("Invalid input: type parameter is empty.")
+            return jsonify({"error": "Invalid type parameter."}), 400
+
+        if model is not None and not model.strip():
+            log_info("Invalid input: model parameter is empty.")
+            return jsonify({"error": "Invalid model parameter."}), 400
 
         # Start building the query
         query = db.session.query(Product)
@@ -358,16 +716,26 @@ def get_products():
 
         if not products:
             log_info("No products found with the provided filters.")
+            return jsonify({"message": "No products found with the provided filters."}), 404
 
         log_info("Products fetched successfully.")
-        notify_success("Fetch Products Success",
-                       f"Successfully fetched filtered products {products} .")
+        # Prepare plain text content for the email
+        products_list = "\n".join(
+            [str(product.to_dict()) for product in products]
+        )
+        plain_text_content = f"Successfully fetched filtered products:\n\n{products_list}"
+        notify_success("Fetch Products Success", plain_text_content)
         return jsonify([product.to_dict() for product in products])
+
+    except SQLAlchemyError as e:
+        log_error(f"Database error occurred while fetching products: {e}")
+        notify_failure("Fetch Products Error", f"Failed to fetch products due to a database error: {e}")
+        return jsonify({"error": "Could not fetch products due to a database error."}), 500
 
     except Exception as e:
         log_error(f"Error fetching products: {e}")
-        notify_failure("Fetch Products Error", f"Error fetching products: {e}")
-        return jsonify({"error": "Failed to fetch products"}), 500
+        notify_failure("Fetch Products Error", f"Failed to fetch products: {e}")
+        return jsonify({"error": "Could not fetch products."}), 500
 
 
 @app.route('/products/<uuid>', methods=['GET'])
@@ -390,7 +758,8 @@ def get_product_by_uuid(uuid):
         if product:
             # Notify success
             notify_success("Fetch Product Success",
-                           f"Product with UUID {uuid} retrieved successfully.")
+                           f"Product with UUID {uuid} retrieved successfully and "
+                           f"product is \n \n {(product.to_dict())}.")
             return jsonify(product.to_dict())
         else:
             log_info(f"Product with UUID {uuid} not found.")
@@ -432,7 +801,7 @@ def filter_products():
             log_info("No products match the filter criteria.")
         log_info("Products filtered successfully.")
         notify_success("Filter Products Success",
-                       f"Successfully filtered products {products}.")
+                       f"Successfully filtered products \n \n {[product.to_dict() for product in products]}.")
         return jsonify([product.to_dict() for product in products])
     except Exception as e:
         log_error(f"Error filtering products: {e}")
@@ -531,7 +900,8 @@ def update_product(uuid):
             product.specs = data.get('specs', product.specs)
             db.session.commit()
             log_info(f"Product updated successfully with UUID: {uuid}")
-            notify_success("Product Updated", f"Product updated successfully with UUID: {uuid}")
+            notify_success("Product Updated",
+                           f"Product \n {product.to_dict()} \n updated successfully with UUID: {uuid}")
             return jsonify(product.to_dict()), 200
         else:
             log_info(f"Product with UUID {uuid} not found.")

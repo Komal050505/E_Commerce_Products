@@ -1,7 +1,8 @@
 """
 This module defines the Product class for managing products in a database.
 
-The Product class represents items in the 'productss' table, including details like the product's unique ID, type, brand, model, price, discounts, specifications, and when it was created.
+The Product class represents items in the 'productss' table, including details like the product's unique ID, type,
+brand, model, price, discounts, specifications, and when it was created.
 
 Classes:
     Product: Represents a product in the database with various attributes.
@@ -10,7 +11,7 @@ Functions:
     to_dict: Converts a Product object into a dictionary format.
 """
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Integer
 from datetime import datetime
 
 db = SQLAlchemy()
@@ -20,7 +21,8 @@ class Product(db.Model):
     """
     The Product class represents a product in the database.
 
-    This class maps to the 'productss' table and includes information about each product, such as its unique ID, type, brand, model, price, discounts, specifications, and creation date.
+    This class maps to the 'productss' table and includes information about each product, such as its unique ID,
+    type, brand, model, price, discounts, specifications, and creation date.
 
     Attributes:
         uuid (str): Unique identifier for the product.
@@ -69,14 +71,30 @@ class Product(db.Model):
 
 
 class ValidProductDetails(db.Model):
+    """
+    A SQLAlchemy model representing valid product details.
+
+    Attributes:
+        id (int): The primary key for the record.
+        product (str): The name of the product. This field is unique and cannot be null.
+        type (str): The type or category of the product. This field cannot be null.
+        brand (str): The brand associated with the product. This field cannot be null.
+    """
+
     __tablename__ = 'valid_product_details'
 
-    id = Column(db.Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     product = Column(String(100), nullable=False, unique=True)
     type = Column(String(100), nullable=False)
     brand = Column(String(100), nullable=False)
 
     def to_dict(self):
+        """
+        Convert the model instance into a dictionary.
+
+        Returns:
+            dict: A dictionary containing the product details with keys 'id', 'product', 'type', and 'brand'.
+        """
         return {
             "id": self.id,
             "product": self.product,
