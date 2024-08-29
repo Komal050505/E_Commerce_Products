@@ -2770,3 +2770,250 @@ DETAIL:  A field with precision 10, scale 2 must round to an absolute value less
 2024-08-29 01:16:04,495 - INFO -  * Restarting with stat
 2024-08-29 01:16:05,875 - WARNING -  * Debugger is active!
 2024-08-29 01:16:05,879 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:18:01,734 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 22:18:01,735 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-29 22:18:01,738 - INFO -  * Restarting with stat
+2024-08-29 22:18:03,013 - WARNING -  * Debugger is active!
+2024-08-29 22:18:03,022 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:18:11,746 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\email_setup\\email_config.py', reloading
+2024-08-29 22:18:11,894 - INFO -  * Restarting with stat
+2024-08-29 22:18:13,193 - WARNING -  * Debugger is active!
+2024-08-29 22:18:13,198 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:18:18,122 - INFO - 127.0.0.1 - - [29/Aug/2024 22:18:18] "[31m[1mPATCH /products/increase_price?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1[0m" 405 -
+2024-08-29 22:19:02,413 - INFO - 127.0.0.1 - - [29/Aug/2024 22:19:02] "[31m[1mPATCH /products/increase_price?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1[0m" 405 -
+2024-08-29 22:19:14,440 - INFO - 127.0.0.1 - - [29/Aug/2024 22:19:14] "[33mPATCH /products/bulk/increase-price/by-date-rangestart_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1[0m" 404 -
+2024-08-29 22:20:32,357 - INFO - 127.0.0.1 - - [29/Aug/2024 22:20:32] "[33mPATCH /products/bulk/increase-price/by-date-rangestart_date=2024-08-26&end_date=2024-08-29&increase_percentage=5?start_date=2024-08-29&end_date=2024-08-26&increase_percentage=5 HTTP/1.1[0m" 404 -
+2024-08-29 22:21:04,224 - INFO - Starting to increase product prices.
+2024-08-29 22:21:04,234 - ERROR - Invalid increase percentage: 5?start_date=2024-08-29 - could not convert string to float: '5?start_date=2024-08-29'
+2024-08-29 22:21:04,235 - INFO - 127.0.0.1 - - [29/Aug/2024 22:21:04] "[31m[1mPATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5?start_date=2024-08-29&end_date=2024-08-26&increase_percentage=5 HTTP/1.1[0m" 400 -
+2024-08-29 22:21:33,399 - INFO - Starting to increase product prices.
+2024-08-29 22:21:33,866 - INFO - Successfully increased prices by 5.0% for 2 products.
+2024-08-29 22:21:37,791 - INFO - 127.0.0.1 - - [29/Aug/2024 22:21:37] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 22:26:52,435 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 22:26:52,610 - INFO -  * Restarting with stat
+2024-08-29 22:26:54,625 - WARNING -  * Debugger is active!
+2024-08-29 22:26:54,632 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:26:54,684 - INFO - Starting to increase product prices.
+2024-08-29 22:26:54,809 - INFO - Successfully increased prices by 5.0% for 2 products.
+2024-08-29 22:26:58,260 - INFO - 127.0.0.1 - - [29/Aug/2024 22:26:58] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 22:29:03,228 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 22:29:03,430 - INFO -  * Restarting with stat
+2024-08-29 22:29:04,562 - WARNING -  * Debugger is active!
+2024-08-29 22:29:04,565 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:29:04,605 - INFO - Starting to increase product prices.
+2024-08-29 22:29:04,706 - INFO - Successfully increased prices by 5.0% for 2 products.
+2024-08-29 22:29:08,407 - INFO - 127.0.0.1 - - [29/Aug/2024 22:29:08] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 22:31:08,020 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 22:31:08,205 - INFO -  * Restarting with stat
+2024-08-29 22:31:09,165 - WARNING -  * Debugger is active!
+2024-08-29 22:31:09,169 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:31:11,141 - INFO - Starting to increase product prices.
+2024-08-29 22:31:11,537 - INFO - Successfully increased prices by 5.0% for 2 products.
+2024-08-29 22:31:15,013 - INFO - 127.0.0.1 - - [29/Aug/2024 22:31:15] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 22:32:47,872 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 22:32:48,110 - INFO -  * Restarting with stat
+2024-08-29 22:32:49,285 - WARNING -  * Debugger is active!
+2024-08-29 22:32:49,289 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 22:32:49,333 - INFO - Starting to increase product prices.
+2024-08-29 22:32:49,446 - INFO - Successfully increased prices by 5.0% for 2 products.
+2024-08-29 22:32:53,497 - INFO - 127.0.0.1 - - [29/Aug/2024 22:32:53] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-26&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 22:33:28,321 - INFO - Starting to increase product prices.
+2024-08-29 22:33:28,337 - INFO - Successfully increased prices by 5.0% for 17 products.
+2024-08-29 22:33:31,797 - INFO - 127.0.0.1 - - [29/Aug/2024 22:33:31] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-20&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-29 23:15:28,707 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:15:28,883 - INFO -  * Restarting with stat
+2024-08-29 23:15:30,514 - WARNING -  * Debugger is active!
+2024-08-29 23:15:30,521 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:16:31,422 - INFO - Starting clearance sale for old stock.
+2024-08-29 23:16:31,431 - INFO - Clearance sale is not active.
+2024-08-29 23:16:31,431 - INFO - 127.0.0.1 - - [29/Aug/2024 23:16:31] "[31m[1mPATCH /products/clearance_sale?cutoff_date=2024-08-29&discount_percentage=50&start_date=2024-08-20 HTTP/1.1[0m" 400 -
+2024-08-29 23:17:02,982 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:17:03,131 - INFO -  * Restarting with stat
+2024-08-29 23:17:04,040 - WARNING -  * Debugger is active!
+2024-08-29 23:17:04,044 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:17:05,047 - INFO - Starting clearance sale for old stock.
+2024-08-29 23:17:05,053 - INFO - Clearance sale is not active.
+2024-08-29 23:17:05,054 - INFO - 127.0.0.1 - - [29/Aug/2024 23:17:05] "[31m[1mPATCH /products/clearance_sale?cutoff_date=2024-08-29&discount_percentage=50&start_date=2024-08-20 HTTP/1.1[0m" 400 -
+2024-08-29 23:17:37,569 - INFO - Starting clearance sale for old stock.
+2024-08-29 23:17:37,569 - INFO - Clearance sale is not active.
+2024-08-29 23:17:37,570 - INFO - 127.0.0.1 - - [29/Aug/2024 23:17:37] "[31m[1mPATCH /products/clearance_sale?cutoff_date=2024-08-29&discount_percentage=50&start_date=2024-08-20 HTTP/1.1[0m" 400 -
+2024-08-29 23:18:02,645 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:18:02,846 - INFO -  * Restarting with stat
+2024-08-29 23:18:03,983 - WARNING -  * Debugger is active!
+2024-08-29 23:18:03,989 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:18:04,121 - INFO - Starting clearance sale for old stock.
+2024-08-29 23:18:04,309 - INFO - Successfully applied a 50.0% discount to 17 old products.
+2024-08-29 23:20:42,018 - INFO - Starting clearance sale for old stock.
+2024-08-29 23:20:42,034 - INFO - Successfully applied a 50.0% discount to 17 old products.
+2024-08-29 23:20:56,526 - INFO - 127.0.0.1 - - [29/Aug/2024 23:20:56] "PATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-29&discount_percentage=50 HTTP/1.1" 200 -
+2024-08-29 23:36:18,069 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-29 23:36:18,224 - INFO -  * Restarting with stat
+2024-08-29 23:36:19,473 - WARNING -  * Debugger is active!
+2024-08-29 23:36:19,480 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:37:23,632 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-29 23:37:23,793 - INFO -  * Restarting with stat
+2024-08-29 23:37:24,675 - WARNING -  * Debugger is active!
+2024-08-29 23:37:24,680 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:40:33,136 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:40:33,335 - INFO -  * Restarting with stat
+2024-08-29 23:40:34,426 - WARNING -  * Debugger is active!
+2024-08-29 23:40:34,430 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:40:58,370 - INFO - Most searched products fetched successfully. Count: 10
+2024-08-29 23:40:58,371 - INFO - 127.0.0.1 - - [29/Aug/2024 23:40:58] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:41:35,892 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:41:35,896 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:41:39,539 - INFO - 127.0.0.1 - - [29/Aug/2024 23:41:39] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:41:53,347 - INFO - Most searched products fetched successfully. Count: 10
+2024-08-29 23:41:53,348 - INFO - 127.0.0.1 - - [29/Aug/2024 23:41:53] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:46:48,282 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-29 23:46:48,385 - INFO -  * Restarting with stat
+2024-08-29 23:51:06,265 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 23:51:06,265 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-29 23:51:06,267 - INFO -  * Restarting with stat
+2024-08-29 23:51:07,210 - WARNING -  * Debugger is active!
+2024-08-29 23:51:07,217 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:51:11,828 - INFO - Most searched products fetched successfully. Count: 10
+2024-08-29 23:51:15,379 - INFO - 127.0.0.1 - - [29/Aug/2024 23:51:15] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:51:59,306 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:51:59,310 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:52:02,856 - INFO - 127.0.0.1 - - [29/Aug/2024 23:52:02] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:52:17,020 - INFO - Most searched products fetched successfully. Count: 10
+2024-08-29 23:52:20,285 - INFO - 127.0.0.1 - - [29/Aug/2024 23:52:20] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:52:51,921 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:52:52,068 - INFO -  * Restarting with stat
+2024-08-29 23:52:52,986 - WARNING -  * Debugger is active!
+2024-08-29 23:52:52,990 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:52:57,492 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:52:57,588 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:53:00,787 - INFO - 127.0.0.1 - - [29/Aug/2024 23:53:00] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:53:02,490 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:53:02,491 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:53:05,923 - INFO - 127.0.0.1 - - [29/Aug/2024 23:53:05] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:53:10,878 - INFO - Most searched products fetched successfully. Count: 1
+2024-08-29 23:53:14,043 - INFO - 127.0.0.1 - - [29/Aug/2024 23:53:14] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:54:12,311 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:54:12,315 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:54:15,709 - INFO - 127.0.0.1 - - [29/Aug/2024 23:54:15] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:54:31,386 - INFO - Most searched products fetched successfully. Count: 1
+2024-08-29 23:54:34,666 - INFO - 127.0.0.1 - - [29/Aug/2024 23:54:34] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:55:26,828 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:55:26,934 - INFO -  * Restarting with stat
+2024-08-29 23:55:27,919 - WARNING -  * Debugger is active!
+2024-08-29 23:55:27,923 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:55:28,037 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-29 23:55:31,533 - INFO - 127.0.0.1 - - [29/Aug/2024 23:55:31] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:58:38,480 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-29 23:58:38,618 - INFO -  * Restarting with stat
+2024-08-29 23:58:39,595 - WARNING -  * Debugger is active!
+2024-08-29 23:58:39,599 - INFO -  * Debugger PIN: 112-370-431
+2024-08-29 23:58:40,647 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-29 23:58:43,912 - INFO - 127.0.0.1 - - [29/Aug/2024 23:58:43] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:58:49,276 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-29 23:58:52,620 - INFO - 127.0.0.1 - - [29/Aug/2024 23:58:52] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-29 23:59:03,310 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:59:03,312 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:59:07,530 - INFO - 127.0.0.1 - - [29/Aug/2024 23:59:07] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:59:26,807 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:59:26,809 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:59:30,444 - INFO - 127.0.0.1 - - [29/Aug/2024 23:59:30] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:59:31,760 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:59:31,762 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:59:34,953 - INFO - 127.0.0.1 - - [29/Aug/2024 23:59:34] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:59:39,022 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-29 23:59:39,023 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-29 23:59:42,377 - INFO - 127.0.0.1 - - [29/Aug/2024 23:59:42] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-29 23:59:47,256 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-29 23:59:51,520 - INFO - 127.0.0.1 - - [29/Aug/2024 23:59:51] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:00:17,632 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-30 00:00:21,039 - INFO - 127.0.0.1 - - [30/Aug/2024 00:00:21] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:00:56,276 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 00:00:56,277 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 00:00:59,673 - INFO - 127.0.0.1 - - [30/Aug/2024 00:00:59] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 00:01:57,772 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-30 00:02:01,340 - INFO - 127.0.0.1 - - [30/Aug/2024 00:02:01] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:02:03,803 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-30 00:02:07,380 - INFO - 127.0.0.1 - - [30/Aug/2024 00:02:07] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:02:12,109 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 00:02:12,110 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 00:02:15,195 - INFO - 127.0.0.1 - - [30/Aug/2024 00:02:15] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 00:07:44,055 - INFO - Most searched products fetched successfully. Count: 5
+2024-08-30 00:07:47,190 - INFO - 127.0.0.1 - - [30/Aug/2024 00:07:47] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:19:52,217 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 00:19:52,346 - INFO -  * Restarting with stat
+2024-08-30 00:19:53,225 - WARNING -  * Debugger is active!
+2024-08-30 00:19:53,229 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 00:20:30,638 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 00:20:30,886 - INFO -  * Restarting with stat
+2024-08-30 00:20:31,818 - WARNING -  * Debugger is active!
+2024-08-30 00:20:31,821 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 00:20:50,807 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 00:20:50,961 - INFO -  * Restarting with stat
+2024-08-30 00:20:52,027 - WARNING -  * Debugger is active!
+2024-08-30 00:20:52,031 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 00:20:52,565 - INFO - Fetching most searched products.
+2024-08-30 00:20:52,661 - INFO - Most searched products fetched successfully.
+2024-08-30 00:20:56,214 - INFO - 127.0.0.1 - - [30/Aug/2024 00:20:56] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:21:15,295 - INFO - Starting product search.
+2024-08-30 00:21:15,302 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:21:15,305 - INFO - Products found matching the search criteria.
+2024-08-30 00:21:18,469 - INFO - 127.0.0.1 - - [30/Aug/2024 00:21:18] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:21:22,336 - INFO - Starting product search.
+2024-08-30 00:21:22,338 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:21:22,341 - INFO - Products found matching the search criteria.
+2024-08-30 00:21:25,762 - INFO - 127.0.0.1 - - [30/Aug/2024 00:21:25] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:21:27,484 - INFO - Starting product search.
+2024-08-30 00:21:27,486 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:21:27,490 - INFO - Products found matching the search criteria.
+2024-08-30 00:21:30,707 - INFO - 127.0.0.1 - - [30/Aug/2024 00:21:30] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:21:32,021 - INFO - Starting product search.
+2024-08-30 00:21:32,022 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:21:32,025 - INFO - Products found matching the search criteria.
+2024-08-30 00:21:35,199 - INFO - 127.0.0.1 - - [30/Aug/2024 00:21:35] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:21:36,136 - INFO - Starting product search.
+2024-08-30 00:21:36,136 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:21:36,139 - INFO - Products found matching the search criteria.
+2024-08-30 00:21:39,225 - INFO - 127.0.0.1 - - [30/Aug/2024 00:21:39] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:21:58,487 - INFO - Fetching most searched products.
+2024-08-30 00:21:58,488 - INFO - Most searched products fetched successfully.
+2024-08-30 00:22:01,673 - INFO - 127.0.0.1 - - [30/Aug/2024 00:22:01] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:22:56,424 - INFO - Starting product search.
+2024-08-30 00:22:56,426 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:22:56,428 - INFO - Products found matching the search criteria.
+2024-08-30 00:22:59,555 - INFO - 127.0.0.1 - - [30/Aug/2024 00:22:59] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:23:00,699 - INFO - Starting product search.
+2024-08-30 00:23:00,701 - DEBUG - Search results: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-30 00:23:00,704 - INFO - Products found matching the search criteria.
+2024-08-30 00:23:03,875 - INFO - 127.0.0.1 - - [30/Aug/2024 00:23:03] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:23:05,092 - INFO - Starting product search.
+2024-08-30 00:23:05,093 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:23:05,096 - INFO - Products found matching the search criteria.
+2024-08-30 00:23:08,425 - INFO - 127.0.0.1 - - [30/Aug/2024 00:23:08] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:23:09,419 - INFO - Starting product search.
+2024-08-30 00:23:09,420 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 00:23:09,423 - INFO - Products found matching the search criteria.
+2024-08-30 00:23:13,394 - INFO - 127.0.0.1 - - [30/Aug/2024 00:23:13] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 00:23:17,921 - INFO - Fetching most searched products.
+2024-08-30 00:23:17,922 - INFO - Most searched products fetched successfully.
+2024-08-30 00:23:21,886 - INFO - 127.0.0.1 - - [30/Aug/2024 00:23:21] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 00:45:55,665 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 00:45:55,807 - INFO -  * Restarting with stat
+2024-08-30 00:45:56,997 - WARNING -  * Debugger is active!
+2024-08-30 00:45:57,001 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 00:49:57,865 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\users_utility\\utilities.py', reloading
+2024-08-30 00:49:58,043 - INFO -  * Restarting with stat
+2024-08-30 00:49:59,009 - WARNING -  * Debugger is active!
+2024-08-30 00:49:59,013 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 00:51:49,566 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\users_utility\\utilities.py', reloading
+2024-08-30 00:51:49,700 - INFO -  * Restarting with stat
+2024-08-30 00:51:50,695 - WARNING -  * Debugger is active!
+2024-08-30 00:51:50,701 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:03:01,867 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 01:03:02,013 - INFO -  * Restarting with stat
+2024-08-30 01:03:02,920 - WARNING -  * Debugger is active!
+2024-08-30 01:03:02,923 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:03:13,552 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\email_setup\\email_config.py', reloading
+2024-08-30 01:03:13,721 - INFO -  * Restarting with stat
+2024-08-30 01:03:14,674 - WARNING -  * Debugger is active!
+2024-08-30 01:03:14,677 - INFO -  * Debugger PIN: 112-370-431

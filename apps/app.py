@@ -1,3 +1,8 @@
+"""
+This Module is used to perform CRUD operations on e-commerce products
+
+"""
+
 import json
 from flask import Flask, jsonify, request
 from sqlalchemy.exc import SQLAlchemyError
@@ -16,6 +21,42 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 
 # Initialize SQLAlchemy with the Flask app
 db.init_app(app)
+
+
+@app.route('/products/most_searched', methods=['GET'])
+def get_most_searched_products():
+    """
+    Retrieves products sorted by their search count in descending order.
+
+    This route fetches the products with the highest search counts first.
+
+    Returns:
+        Response: JSON array of products sorted by search count.
+    """
+    log_info("Fetching most searched products.")
+
+    try:
+        # Query to fetch products sorted by search_count in descending order
+        most_searched_products = db.session.query(Product).order_by(desc(Product.search_count)).all()
+
+        if not most_searched_products:
+            log_info("No products found.")
+            return jsonify({"message": "No products found."}), 404
+
+        log_info("Most searched products fetched successfully.")
+        # Prepare plain text content for the email
+        products_list = "\n".join(
+            [str(product.to_dict()) for product in most_searched_products]
+        )
+        plain_text_content = f"Successfully fetched most searched products:\n\n{products_list}"
+        notify_success("Fetch Most Searched Products Success", plain_text_content)
+
+        return jsonify([product.to_dict() for product in most_searched_products])
+
+    except Exception as e:
+        log_error(f"Error fetching most searched products: {e}")
+        notify_failure("Fetch Most Searched Products Error", f"Failed to fetch most searched products: {e}")
+        return jsonify({"error": "Could not fetch most searched products."}), 500
 
 
 @app.route('/products/count', methods=['GET'])
@@ -38,12 +79,11 @@ def get_products_count():
     """
     log_info("Starting product count retrieval.")
     try:
-        # Extract query parameters
         product_type = request.args.get('type')
         brand = request.args.get('brand')
         model = request.args.get('model')
 
-        # Enhanced validation for query parameters
+        # validation for query parameters
 
         try:
             validate_string_param(product_type, "type")
@@ -54,16 +94,14 @@ def get_products_count():
             notify_failure("Product Count Error", str(ve))
             return jsonify({"error": str(ve)}), 400
 
-        # Build filter conditions dynamically
         conditions = []
         if product_type:
-            conditions.append(Product.type.ilike(product_type))  # Case-sensitive match
+            conditions.append(Product.type.ilike(product_type))  # using i-like() for Case-sensitive match
 
         if brand:
-            conditions.append(Product.brand.ilike(brand))  # Case-insensitive match
-
+            conditions.append(Product.brand.ilike(brand))
         if model:
-            conditions.append(Product.model.ilike(model))  # Case-insensitive match
+            conditions.append(Product.model.ilike(model))
 
         if not conditions:
             error_message = "At least one query parameter (type, brand, or model) must be provided."
@@ -71,20 +109,16 @@ def get_products_count():
             notify_failure("Product Count Error", error_message)
             return jsonify({"error": error_message}), 400
 
-        # Fetch the products and count of products matching the conditions
         products = db.session.query(Product).filter(and_(*conditions)).all()
         count = len(products)
         log_info(f"Product count retrieved successfully: {count}")
 
-        # Prepare detailed product information
         product_details = [product.to_dict() for product in products]
         log_debug(f"Product details: {product_details}")
 
-        # Send success notification with product details
         notify_success("Product Count Success",
                        f"Product count retrieved successfully: {count}\n\nProduct Details: {product_details}")
 
-        # Return the count and product details
         return jsonify({
             "count": count,
             "message": "Product count retrieved successfully.",
@@ -92,13 +126,11 @@ def get_products_count():
         }), 200
 
     except SQLAlchemyError as e:
-        # Handle database errors and send a failure notification email
         log_error(f"Database error occurred: {e}")
         notify_failure("Product Count Error", f"Database error occurred: {e}")
         return jsonify({"error": str(e)}), 500
 
     except Exception as e:
-        # Handle general errors and send a failure notification email
         log_error(f"An unexpected error occurred: {e}")
         notify_failure("Product Count Error", f"An unexpected error occurred: {e}")
         return jsonify({"error": "An unexpected error occurred.", "details": str(e)}), 500
@@ -107,13 +139,10 @@ def get_products_count():
 @app.route('/products/clearance_sale', methods=['PATCH'])
 def clearance_sale():
     """
-    Applies a discount to old stock based on the provided cutoff date and discount percentage.
+    Applies a discount to old stock based on the provided cutoff date and discount percentage, valid for 5 days.
 
-    Query Parameters:
-
-    cutoff_date (str): The cutoff date in YYYY-MM-DD format. Products created before this date will
-    have discounts applied.
-
+    Query Parameters: - start_date (str): The start date of the clearance sale in YYYY-MM-DD format. - cutoff_date (
+    str): The cutoff date in YYYY-MM-DD format. Products created before this date will have discounts applied. -
     discount_percentage (float): The discount percentage to apply to the old products.
 
     Returns:
@@ -125,17 +154,26 @@ def clearance_sale():
     """
     log_info("Starting clearance sale for old stock.")
     try:
+        start_date_str = request.args.get('start_date')
         cutoff_date_str = request.args.get('cutoff_date')
         discount_percentage_str = request.args.get('discount_percentage')
 
-        if not cutoff_date_str or not discount_percentage_str:
-            return jsonify({"error": "cutoff_date and discount_percentage parameters are required."}), 400
+        if not start_date_str or not cutoff_date_str or not discount_percentage_str:
+            return jsonify({"error": "start_date, cutoff_date, and discount_percentage parameters are required."}), 400
 
         try:
+            start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
             cutoff_date = datetime.strptime(cutoff_date_str, '%Y-%m-%d')
         except ValueError:
-            log_error(f"Invalid date format: {cutoff_date_str}")
+            log_error(f"Invalid date format: start_date: {start_date_str}, cutoff_date: {cutoff_date_str}")
             return jsonify({"error": "Invalid date format. Expected YYYY-MM-DD."}), 400
+
+        end_date = start_date + timedelta(days=10)
+
+        # Checks if the current date is within the 10-day sale period
+        if not (start_date <= datetime.now() <= end_date):
+            log_info("Clearance sale is not active.")
+            return jsonify({"message": "Clearance sale is not active at this time."}), 400
 
         try:
             discount_percentage = float(discount_percentage_str)
@@ -274,9 +312,9 @@ def increase_bulk_product_price_by_date_range():
 
         # Create the email body
         notify_success("Increase Product Price Success",
-                       f"Successfully applied a {increase_percentage}% increase % to {updated_products} products "
-                       f"created before start date : {start_date_str} to end date : {end_date_str}.\n \n ")
-        # f"Products are:\n" + "\n".join([str(product) for product in updated_products]))
+                       f"Successfully applied a {increase_percentage}% increase. \n \n updated count: {product_count} "
+                       f" \n \n {updated_products} products"
+                       f"created before start date : {start_date_str} to end date : {end_date_str}. ")
 
         return jsonify({
             "updated_count": product_count,
@@ -385,6 +423,10 @@ def search_products():
             log_info("No products match the search query.")
             notify_success("Product Search Success", "No products found matching the search criteria.")
             return jsonify({"message": "No products found matching your search criteria."}), 200
+
+        for product in search_results:
+            product.search_count += 1
+        db.session.commit()
 
         # Successfully found matching products
         log_info("Products found matching the search criteria.")

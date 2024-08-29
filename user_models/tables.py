@@ -46,6 +46,7 @@ class Product(db.Model):
     discounts = db.Column(db.Float)
     specs = db.Column(db.JSON)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    search_count = db.Column(db.Integer, default=0)
 
     def to_dict(self):
         """
@@ -66,7 +67,8 @@ class Product(db.Model):
             "price": self.price,
             "discounts": self.discounts,
             "specs": self.specs,
-            "created_at": self.created_at.isoformat()
+            "created_at": self.created_at.isoformat(),
+            "search_count": self.search_count
         }
 
 
@@ -87,17 +89,19 @@ class ValidProductDetails(db.Model):
     product = Column(String(100), nullable=False, unique=True)
     type = Column(String(100), nullable=False)
     brand = Column(String(100), nullable=False)
+    search_count = Column(Integer, default=0)
 
     def to_dict(self):
         """
         Convert the model instance into a dictionary.
 
-        Returns:
-            dict: A dictionary containing the product details with keys 'id', 'product', 'type', and 'brand'.
+        Returns: dict: A dictionary containing the product details with keys 'id', 'product', 'type', 'brand' and
+        search_count.
         """
         return {
             "id": self.id,
             "product": self.product,
             "type": self.type,
-            "brand": self.brand
+            "brand": self.brand,
+            "search_count": self.search_count
         }
