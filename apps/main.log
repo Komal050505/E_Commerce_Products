@@ -3017,3 +3017,1117 @@ DETAIL:  A field with precision 10, scale 2 must round to an absolute value less
 2024-08-30 01:03:13,721 - INFO -  * Restarting with stat
 2024-08-30 01:03:14,674 - WARNING -  * Debugger is active!
 2024-08-30 01:03:14,677 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:24:18,269 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-30 01:24:18,269 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:24:18,271 - INFO -  * Restarting with stat
+2024-08-30 01:24:19,080 - WARNING -  * Debugger is active!
+2024-08-30 01:24:19,084 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:31:05,818 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 01:31:06,132 - INFO -  * Restarting with stat
+2024-08-30 01:31:07,192 - WARNING -  * Debugger is active!
+2024-08-30 01:31:07,195 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:34:59,166 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 01:34:59,307 - INFO -  * Restarting with stat
+2024-08-30 01:35:00,275 - WARNING -  * Debugger is active!
+2024-08-30 01:35:00,279 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:38:32,648 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 01:38:32,836 - INFO -  * Restarting with stat
+2024-08-30 01:38:33,660 - WARNING -  * Debugger is active!
+2024-08-30 01:38:33,664 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:41:00,110 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\db_connections\\configurations.py', reloading
+2024-08-30 01:41:00,327 - INFO -  * Restarting with stat
+2024-08-30 01:41:01,310 - WARNING -  * Debugger is active!
+2024-08-30 01:41:01,314 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:42:19,397 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 01:42:19,655 - INFO -  * Restarting with stat
+2024-08-30 01:42:20,663 - WARNING -  * Debugger is active!
+2024-08-30 01:42:20,666 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:43:00,451 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:43:00,452 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:43:00,455 - INFO -  * Restarting with stat
+2024-08-30 01:43:01,260 - WARNING -  * Debugger is active!
+2024-08-30 01:43:01,264 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:43:05,854 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:43:05,854 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:43:05,857 - INFO -  * Restarting with stat
+2024-08-30 01:43:06,838 - WARNING -  * Debugger is active!
+2024-08-30 01:43:06,841 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:43:15,718 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:43:15,732 - ERROR - Database error while adding product to cart: When initializing mapper Mapper[Cart(cart)], expression 'Product' failed to locate a name ('Product'). If this is a class name, consider adding this relationship() to the <class 'user_models.tables.Cart'> class after both dependent classes have been defined.
+2024-08-30 01:43:18,748 - INFO - 127.0.0.1 - - [30/Aug/2024 01:43:18] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:44:45,619 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:44:45,631 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:44:45,890 - INFO -  * Restarting with stat
+2024-08-30 01:44:45,904 - INFO -  * Restarting with stat
+2024-08-30 01:49:00,069 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:49:00,069 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:49:00,070 - INFO -  * Restarting with stat
+2024-08-30 01:49:00,967 - WARNING -  * Debugger is active!
+2024-08-30 01:49:00,971 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:49:06,566 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:49:06,568 - ERROR - Database error while adding product to cart: When initializing mapper Mapper[User(user_registration)], expression 'Cart' failed to locate a name ('Cart'). If this is a class name, consider adding this relationship() to the <class 'user_models.tables.User'> class after both dependent classes have been defined.
+2024-08-30 01:49:09,164 - INFO - 127.0.0.1 - - [30/Aug/2024 01:49:09] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:50:30,578 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:50:30,778 - INFO -  * Restarting with stat
+2024-08-30 01:50:31,651 - WARNING -  * Debugger is active!
+2024-08-30 01:50:31,654 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:50:46,011 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:50:46,012 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:50:46,014 - INFO -  * Restarting with stat
+2024-08-30 01:50:46,868 - WARNING -  * Debugger is active!
+2024-08-30 01:50:46,872 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:50:49,670 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:50:49,680 - ERROR - Database error while adding product to cart: Mapper 'Mapper[Product(productss)]' has no property 'carts'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2024-08-30 01:50:52,171 - INFO - 127.0.0.1 - - [30/Aug/2024 01:50:52] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:51:28,076 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:51:28,077 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:51:28,080 - INFO -  * Restarting with stat
+2024-08-30 01:51:29,024 - WARNING -  * Debugger is active!
+2024-08-30 01:51:29,028 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:51:31,544 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:51:31,559 - ERROR - Database error while adding product to cart: Mapper 'Mapper[Product(productss)]' has no property 'carts'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2024-08-30 01:51:35,071 - INFO - 127.0.0.1 - - [30/Aug/2024 01:51:35] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:52:19,586 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:52:19,587 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:52:19,590 - INFO -  * Restarting with stat
+2024-08-30 01:52:20,711 - WARNING -  * Debugger is active!
+2024-08-30 01:52:20,716 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:52:22,363 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:52:22,378 - ERROR - Database error while adding product to cart: Mapper 'Mapper[Product(productss)]' has no property 'carts'.  If this property was indicated from other mappers or configure events, ensure registry.configure() has been called.
+2024-08-30 01:52:26,018 - INFO - 127.0.0.1 - - [30/Aug/2024 01:52:26] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:55:07,364 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:55:07,518 - INFO -  * Restarting with stat
+2024-08-30 01:55:08,481 - WARNING -  * Debugger is active!
+2024-08-30 01:55:08,485 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:55:33,444 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:55:33,630 - INFO -  * Restarting with stat
+2024-08-30 01:55:34,575 - WARNING -  * Debugger is active!
+2024-08-30 01:55:34,578 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:56:15,836 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:56:15,836 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:56:15,838 - INFO -  * Restarting with stat
+2024-08-30 01:56:16,724 - WARNING -  * Debugger is active!
+2024-08-30 01:56:16,729 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:56:19,670 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:56:19,673 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.carts': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 01:56:23,140 - INFO - 127.0.0.1 - - [30/Aug/2024 01:56:23] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:57:31,629 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:57:31,829 - INFO -  * Restarting with stat
+2024-08-30 01:57:32,822 - WARNING -  * Debugger is active!
+2024-08-30 01:57:32,824 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:57:49,017 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 01:57:49,018 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 01:57:49,020 - INFO -  * Restarting with stat
+2024-08-30 01:57:49,916 - WARNING -  * Debugger is active!
+2024-08-30 01:57:49,919 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:57:52,758 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 01:57:52,761 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.carts': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 01:57:56,228 - INFO - 127.0.0.1 - - [30/Aug/2024 01:57:56] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 01:59:11,515 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:59:11,656 - INFO -  * Restarting with stat
+2024-08-30 01:59:12,640 - WARNING -  * Debugger is active!
+2024-08-30 01:59:12,644 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 01:59:43,733 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 01:59:43,907 - INFO -  * Restarting with stat
+2024-08-30 01:59:45,019 - WARNING -  * Debugger is active!
+2024-08-30 01:59:45,024 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:00:12,291 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:00:12,293 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.carts': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 02:00:15,899 - INFO - 127.0.0.1 - - [30/Aug/2024 02:00:15] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:02:11,170 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:02:11,324 - INFO -  * Restarting with stat
+2024-08-30 02:02:12,148 - WARNING -  * Debugger is active!
+2024-08-30 02:02:12,151 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:02:28,252 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:02:28,254 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.cart_entries': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 02:02:31,951 - INFO - 127.0.0.1 - - [30/Aug/2024 02:02:31] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:03:57,065 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:03:57,251 - INFO -  * Restarting with stat
+2024-08-30 02:03:58,313 - WARNING -  * Debugger is active!
+2024-08-30 02:03:58,317 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:04:53,822 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:04:53,966 - INFO -  * Restarting with stat
+2024-08-30 02:04:54,825 - WARNING -  * Debugger is active!
+2024-08-30 02:04:54,829 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:06:46,678 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:06:46,922 - INFO -  * Restarting with stat
+2024-08-30 02:08:06,418 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 02:08:06,419 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 02:08:06,421 - INFO -  * Restarting with stat
+2024-08-30 02:08:07,241 - WARNING -  * Debugger is active!
+2024-08-30 02:08:07,244 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:08:14,203 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:08:14,207 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.cart_entries': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 02:08:17,738 - INFO - 127.0.0.1 - - [30/Aug/2024 02:08:17] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:12:21,170 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:12:21,336 - INFO -  * Restarting with stat
+2024-08-30 02:12:22,260 - WARNING -  * Debugger is active!
+2024-08-30 02:12:22,264 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:12:37,095 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:12:37,106 - ERROR - Database error while adding product to cart: Error creating backref 'cart_entries' on relationship 'Cart.product': property of that name exists on mapper 'Mapper[Product(productss)]'
+2024-08-30 02:12:40,835 - INFO - 127.0.0.1 - - [30/Aug/2024 02:12:40] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:17:14,106 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 02:17:14,107 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 02:17:14,108 - INFO -  * Restarting with stat
+2024-08-30 02:17:14,921 - WARNING -  * Debugger is active!
+2024-08-30 02:17:14,924 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:17:18,881 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:17:18,892 - ERROR - Database error while adding product to cart: Error creating backref 'cart_entries' on relationship 'Cart.product': property of that name exists on mapper 'Mapper[Product(productss)]'
+2024-08-30 02:17:23,063 - INFO - 127.0.0.1 - - [30/Aug/2024 02:17:23] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:20:22,203 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:20:22,204 - ERROR - Database error while adding product to cart: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Cart(cart)]'. Original exception was: Error creating backref 'cart_entries' on relationship 'Cart.product': property of that name exists on mapper 'Mapper[Product(productss)]'
+2024-08-30 02:20:26,210 - INFO - 127.0.0.1 - - [30/Aug/2024 02:20:26] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 02:24:11,702 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 02:24:11,885 - INFO -  * Restarting with stat
+2024-08-30 02:24:13,144 - WARNING -  * Debugger is active!
+2024-08-30 02:24:13,150 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 02:24:13,196 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 02:24:13,202 - ERROR - Database error while adding product to cart: Error creating backref 'cart_entries' on relationship 'Cart.product': property of that name exists on mapper 'Mapper[Product(productss)]'
+2024-08-30 02:24:16,698 - INFO - 127.0.0.1 - - [30/Aug/2024 02:24:16] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:00:20,775 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 11:00:20,776 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 11:00:20,779 - INFO -  * Restarting with stat
+2024-08-30 11:00:22,402 - WARNING -  * Debugger is active!
+2024-08-30 11:00:22,413 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:02:16,645 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 11:02:16,655 - ERROR - Database error while adding product to cart: Error creating backref 'cart_entries' on relationship 'Cart.product': property of that name exists on mapper 'Mapper[Product(productss)]'
+2024-08-30 11:02:22,054 - INFO - 127.0.0.1 - - [30/Aug/2024 11:02:22] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:05:14,348 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:05:14,526 - INFO -  * Restarting with stat
+2024-08-30 11:05:16,958 - WARNING -  * Debugger is active!
+2024-08-30 11:05:16,968 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:06:34,320 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:06:34,504 - INFO -  * Restarting with stat
+2024-08-30 11:06:35,488 - WARNING -  * Debugger is active!
+2024-08-30 11:06:35,493 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:06:48,045 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 11:06:48,344 - ERROR - User 'komalsaikiran' not found.
+2024-08-30 11:06:51,887 - INFO - 127.0.0.1 - - [30/Aug/2024 11:06:51] "[33mPOST /cart/add HTTP/1.1[0m" 404 -
+2024-08-30 11:07:24,031 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran with quantity 2.
+2024-08-30 11:07:24,037 - ERROR - User 'komalsaikiran' not found.
+2024-08-30 11:07:27,899 - INFO - 127.0.0.1 - - [30/Aug/2024 11:07:27] "[33mPOST /cart/add HTTP/1.1[0m" 404 -
+2024-08-30 11:07:54,583 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komal with quantity 2.
+2024-08-30 11:07:54,588 - ERROR - User 'komal' not found.
+2024-08-30 11:07:57,942 - INFO - 127.0.0.1 - - [30/Aug/2024 11:07:57] "[33mPOST /cart/add HTTP/1.1[0m" 404 -
+2024-08-30 11:17:31,004 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:17:31,030 - ERROR - Database error while adding product to cart: (psycopg2.errors.UndefinedTable) relation "cart" does not exist
+LINE 1: INSERT INTO cart (user_name, product_uuid, quantity) VALUES ...
+                    ^
+
+[SQL: INSERT INTO cart (user_name, product_uuid, quantity) VALUES (%(user_name)s, %(product_uuid)s, %(quantity)s) RETURNING cart.id]
+[parameters: {'user_name': 'komalsaikiran ', 'product_uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1', 'quantity': 2}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-30 11:17:34,524 - INFO - 127.0.0.1 - - [30/Aug/2024 11:17:34] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:21:40,076 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 11:21:40,368 - INFO -  * Restarting with stat
+2024-08-30 11:21:41,568 - WARNING -  * Debugger is active!
+2024-08-30 11:21:41,572 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:21:54,597 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 11:21:54,794 - INFO -  * Restarting with stat
+2024-08-30 11:21:55,796 - WARNING -  * Debugger is active!
+2024-08-30 11:21:55,799 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:22:40,092 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:22:40,263 - ERROR - Database error while adding product to cart: (psycopg2.errors.UndefinedTable) relation "cart" does not exist
+LINE 1: INSERT INTO cart (user_name, product_uuid, quantity) VALUES ...
+                    ^
+
+[SQL: INSERT INTO cart (user_name, product_uuid, quantity) VALUES (%(user_name)s, %(product_uuid)s, %(quantity)s) RETURNING cart.id]
+[parameters: {'user_name': 'komalsaikiran ', 'product_uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1', 'quantity': 2}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-30 11:22:44,073 - INFO - 127.0.0.1 - - [30/Aug/2024 11:22:44] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:26:51,933 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:26:52,164 - INFO -  * Restarting with stat
+2024-08-30 11:32:28,164 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 11:32:28,165 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 11:32:28,167 - INFO -  * Restarting with stat
+2024-08-30 11:32:29,238 - WARNING -  * Debugger is active!
+2024-08-30 11:32:29,243 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:33:36,835 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:33:36,851 - ERROR - Database error while adding product to cart: Error creating backref 'product' on relationship 'Product.cart_entries': property of that name exists on mapper 'Mapper[Cart(cart)]'
+2024-08-30 11:33:40,647 - INFO - 127.0.0.1 - - [30/Aug/2024 11:33:40] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:34:11,458 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:34:11,747 - INFO -  * Restarting with stat
+2024-08-30 11:34:13,031 - WARNING -  * Debugger is active!
+2024-08-30 11:34:13,037 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:34:13,084 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:34:13,202 - ERROR - Database error while adding product to cart: (psycopg2.errors.UndefinedTable) relation "cart" does not exist
+LINE 1: INSERT INTO cart (user_name, product_uuid, quantity) VALUES ...
+                    ^
+
+[SQL: INSERT INTO cart (user_name, product_uuid, quantity) VALUES (%(user_name)s, %(product_uuid)s::UUID, %(quantity)s) RETURNING cart.id]
+[parameters: {'user_name': 'komalsaikiran ', 'product_uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1', 'quantity': 2}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-08-30 11:34:16,688 - INFO - 127.0.0.1 - - [30/Aug/2024 11:34:16] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 11:48:38,790 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:48:38,948 - INFO -  * Restarting with stat
+2024-08-30 11:48:40,214 - WARNING -  * Debugger is active!
+2024-08-30 11:48:40,218 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:49:26,894 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\user_models\\tables.py', reloading
+2024-08-30 11:49:27,007 - INFO -  * Restarting with stat
+2024-08-30 11:49:27,879 - WARNING -  * Debugger is active!
+2024-08-30 11:49:27,882 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:54:09,952 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:54:10,072 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 11:54:13,991 - INFO - 127.0.0.1 - - [30/Aug/2024 11:54:13] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 11:55:17,364 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 11:55:17,528 - INFO -  * Restarting with stat
+2024-08-30 11:55:18,595 - WARNING -  * Debugger is active!
+2024-08-30 11:55:18,599 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:55:18,645 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:55:18,744 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 11:55:22,029 - INFO - 127.0.0.1 - - [30/Aug/2024 11:55:22] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 11:58:55,086 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 11:58:55,269 - INFO -  * Restarting with stat
+2024-08-30 11:58:56,196 - WARNING -  * Debugger is active!
+2024-08-30 11:58:56,199 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:59:31,268 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 11:59:31,441 - INFO -  * Restarting with stat
+2024-08-30 11:59:32,528 - WARNING -  * Debugger is active!
+2024-08-30 11:59:32,531 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 11:59:32,577 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 11:59:32,676 - ERROR - Error adding product to cart: 'Product' object is not iterable
+2024-08-30 11:59:36,128 - INFO - 127.0.0.1 - - [30/Aug/2024 11:59:36] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:04:31,875 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:04:32,114 - INFO -  * Restarting with stat
+2024-08-30 12:10:27,713 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 12:10:27,713 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 12:10:27,715 - INFO -  * Restarting with stat
+2024-08-30 12:10:28,504 - WARNING -  * Debugger is active!
+2024-08-30 12:10:28,509 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:10:31,790 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:10:31,902 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:10:31,902 - ERROR - Error adding product to cart: 'Product' object is not iterable
+2024-08-30 12:10:35,620 - INFO - 127.0.0.1 - - [30/Aug/2024 12:10:35] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:11:55,922 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:11:56,055 - INFO -  * Restarting with stat
+2024-08-30 12:11:57,146 - WARNING -  * Debugger is active!
+2024-08-30 12:11:57,151 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:11:57,195 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:11:57,297 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:12:00,671 - ERROR - Error adding product to cart: Invalid format specifier ' "Product {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 9} added to cart successfully"' for object of type 'str'
+2024-08-30 12:12:04,135 - INFO - 127.0.0.1 - - [30/Aug/2024 12:12:04] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:12:40,098 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:12:40,107 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:12:43,611 - ERROR - Error adding product to cart: Invalid format specifier ' "Product {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 9} added to cart successfully"' for object of type 'str'
+2024-08-30 12:12:46,919 - INFO - 127.0.0.1 - - [30/Aug/2024 12:12:46] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:13:20,662 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:13:20,777 - INFO -  * Restarting with stat
+2024-08-30 12:13:21,650 - WARNING -  * Debugger is active!
+2024-08-30 12:13:21,654 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:14:52,495 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:14:52,726 - INFO -  * Restarting with stat
+2024-08-30 12:14:53,817 - WARNING -  * Debugger is active!
+2024-08-30 12:14:53,821 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:15:13,822 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:15:14,019 - INFO -  * Restarting with stat
+2024-08-30 12:15:14,898 - WARNING -  * Debugger is active!
+2024-08-30 12:15:14,901 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:15:32,998 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:15:33,103 - INFO -  * Restarting with stat
+2024-08-30 12:15:33,866 - WARNING -  * Debugger is active!
+2024-08-30 12:15:33,870 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:16:55,613 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:16:55,795 - INFO -  * Restarting with stat
+2024-08-30 12:16:56,758 - WARNING -  * Debugger is active!
+2024-08-30 12:16:56,763 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:17:01,084 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:17:01,209 - INFO - 127.0.0.1 - - [30/Aug/2024 12:17:01] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:18:41,466 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:18:41,597 - INFO -  * Restarting with stat
+2024-08-30 12:18:42,542 - WARNING -  * Debugger is active!
+2024-08-30 12:18:42,546 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:18:45,870 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:18:45,990 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:18:49,369 - INFO - 127.0.0.1 - - [30/Aug/2024 12:18:49] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:20:49,247 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 12:20:49,248 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 12:20:49,250 - INFO -  * Restarting with stat
+2024-08-30 12:20:50,272 - WARNING -  * Debugger is active!
+2024-08-30 12:20:50,278 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:20:51,258 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:20:51,382 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:20:54,603 - ERROR - Error adding product to cart: Invalid format specifier ' "Product Product details: UUID=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1, Type=mob, Brand=Apple, Model=iPhone 13, Price=184.58, Discounts=10.0, Specs={'battery': '3095 mAh', 'screen_size': '6.1 inches'}, Created At=2024-08-24T15:17:25.420548, Search Count=9 added to cart successfully"' for object of type 'str'
+2024-08-30 12:20:57,901 - INFO - 127.0.0.1 - - [30/Aug/2024 12:20:57] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:24:27,544 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:24:27,660 - INFO -  * Restarting with stat
+2024-08-30 12:24:28,431 - WARNING -  * Debugger is active!
+2024-08-30 12:24:28,437 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:24:50,405 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:24:50,527 - INFO - 127.0.0.1 - - [30/Aug/2024 12:24:50] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:25:08,828 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:25:08,849 - INFO - 127.0.0.1 - - [30/Aug/2024 12:25:08] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 12:26:04,907 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:26:05,158 - INFO -  * Restarting with stat
+2024-08-30 12:26:06,278 - WARNING -  * Debugger is active!
+2024-08-30 12:26:06,282 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:26:06,701 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:26:06,812 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:26:10,425 - INFO - 127.0.0.1 - - [30/Aug/2024 12:26:10] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:28:29,046 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:28:29,246 - INFO -  * Restarting with stat
+2024-08-30 12:28:30,427 - WARNING -  * Debugger is active!
+2024-08-30 12:28:30,432 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:28:30,535 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:28:30,649 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:28:34,244 - INFO - 127.0.0.1 - - [30/Aug/2024 12:28:34] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:29:11,441 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:29:11,586 - INFO -  * Restarting with stat
+2024-08-30 12:29:12,619 - WARNING -  * Debugger is active!
+2024-08-30 12:29:12,622 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:29:12,672 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:29:12,776 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:29:16,044 - INFO - 127.0.0.1 - - [30/Aug/2024 12:29:16] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:31:54,066 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:31:54,183 - INFO -  * Restarting with stat
+2024-08-30 12:31:55,112 - WARNING -  * Debugger is active!
+2024-08-30 12:31:55,116 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:31:58,215 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:31:58,336 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:32:01,716 - INFO - 127.0.0.1 - - [30/Aug/2024 12:32:01] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:32:19,550 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 12:32:19,550 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 12:32:19,552 - INFO -  * Restarting with stat
+2024-08-30 12:32:20,332 - WARNING -  * Debugger is active!
+2024-08-30 12:32:20,336 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:33:00,502 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:33:00,668 - INFO -  * Restarting with stat
+2024-08-30 12:33:01,780 - WARNING -  * Debugger is active!
+2024-08-30 12:33:01,787 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:33:02,045 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:33:02,164 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:33:05,839 - INFO - 127.0.0.1 - - [30/Aug/2024 12:33:05] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:33:48,582 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:33:48,752 - INFO -  * Restarting with stat
+2024-08-30 12:33:49,679 - WARNING -  * Debugger is active!
+2024-08-30 12:33:49,684 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:33:50,597 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:33:50,710 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:33:54,157 - INFO - 127.0.0.1 - - [30/Aug/2024 12:33:54] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:34:24,730 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user komalsaikiran  with quantity 2.
+2024-08-30 12:34:24,738 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:34:28,137 - INFO - 127.0.0.1 - - [30/Aug/2024 12:34:28] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 12:38:26,087 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:38:26,211 - INFO -  * Restarting with stat
+2024-08-30 12:38:27,068 - WARNING -  * Debugger is active!
+2024-08-30 12:38:27,071 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:47:22,572 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:47:22,670 - INFO -  * Restarting with stat
+2024-08-30 12:47:23,532 - WARNING -  * Debugger is active!
+2024-08-30 12:47:23,536 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:49:26,645 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:49:26,743 - INFO -  * Restarting with stat
+2024-08-30 12:49:27,614 - WARNING -  * Debugger is active!
+2024-08-30 12:49:27,619 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:52:08,856 - INFO - Attempting to add product None to cart for user None with quantity 1.
+2024-08-30 12:52:08,952 - ERROR - User 'None' not found.
+2024-08-30 12:52:12,660 - INFO - 127.0.0.1 - - [30/Aug/2024 12:52:12] "[33mPOST /cart/add HTTP/1.1[0m" 404 -
+2024-08-30 12:52:48,879 - INFO - 127.0.0.1 - - [30/Aug/2024 12:52:48] "[31m[1mGET /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1[0m" 405 -
+2024-08-30 12:53:07,528 - INFO - 127.0.0.1 - - [30/Aug/2024 12:53:07] "[31m[1mPOST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1[0m" 415 -
+2024-08-30 12:54:13,729 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:54:13,879 - INFO -  * Restarting with stat
+2024-08-30 12:54:14,609 - WARNING -  * Debugger is active!
+2024-08-30 12:54:14,612 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:55:18,040 - INFO - 127.0.0.1 - - [30/Aug/2024 12:55:18] "[31m[1mPOST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1[0m" 415 -
+2024-08-30 12:56:20,400 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 12:56:20,401 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 12:56:20,402 - INFO -  * Restarting with stat
+2024-08-30 12:56:21,097 - WARNING -  * Debugger is active!
+2024-08-30 12:56:21,101 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:56:23,550 - INFO - 127.0.0.1 - - [30/Aug/2024 12:56:23] "[31m[1mPOST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1[0m" 415 -
+2024-08-30 12:57:51,376 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:57:51,478 - INFO -  * Restarting with stat
+2024-08-30 12:57:52,402 - WARNING -  * Debugger is active!
+2024-08-30 12:57:52,411 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 12:57:52,795 - INFO - Attempting to remove quantity 2 of product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from cart for user komalsaikiran .
+2024-08-30 12:57:52,912 - INFO - Quantity 2 of product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' removed from cart for user 'komalsaikiran ' successfully.
+2024-08-30 12:57:56,565 - INFO - 127.0.0.1 - - [30/Aug/2024 12:57:56] "POST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1" 200 -
+2024-08-30 12:59:42,476 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 12:59:42,598 - INFO -  * Restarting with stat
+2024-08-30 13:03:10,906 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 13:03:10,906 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 13:03:10,909 - INFO -  * Restarting with stat
+2024-08-30 13:03:11,667 - WARNING -  * Debugger is active!
+2024-08-30 13:03:11,671 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 13:03:14,118 - INFO - Attempting to remove quantity 2 of product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from cart for user komalsaikiran .
+2024-08-30 13:03:14,241 - INFO - Quantity 2 of product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' removed from cart for user 'komalsaikiran ' successfully.
+2024-08-30 13:03:17,717 - INFO - 127.0.0.1 - - [30/Aug/2024 13:03:17] "POST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1" 200 -
+2024-08-30 13:05:20,598 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 13:05:20,806 - INFO -  * Restarting with stat
+2024-08-30 13:05:21,773 - WARNING -  * Debugger is active!
+2024-08-30 13:05:21,778 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 13:05:22,005 - INFO - Attempting to remove quantity 2 of product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from cart for user komalsaikiran .
+2024-08-30 13:05:22,122 - INFO - Quantity 2 of product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' removed from cart for user 'komalsaikiran ' successfully.
+2024-08-30 13:05:25,502 - INFO - 127.0.0.1 - - [30/Aug/2024 13:05:25] "POST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1" 200 -
+2024-08-30 13:06:41,078 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 13:06:41,300 - INFO -  * Restarting with stat
+2024-08-30 13:06:42,453 - WARNING -  * Debugger is active!
+2024-08-30 13:06:42,459 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 13:06:42,552 - INFO - Attempting to remove quantity 2 of product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from cart for user komalsaikiran .
+2024-08-30 13:06:42,665 - INFO - Quantity 2 of product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' removed from cart for user 'komalsaikiran ' successfully.
+2024-08-30 13:06:46,541 - INFO - 127.0.0.1 - - [30/Aug/2024 13:06:46] "POST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1" 200 -
+2024-08-30 14:56:39,546 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 14:56:39,547 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 14:56:39,551 - INFO -  * Restarting with stat
+2024-08-30 14:56:40,330 - WARNING -  * Debugger is active!
+2024-08-30 14:56:40,342 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 15:51:24,498 - INFO - Attempting to remove quantity 2 of product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from cart for user komalsaikiran .
+2024-08-30 15:51:24,794 - INFO - Quantity 2 of product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' removed from cart for user 'komalsaikiran ' successfully.
+2024-08-30 15:51:29,770 - INFO - 127.0.0.1 - - [30/Aug/2024 15:51:29] "POST /cart/remove_quantity?username=komalsaikiran%20&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1&quantity=2 HTTP/1.1" 200 -
+2024-08-30 16:56:27,775 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 16:56:28,226 - INFO -  * Restarting with stat
+2024-08-30 16:56:29,916 - WARNING -  * Debugger is active!
+2024-08-30 16:56:29,922 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:01:08,818 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:01:09,006 - INFO -  * Restarting with stat
+2024-08-30 17:01:10,010 - WARNING -  * Debugger is active!
+2024-08-30 17:01:10,013 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:08:09,922 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:08:10,127 - INFO -  * Restarting with stat
+2024-08-30 17:08:11,806 - WARNING -  * Debugger is active!
+2024-08-30 17:08:11,811 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:10:04,984 - INFO - Attempting to clear cart for user 'komalsaikiran'.
+2024-08-30 17:10:05,138 - ERROR - User 'komalsaikiran' not found.
+2024-08-30 17:10:10,430 - INFO - 127.0.0.1 - - [30/Aug/2024 17:10:10] "[33mPOST /clear-cart HTTP/1.1[0m" 404 -
+2024-08-30 17:10:23,983 - INFO - Attempting to clear cart for user 'komalsaikiran '.
+2024-08-30 17:10:23,994 - INFO - Cart cleared for user 'komalsaikiran ' successfully.
+2024-08-30 17:10:28,772 - INFO - 127.0.0.1 - - [30/Aug/2024 17:10:28] "POST /clear-cart HTTP/1.1" 200 -
+2024-08-30 17:18:15,759 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:18:15,912 - INFO -  * Restarting with stat
+2024-08-30 17:18:17,396 - WARNING -  * Debugger is active!
+2024-08-30 17:18:17,401 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:20:00,596 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:20:00,787 - INFO -  * Restarting with stat
+2024-08-30 17:20:01,841 - WARNING -  * Debugger is active!
+2024-08-30 17:20:01,845 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:21:03,929 - INFO - 127.0.0.1 - - [30/Aug/2024 17:21:03] "[31m[1mGET /purchase-all-cart-products?username%20=komalsaikiran%20 HTTP/1.1[0m" 405 -
+2024-08-30 17:21:18,104 - INFO - Attempting to purchase all products in the cart for user None.
+2024-08-30 17:21:18,382 - ERROR - User 'None' not found.
+2024-08-30 17:21:23,266 - INFO - 127.0.0.1 - - [30/Aug/2024 17:21:23] "[33mPOST /purchase-all-cart-products?username%20=komalsaikiran%20 HTTP/1.1[0m" 404 -
+2024-08-30 17:21:52,516 - INFO - Attempting to purchase all products in the cart for user None.
+2024-08-30 17:21:52,519 - ERROR - User 'None' not found.
+2024-08-30 17:21:55,949 - INFO - 127.0.0.1 - - [30/Aug/2024 17:21:55] "[33mPOST /purchase-all-cart-products?username%20=komalsaikiran%20 HTTP/1.1[0m" 404 -
+2024-08-30 17:23:09,808 - INFO - Attempting to purchase all products in the cart for user None.
+2024-08-30 17:23:09,810 - ERROR - User 'None' not found.
+2024-08-30 17:23:13,054 - INFO - 127.0.0.1 - - [30/Aug/2024 17:23:13] "[33mPOST /purchase-all-cart-products?username%20=komalsaikiran HTTP/1.1[0m" 404 -
+2024-08-30 17:23:50,276 - INFO - Attempting to purchase all products in the cart for user None.
+2024-08-30 17:23:50,278 - ERROR - User 'None' not found.
+2024-08-30 17:23:53,438 - INFO - 127.0.0.1 - - [30/Aug/2024 17:23:53] "[33mPOST /purchase-all-cart-products?username%20=Hemanth%20usha HTTP/1.1[0m" 404 -
+2024-08-30 17:26:19,366 - INFO - Attempting to purchase all products in the cart for user None.
+2024-08-30 17:26:19,369 - ERROR - User 'None' not found.
+2024-08-30 17:26:22,774 - INFO - 127.0.0.1 - - [30/Aug/2024 17:26:22] "[33mPOST /purchase-all-cart-products?username%20=Hemanth%20usha HTTP/1.1[0m" 404 -
+2024-08-30 17:27:07,397 - INFO - Attempting to purchase all products in the cart for user Hemanth usha.
+2024-08-30 17:27:07,405 - INFO - No items in the cart for user 'Hemanth usha'.
+2024-08-30 17:27:10,899 - INFO - 127.0.0.1 - - [30/Aug/2024 17:27:10] "[33mPOST /purchase-all-cart-products?username=Hemanth%20usha HTTP/1.1[0m" 404 -
+2024-08-30 17:27:48,558 - INFO - 127.0.0.1 - - [30/Aug/2024 17:27:48] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 17:28:24,533 - INFO - 127.0.0.1 - - [30/Aug/2024 17:28:24] "[35m[1mPOST /cart/add HTTP/1.1[0m" 500 -
+2024-08-30 17:30:14,998 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:30:15,220 - INFO -  * Restarting with stat
+2024-08-30 17:30:16,578 - WARNING -  * Debugger is active!
+2024-08-30 17:30:16,583 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:30:16,636 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:30:16,760 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:30:20,204 - INFO - 127.0.0.1 - - [30/Aug/2024 17:30:20] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:30:24,203 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:30:24,214 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:30:27,523 - INFO - 127.0.0.1 - - [30/Aug/2024 17:30:27] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:31:25,353 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:31:25,518 - INFO -  * Restarting with stat
+2024-08-30 17:31:26,410 - WARNING -  * Debugger is active!
+2024-08-30 17:31:26,416 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:31:26,821 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:31:26,943 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:31:30,318 - INFO - 127.0.0.1 - - [30/Aug/2024 17:31:30] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:32:03,961 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:32:04,160 - INFO -  * Restarting with stat
+2024-08-30 17:32:05,210 - WARNING -  * Debugger is active!
+2024-08-30 17:32:05,217 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:32:05,522 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:32:05,640 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:32:08,890 - INFO - 127.0.0.1 - - [30/Aug/2024 17:32:08] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:32:33,346 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:32:33,482 - INFO -  * Restarting with stat
+2024-08-30 17:32:34,470 - WARNING -  * Debugger is active!
+2024-08-30 17:32:34,474 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:32:34,888 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:32:34,997 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:32:38,511 - INFO - 127.0.0.1 - - [30/Aug/2024 17:32:38] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:33:15,435 - INFO - Attempting to purchase all products in the cart for user Hemanth usha.
+2024-08-30 17:33:15,443 - INFO - All products purchased successfully for user 'Hemanth usha'. Total cost: 1845.8000000000002. Total quantity: 10.
+2024-08-30 17:33:18,726 - INFO - 127.0.0.1 - - [30/Aug/2024 17:33:18] "POST /purchase-all-cart-products?username=Hemanth%20usha HTTP/1.1" 200 -
+2024-08-30 17:35:41,018 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:35:41,163 - INFO -  * Restarting with stat
+2024-08-30 17:35:42,422 - WARNING -  * Debugger is active!
+2024-08-30 17:35:42,427 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:35:42,476 - INFO - Attempting to purchase all products in the cart for user Hemanth usha.
+2024-08-30 17:35:42,670 - INFO - No items in the cart for user 'Hemanth usha'.
+2024-08-30 17:35:46,153 - INFO - 127.0.0.1 - - [30/Aug/2024 17:35:46] "[33mPOST /purchase-all-cart-products?username=Hemanth%20usha HTTP/1.1[0m" 404 -
+2024-08-30 17:36:00,417 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:36:00,430 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:36:04,198 - INFO - 127.0.0.1 - - [30/Aug/2024 17:36:04] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:36:15,088 - INFO - Attempting to purchase all products in the cart for user Hemanth usha.
+2024-08-30 17:36:15,094 - INFO - All products purchased successfully for user 'Hemanth usha'. Total cost: 369.16. Total quantity: 2.
+2024-08-30 17:36:18,525 - INFO - 127.0.0.1 - - [30/Aug/2024 17:36:18] "POST /purchase-all-cart-products?username=Hemanth%20usha HTTP/1.1" 200 -
+2024-08-30 17:36:57,556 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 17:36:57,556 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 17:36:57,558 - INFO -  * Restarting with stat
+2024-08-30 17:36:58,357 - WARNING -  * Debugger is active!
+2024-08-30 17:36:58,362 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:38:56,737 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:38:56,849 - INFO -  * Restarting with stat
+2024-08-30 17:38:57,590 - WARNING -  * Debugger is active!
+2024-08-30 17:38:57,593 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:44:48,524 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:44:48,652 - INFO -  * Restarting with stat
+2024-08-30 17:44:49,691 - WARNING -  * Debugger is active!
+2024-08-30 17:44:49,695 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:45:11,044 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:45:11,165 - ERROR - No products found in any cart.
+2024-08-30 17:45:11,167 - INFO - 127.0.0.1 - - [30/Aug/2024 17:45:11] "[33mGET /most-purchased-product HTTP/1.1[0m" 404 -
+2024-08-30 17:45:29,934 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 17:45:29,955 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 17:45:33,894 - INFO - 127.0.0.1 - - [30/Aug/2024 17:45:33] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 17:45:41,199 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:45:41,204 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 2.
+2024-08-30 17:45:41,204 - INFO - 127.0.0.1 - - [30/Aug/2024 17:45:41] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 17:47:41,010 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:47:41,132 - INFO -  * Restarting with stat
+2024-08-30 17:47:42,186 - WARNING -  * Debugger is active!
+2024-08-30 17:47:42,190 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:47:42,233 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:47:42,340 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 2.
+2024-08-30 17:47:45,642 - INFO - 127.0.0.1 - - [30/Aug/2024 17:47:45] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 17:48:35,506 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:48:35,645 - INFO -  * Restarting with stat
+2024-08-30 17:48:36,730 - WARNING -  * Debugger is active!
+2024-08-30 17:48:36,735 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:48:36,786 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:48:36,894 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 2.
+2024-08-30 17:48:40,503 - INFO - 127.0.0.1 - - [30/Aug/2024 17:48:40] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 17:49:18,840 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:49:18,954 - INFO -  * Restarting with stat
+2024-08-30 17:49:20,023 - WARNING -  * Debugger is active!
+2024-08-30 17:49:20,027 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:49:20,074 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:49:20,173 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 2.
+2024-08-30 17:49:23,840 - INFO - 127.0.0.1 - - [30/Aug/2024 17:49:23] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 17:50:00,012 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:50:00,190 - INFO -  * Restarting with stat
+2024-08-30 17:50:01,458 - WARNING -  * Debugger is active!
+2024-08-30 17:50:01,463 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 17:50:01,533 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 17:50:01,674 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 2.
+2024-08-30 17:50:04,908 - INFO - 127.0.0.1 - - [30/Aug/2024 17:50:04] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 17:53:16,700 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 17:53:16,817 - INFO -  * Restarting with stat
+2024-08-30 17:53:18,010 - WARNING -  * Debugger is active!
+2024-08-30 17:53:18,017 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 20:50:42,313 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 20:50:42,702 - INFO -  * Restarting with stat
+2024-08-30 20:50:44,403 - WARNING -  * Debugger is active!
+2024-08-30 20:50:44,408 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:01:17,830 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 21:01:18,056 - INFO -  * Restarting with stat
+2024-08-30 21:01:19,411 - WARNING -  * Debugger is active!
+2024-08-30 21:01:19,419 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:08:33,763 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 21:08:33,927 - INFO -  * Restarting with stat
+2024-08-30 21:08:35,081 - WARNING -  * Debugger is active!
+2024-08-30 21:08:35,090 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:10:59,273 - INFO - Attempting to purchase product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from the cart for user Hemanth usha.
+2024-08-30 21:10:59,546 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' purchased successfully for user 'Hemanth usha'. Cost: 369.16.
+2024-08-30 21:13:03,517 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 21:13:03,631 - ERROR - No products found in any cart.
+2024-08-30 21:13:20,530 - INFO - 127.0.0.1 - - [30/Aug/2024 21:13:20] "[33mGET /most-purchased-product HTTP/1.1[0m" 404 -
+2024-08-30 21:13:43,903 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 21:13:43,942 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 21:19:10,768 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 21:19:10,768 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 21:19:10,772 - INFO -  * Restarting with stat
+2024-08-30 21:19:12,565 - WARNING -  * Debugger is active!
+2024-08-30 21:19:12,571 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:19:12,631 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 21:19:12,768 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 21:19:16,887 - INFO - 127.0.0.1 - - [30/Aug/2024 21:19:16] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 21:24:54,951 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 21:24:54,958 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 21:26:13,899 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 21:26:13,899 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 21:26:13,902 - INFO -  * Restarting with stat
+2024-08-30 21:26:15,134 - WARNING -  * Debugger is active!
+2024-08-30 21:26:15,138 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:26:15,895 - INFO - Attempting to add product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 to cart for user Hemanth usha with quantity 2.
+2024-08-30 21:26:16,074 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 21:26:33,568 - INFO - 127.0.0.1 - - [30/Aug/2024 21:26:33] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 21:30:48,937 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 21:30:49,141 - INFO -  * Restarting with stat
+2024-08-30 21:30:50,439 - WARNING -  * Debugger is active!
+2024-08-30 21:30:50,442 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:31:11,483 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 21:31:11,698 - INFO -  * Restarting with stat
+2024-08-30 21:31:12,630 - WARNING -  * Debugger is active!
+2024-08-30 21:31:12,634 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:31:16,737 - INFO - Fetching most searched products.
+2024-08-30 21:31:16,875 - INFO - Most searched products fetched successfully.
+2024-08-30 21:32:48,001 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 21:32:48,001 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 21:32:48,003 - INFO -  * Restarting with stat
+2024-08-30 21:32:48,779 - WARNING -  * Debugger is active!
+2024-08-30 21:32:48,782 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:32:51,975 - INFO - Fetching most searched products.
+2024-08-30 21:32:52,082 - INFO - Most searched products fetched successfully.
+2024-08-30 21:36:07,714 - INFO - Fetching most searched products.
+2024-08-30 21:36:07,809 - INFO - Most searched products fetched successfully.
+2024-08-30 21:36:55,408 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 21:36:55,408 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 21:36:55,411 - INFO -  * Restarting with stat
+2024-08-30 21:36:56,207 - WARNING -  * Debugger is active!
+2024-08-30 21:36:56,210 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 21:36:59,774 - INFO - Fetching most searched products.
+2024-08-30 21:36:59,889 - INFO - Most searched products fetched successfully.
+2024-08-30 21:39:01,048 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 21:39:01,187 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 8.
+2024-08-30 21:39:46,605 - INFO - Attempting to retrieve the most purchased product across all users.
+2024-08-30 21:39:46,740 - INFO - Most purchased product across all users is '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' with total quantity 8.
+2024-08-30 21:39:48,107 - INFO - 127.0.0.1 - - [30/Aug/2024 21:39:48] "GET /most-purchased-product HTTP/1.1" 200 -
+2024-08-30 21:40:54,264 - INFO - Starting to fetch products with filters.
+2024-08-30 21:40:54,267 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 21:40:54,267 - INFO - Products fetched successfully.
+2024-08-30 21:49:27,558 - INFO - Starting to fetch products with filters.
+2024-08-30 21:49:27,635 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 21:49:27,635 - INFO - Products fetched successfully.
+2024-08-30 21:49:31,156 - INFO - 127.0.0.1 - - [30/Aug/2024 21:49:31] "GET /products HTTP/1.1" 200 -
+2024-08-30 21:50:20,809 - INFO - Attempting to add product a79b5db3-742d-45b3-a654-d8a2f6b91b72 to cart for user Hemanth usha with quantity 2.
+2024-08-30 21:50:20,842 - INFO - Product 'a79b5db3-742d-45b3-a654-d8a2f6b91b72' added to cart for user 'Hemanth usha' successfully.
+2024-08-30 21:50:24,261 - INFO - 127.0.0.1 - - [30/Aug/2024 21:50:24] "[35m[1mPOST /cart/add HTTP/1.1[0m" 201 -
+2024-08-30 21:50:37,052 - INFO - Attempting to purchase product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 from the cart for user Hemanth usha.
+2024-08-30 21:50:37,062 - INFO - Product '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1' purchased successfully for user 'Hemanth usha'. Cost: 1476.64.
+2024-08-30 21:50:40,298 - INFO - 127.0.0.1 - - [30/Aug/2024 21:50:40] "POST /purchase-single-cart-product?username=Hemanth%20usha&product_uuid=5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1 HTTP/1.1" 200 -
+2024-08-30 22:08:43,884 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': {'color': 'Black-red', 'weight': '1.50kg'}}.
+2024-08-30 22:08:43,893 - DEBUG - New product object created: <Product (transient 1432956729680)>
+2024-08-30 22:08:43,907 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "productss_pkey"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174000) already exists.
+
+[SQL: INSERT INTO productss (uuid, type, brand, model, price, discounts, specs, created_at, search_count) VALUES (%(uuid)s::UUID, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s, %(created_at)s, %(search_count)s)]
+[parameters: {'uuid': '123e4567-e89b-12d3-a456-426614174000', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': '{"color": "Black-red", "weight": "1.50kg"}', 'created_at': datetime.datetime(2024, 8, 30, 16, 38, 43, 894897), 'search_count': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-30 22:08:47,390 - INFO - 127.0.0.1 - - [30/Aug/2024 22:08:47] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-30 22:09:40,528 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174005', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': {'color': 'Black-red', 'weight': '1.50kg'}}.
+2024-08-30 22:09:40,530 - DEBUG - New product object created: <Product (transient 1432956795856)>
+2024-08-30 22:09:40,538 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174005
+2024-08-30 22:09:43,742 - INFO - 127.0.0.1 - - [30/Aug/2024 22:09:43] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-30 22:23:12,293 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:23:12,437 - INFO -  * Restarting with stat
+2024-08-30 22:27:07,849 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 22:27:07,850 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 22:27:07,851 - INFO -  * Restarting with stat
+2024-08-30 22:27:08,623 - WARNING -  * Debugger is active!
+2024-08-30 22:27:08,632 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:27:29,235 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174006', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': {'color': 'Black-red', 'weight': '1.50kg'}}.
+2024-08-30 22:27:29,335 - DEBUG - New product object created: <Product (transient 2483886561424)>
+2024-08-30 22:27:29,348 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174006
+2024-08-30 22:27:29,349 - ERROR - Error creating product: 'dict' object has no attribute 'to_dict'
+2024-08-30 22:27:32,735 - INFO - 127.0.0.1 - - [30/Aug/2024 22:27:32] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-30 22:28:29,652 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:28:29,761 - INFO -  * Restarting with stat
+2024-08-30 22:28:30,521 - WARNING -  * Debugger is active!
+2024-08-30 22:28:30,525 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:29:31,927 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:29:32,073 - INFO -  * Restarting with stat
+2024-08-30 22:29:33,097 - WARNING -  * Debugger is active!
+2024-08-30 22:29:33,100 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:29:33,142 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174006', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': {'color': 'Black-red', 'weight': '1.50kg'}}.
+2024-08-30 22:29:33,224 - DEBUG - New product object created: <Product (transient 2725475754000)>
+2024-08-30 22:29:33,230 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "productss_pkey"
+DETAIL:  Key (uuid)=(123e4567-e89b-12d3-a456-426614174006) already exists.
+
+[SQL: INSERT INTO productss (uuid, type, brand, model, price, discounts, specs, created_at, search_count) VALUES (%(uuid)s::UUID, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s, %(created_at)s, %(search_count)s)]
+[parameters: {'uuid': '123e4567-e89b-12d3-a456-426614174006', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': '{"color": "Black-red", "weight": "1.50kg"}', 'created_at': datetime.datetime(2024, 8, 30, 16, 59, 33, 226347), 'search_count': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-30 22:29:36,469 - INFO - 127.0.0.1 - - [30/Aug/2024 22:29:36] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-30 22:30:02,963 - INFO - Starting product creation with data: {'uuid': '123e4567-e89b-12d3-a456-426614174007', 'type': 'Electronics', 'brand': 'BrandName', 'model': 'ModelXYZ', 'price': 2999.99, 'discounts': 10.0, 'specs': {'color': 'Black-red', 'weight': '1.50kg'}}.
+2024-08-30 22:30:02,965 - DEBUG - New product object created: <Product (transient 2725476171088)>
+2024-08-30 22:30:02,974 - INFO - Product created successfully with UUID: 123e4567-e89b-12d3-a456-426614174007
+2024-08-30 22:30:06,606 - INFO - 127.0.0.1 - - [30/Aug/2024 22:30:06] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-30 22:31:20,773 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:31:20,888 - INFO -  * Restarting with stat
+2024-08-30 22:31:21,719 - WARNING -  * Debugger is active!
+2024-08-30 22:31:21,724 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:32:00,083 - INFO - Starting to fetch products with filters.
+2024-08-30 22:32:00,192 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 22:32:00,194 - INFO - Products fetched successfully.
+2024-08-30 22:32:03,518 - INFO - 127.0.0.1 - - [30/Aug/2024 22:32:03] "GET /products HTTP/1.1" 200 -
+2024-08-30 22:35:57,403 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:35:57,618 - INFO -  * Restarting with stat
+2024-08-30 22:35:58,469 - WARNING -  * Debugger is active!
+2024-08-30 22:35:58,472 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:35:59,031 - INFO - Starting to fetch products with filters.
+2024-08-30 22:35:59,130 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 22:35:59,130 - INFO - Products fetched successfully.
+2024-08-30 22:36:02,494 - INFO - 127.0.0.1 - - [30/Aug/2024 22:36:02] "GET /products HTTP/1.1" 200 -
+2024-08-30 22:39:05,211 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:39:05,328 - INFO -  * Restarting with stat
+2024-08-30 22:39:06,159 - WARNING -  * Debugger is active!
+2024-08-30 22:39:06,163 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:39:38,104 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:39:38,335 - INFO -  * Restarting with stat
+2024-08-30 22:39:39,383 - WARNING -  * Debugger is active!
+2024-08-30 22:39:39,387 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:39:39,450 - INFO - Starting to fetch products with filters.
+2024-08-30 22:39:39,543 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 22:39:39,543 - INFO - Products fetched successfully.
+2024-08-30 22:39:42,843 - INFO - 127.0.0.1 - - [30/Aug/2024 22:39:42] "GET /products HTTP/1.1" 200 -
+2024-08-30 22:40:33,623 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 22:40:33,627 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 22:40:37,258 - INFO - 127.0.0.1 - - [30/Aug/2024 22:40:37] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 22:43:08,640 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:43:08,877 - INFO -  * Restarting with stat
+2024-08-30 22:43:09,907 - WARNING -  * Debugger is active!
+2024-08-30 22:43:09,910 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:43:09,952 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 22:43:10,048 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 22:43:13,499 - INFO - 127.0.0.1 - - [30/Aug/2024 22:43:13] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 22:43:55,538 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:43:55,654 - INFO -  * Restarting with stat
+2024-08-30 22:43:56,740 - WARNING -  * Debugger is active!
+2024-08-30 22:43:56,743 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:43:56,784 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 22:43:56,876 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 22:44:00,455 - INFO - 127.0.0.1 - - [30/Aug/2024 22:44:00] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 22:44:51,231 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:44:51,360 - INFO -  * Restarting with stat
+2024-08-30 22:44:53,351 - WARNING -  * Debugger is active!
+2024-08-30 22:44:53,358 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:46:47,435 - INFO - Starting to fetch products with filters.
+2024-08-30 22:46:47,559 - DEBUG - Products retrieved: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 22:46:47,559 - INFO - Products fetched successfully.
+2024-08-30 22:46:50,764 - INFO - 127.0.0.1 - - [30/Aug/2024 22:46:50] "GET /products HTTP/1.1" 200 -
+2024-08-30 22:48:23,082 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:48:23,297 - INFO -  * Restarting with stat
+2024-08-30 22:48:24,560 - WARNING -  * Debugger is active!
+2024-08-30 22:48:24,564 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:48:27,236 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-30 22:48:27,350 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-30 22:48:30,609 - INFO - 127.0.0.1 - - [30/Aug/2024 22:48:30] "GET /products/f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47 HTTP/1.1" 200 -
+2024-08-30 22:49:35,729 - INFO - Starting table creation process.
+2024-08-30 22:49:35,748 - INFO - Tables created successfully.
+2024-08-30 22:49:39,806 - INFO - 127.0.0.1 - - [30/Aug/2024 22:49:39] "POST /create-tables HTTP/1.1" 200 -
+2024-08-30 22:49:57,973 - INFO - Starting filter products.
+2024-08-30 22:49:57,973 - INFO - Filtering by type: mob
+2024-08-30 22:49:57,974 - INFO - Filtering by brand: Apple
+2024-08-30 22:49:57,977 - DEBUG - Filtered products: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 22:49:57,978 - INFO - Products filtered successfully.
+2024-08-30 22:50:01,133 - INFO - 127.0.0.1 - - [30/Aug/2024 22:50:01] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-30 22:51:19,097 - INFO - Starting filter products.
+2024-08-30 22:51:19,098 - INFO - Filtering by type: mob
+2024-08-30 22:51:19,100 - DEBUG - Filtered products: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>]
+2024-08-30 22:51:19,100 - INFO - Products filtered successfully.
+2024-08-30 22:51:22,263 - INFO - 127.0.0.1 - - [30/Aug/2024 22:51:22] "GET /products/filter?type=mob HTTP/1.1" 200 -
+2024-08-30 22:51:31,937 - INFO - Starting filter products.
+2024-08-30 22:51:31,937 - INFO - Filtering by type: mob
+2024-08-30 22:51:31,937 - INFO - Filtering by brand: Apple
+2024-08-30 22:51:31,939 - DEBUG - Filtered products: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 22:51:31,940 - INFO - Products filtered successfully.
+2024-08-30 22:51:35,304 - INFO - 127.0.0.1 - - [30/Aug/2024 22:51:35] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-30 22:53:11,101 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:53:11,267 - INFO -  * Restarting with stat
+2024-08-30 22:53:12,411 - WARNING -  * Debugger is active!
+2024-08-30 22:53:12,415 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:53:12,456 - INFO - Starting filter products.
+2024-08-30 22:53:12,465 - INFO - Filtering by type: mob
+2024-08-30 22:53:12,465 - INFO - Filtering by brand: Apple
+2024-08-30 22:53:12,552 - DEBUG - Filtered products: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 22:53:12,552 - INFO - Products filtered successfully.
+2024-08-30 22:53:15,692 - INFO - 127.0.0.1 - - [30/Aug/2024 22:53:15] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-30 22:54:17,408 - INFO - Starting filter products.
+2024-08-30 22:54:17,408 - INFO - Filtering by type: mob
+2024-08-30 22:54:17,408 - INFO - Filtering by brand: Apple
+2024-08-30 22:54:17,409 - DEBUG - Filtered products: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 22:54:17,409 - INFO - Products filtered successfully.
+2024-08-30 22:54:20,582 - INFO - 127.0.0.1 - - [30/Aug/2024 22:54:20] "GET /products/filter?type=mob&brand=Apple HTTP/1.1" 200 -
+2024-08-30 22:54:38,935 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-30 22:54:38,941 - DEBUG - New product object created: <Product (transient 2076403475280)>
+2024-08-30 22:54:38,960 - ERROR - Error creating product: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "productss_pkey"
+DETAIL:  Key (uuid)=(5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8) already exists.
+
+[SQL: INSERT INTO productss (uuid, type, brand, model, price, discounts, specs, created_at, search_count) VALUES (%(uuid)s::UUID, %(type)s, %(brand)s, %(model)s, %(price)s, %(discounts)s, %(specs)s, %(created_at)s, %(search_count)s)]
+[parameters: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999, 'discounts': 5, 'specs': '{"screen_size": "6.2 inches", "battery": "4000 mAh"}', 'created_at': datetime.datetime(2024, 8, 30, 17, 24, 38, 944190), 'search_count': 0}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-08-30 22:54:42,947 - INFO - 127.0.0.1 - - [30/Aug/2024 22:54:42] "[35m[1mPOST /products HTTP/1.1[0m" 500 -
+2024-08-30 22:54:54,571 - INFO - Starting product creation with data: {'uuid': '5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9', 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999, 'discounts': 5, 'specs': {'screen_size': '6.2 inches', 'battery': '4000 mAh'}}.
+2024-08-30 22:54:54,576 - DEBUG - New product object created: <Product (transient 2076403538960)>
+2024-08-30 22:54:54,583 - INFO - Product created successfully with UUID: 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9
+2024-08-30 22:54:57,694 - INFO - 127.0.0.1 - - [30/Aug/2024 22:54:57] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2024-08-30 22:56:19,386 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:56:19,545 - INFO -  * Restarting with stat
+2024-08-30 22:56:20,544 - WARNING -  * Debugger is active!
+2024-08-30 22:56:20,547 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:56:42,386 - INFO - Updating product with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 using data: {'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10, 'specs': '256GB, Blue'}.
+2024-08-30 22:56:42,496 - DEBUG - Product before update: {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 205.08, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 9}
+2024-08-30 22:56:42,506 - INFO - Product updated successfully with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1
+2024-08-30 22:56:46,056 - INFO - 127.0.0.1 - - [30/Aug/2024 22:56:46] "PUT /products/4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 HTTP/1.1" 200 -
+2024-08-30 22:58:30,408 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 22:58:30,568 - INFO -  * Restarting with stat
+2024-08-30 22:58:31,453 - WARNING -  * Debugger is active!
+2024-08-30 22:58:31,457 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 22:58:32,419 - INFO - Updating product with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 using data: {'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10, 'specs': '256GB, Blue'}.
+2024-08-30 22:58:32,517 - DEBUG - Product before update: {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 9}
+2024-08-30 22:58:32,519 - INFO - Product updated successfully with UUID: 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1
+2024-08-30 22:58:36,031 - INFO - 127.0.0.1 - - [30/Aug/2024 22:58:36] "PUT /products/4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1 HTTP/1.1" 200 -
+2024-08-30 23:00:27,586 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:00:27,694 - INFO -  * Restarting with stat
+2024-08-30 23:00:28,455 - WARNING -  * Debugger is active!
+2024-08-30 23:00:28,458 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:01:21,544 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:01:21,662 - INFO -  * Restarting with stat
+2024-08-30 23:01:22,623 - WARNING -  * Debugger is active!
+2024-08-30 23:01:22,627 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:01:42,304 - INFO - Fetching latest products.
+2024-08-30 23:01:42,424 - DEBUG - Latest products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>]
+2024-08-30 23:01:42,424 - INFO - Latest products fetched successfully.
+2024-08-30 23:01:45,767 - INFO - 127.0.0.1 - - [30/Aug/2024 23:01:45] "GET /products/latest HTTP/1.1" 200 -
+2024-08-30 23:03:06,653 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:03:06,803 - INFO -  * Restarting with stat
+2024-08-30 23:03:07,769 - WARNING -  * Debugger is active!
+2024-08-30 23:03:07,774 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:03:07,815 - INFO - Fetching latest products.
+2024-08-30 23:03:07,907 - DEBUG - Latest products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>]
+2024-08-30 23:03:07,907 - INFO - Latest products fetched successfully.
+2024-08-30 23:03:12,290 - INFO - 127.0.0.1 - - [30/Aug/2024 23:03:12] "GET /products/latest HTTP/1.1" 200 -
+2024-08-30 23:05:20,266 - INFO - Fetching latest discounted products.
+2024-08-30 23:05:20,271 - DEBUG - Latest discounted products retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 23:05:20,271 - INFO - Latest discounted products fetched successfully.
+2024-08-30 23:05:23,638 - INFO - 127.0.0.1 - - [30/Aug/2024 23:05:23] "GET /products/latest-discounted HTTP/1.1" 200 -
+2024-08-30 23:06:23,943 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:06:24,160 - INFO -  * Restarting with stat
+2024-08-30 23:06:25,239 - WARNING -  * Debugger is active!
+2024-08-30 23:06:25,242 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:06:25,284 - INFO - Fetching latest discounted products.
+2024-08-30 23:06:25,379 - DEBUG - Latest discounted products retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>]
+2024-08-30 23:06:25,379 - INFO - Latest discounted products fetched successfully.
+2024-08-30 23:06:28,552 - INFO - 127.0.0.1 - - [30/Aug/2024 23:06:28] "GET /products/latest-discounted HTTP/1.1" 200 -
+2024-08-30 23:06:52,449 - INFO - Starting filter by price range.
+2024-08-30 23:06:52,456 - DEBUG - Products in price range (60000.0, 150000.0): [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-30 23:06:52,456 - INFO - Products filtered by price range successfully.
+2024-08-30 23:06:55,987 - INFO - 127.0.0.1 - - [30/Aug/2024 23:06:55] "GET /products/price-range?min_price=60000&max_price=150000 HTTP/1.1" 200 -
+2024-08-30 23:07:51,546 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:07:51,810 - INFO -  * Restarting with stat
+2024-08-30 23:07:53,231 - WARNING -  * Debugger is active!
+2024-08-30 23:07:53,234 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:07:53,287 - INFO - Starting filter by price range.
+2024-08-30 23:07:53,388 - DEBUG - Products in price range (60000.0, 150000.0): [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-30 23:07:53,388 - INFO - Products filtered by price range successfully.
+2024-08-30 23:07:56,702 - INFO - 127.0.0.1 - - [30/Aug/2024 23:07:56] "GET /products/price-range?min_price=60000&max_price=150000 HTTP/1.1" 200 -
+2024-08-30 23:08:23,353 - INFO - Starting filter products by specs.
+2024-08-30 23:08:23,354 - DEBUG - Raw data received: 
+{
+    "specs": {
+        "battery": "4000 mAh",
+        "screen_size": "6.2 inches"
+    }
+}
+
+2024-08-30 23:08:23,354 - DEBUG - Parsed data: {'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}}
+2024-08-30 23:08:23,357 - ERROR - Failed to parse product specs: Extra data: line 1 column 4 (char 3)
+2024-08-30 23:08:23,357 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>]
+2024-08-30 23:08:23,357 - INFO - Products filtered by specs successfully.
+2024-08-30 23:08:26,623 - INFO - 127.0.0.1 - - [30/Aug/2024 23:08:26] "POST /products/specs HTTP/1.1" 200 -
+2024-08-30 23:08:50,770 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:08:50,922 - INFO -  * Restarting with stat
+2024-08-30 23:08:51,747 - WARNING -  * Debugger is active!
+2024-08-30 23:08:51,751 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:09:59,575 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:09:59,731 - INFO -  * Restarting with stat
+2024-08-30 23:10:00,738 - WARNING -  * Debugger is active!
+2024-08-30 23:10:00,742 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:10:01,150 - INFO - Starting filter products by specs.
+2024-08-30 23:10:01,150 - DEBUG - Raw data received: 
+{
+    "specs": {
+        "battery": "4000 mAh",
+        "screen_size": "6.2 inches"
+    }
+}
+
+2024-08-30 23:10:01,150 - DEBUG - Parsed data: {'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}}
+2024-08-30 23:10:01,259 - ERROR - Failed to parse product specs: Extra data: line 1 column 4 (char 3)
+2024-08-30 23:10:01,260 - DEBUG - Filtered products: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>]
+2024-08-30 23:10:01,260 - INFO - Products filtered by specs successfully.
+2024-08-30 23:10:04,583 - INFO - 127.0.0.1 - - [30/Aug/2024 23:10:04] "POST /products/specs HTTP/1.1" 200 -
+2024-08-30 23:10:24,831 - INFO - Fetching products created in the last 24 hours.
+2024-08-30 23:10:24,837 - DEBUG - Recent products retrieved: [<Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>]
+2024-08-30 23:10:24,837 - INFO - Products created in the last 24 hours fetched successfully.
+2024-08-30 23:10:28,466 - INFO - 127.0.0.1 - - [30/Aug/2024 23:10:28] "GET /products/recent/24hrs HTTP/1.1" 200 -
+2024-08-30 23:11:10,774 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:11:10,992 - INFO -  * Restarting with stat
+2024-08-30 23:11:11,995 - WARNING -  * Debugger is active!
+2024-08-30 23:11:12,000 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:11:12,443 - INFO - Fetching products created in the last 24 hours.
+2024-08-30 23:11:12,544 - DEBUG - Recent products retrieved: [<Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>]
+2024-08-30 23:11:12,544 - INFO - Products created in the last 24 hours fetched successfully.
+2024-08-30 23:11:15,786 - INFO - 127.0.0.1 - - [30/Aug/2024 23:11:15] "GET /products/recent/24hrs HTTP/1.1" 200 -
+2024-08-30 23:11:36,501 - INFO - Fetching products sorted by discount.
+2024-08-30 23:11:36,508 - DEBUG - Products sorted by discount retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>]
+2024-08-30 23:11:36,508 - INFO - Products sorted by discount fetched successfully.
+2024-08-30 23:11:39,926 - INFO - 127.0.0.1 - - [30/Aug/2024 23:11:39] "GET /products/discounted HTTP/1.1" 200 -
+2024-08-30 23:12:26,966 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:12:27,190 - INFO -  * Restarting with stat
+2024-08-30 23:12:28,227 - WARNING -  * Debugger is active!
+2024-08-30 23:12:28,230 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:12:28,828 - INFO - Fetching products sorted by discount.
+2024-08-30 23:12:28,924 - DEBUG - Products sorted by discount retrieved: [<Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174007>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>]
+2024-08-30 23:12:28,924 - INFO - Products sorted by discount fetched successfully.
+2024-08-30 23:12:32,117 - INFO - 127.0.0.1 - - [30/Aug/2024 23:12:32] "GET /products/discounted HTTP/1.1" 200 -
+2024-08-30 23:12:49,827 - INFO - Starting product search.
+2024-08-30 23:12:49,833 - DEBUG - Search results: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>]
+2024-08-30 23:12:49,839 - INFO - Products found matching the search criteria.
+2024-08-30 23:12:53,647 - INFO - 127.0.0.1 - - [30/Aug/2024 23:12:53] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 23:13:36,846 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:13:37,017 - INFO -  * Restarting with stat
+2024-08-30 23:13:38,239 - WARNING -  * Debugger is active!
+2024-08-30 23:13:38,244 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:13:38,290 - INFO - Starting product search.
+2024-08-30 23:13:38,388 - DEBUG - Search results: [<Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>]
+2024-08-30 23:13:38,394 - INFO - Products found matching the search criteria.
+2024-08-30 23:13:41,861 - INFO - 127.0.0.1 - - [30/Aug/2024 23:13:41] "GET /products/search?query=ip HTTP/1.1" 200 -
+2024-08-30 23:14:46,967 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:14:47,093 - INFO -  * Restarting with stat
+2024-08-30 23:25:48,183 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-08-30 23:25:48,183 - INFO - [33mPress CTRL+C to quit[0m
+2024-08-30 23:25:48,184 - INFO -  * Restarting with stat
+2024-08-30 23:25:48,906 - WARNING -  * Debugger is active!
+2024-08-30 23:25:48,909 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:25:53,517 - INFO - Starting product count retrieval.
+2024-08-30 23:25:53,611 - INFO - Product count retrieved successfully: 9
+2024-08-30 23:25:53,611 - DEBUG - Product details: [{'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999.0, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-30T17:24:54.576255', 'search_count': 0}, {'uuid': UUID('3c5e37f4-8cb6-453b-94e9-926c7ffb401f'), 'type': 'mob', 'brand': 'OnePlus', 'model': '8T', 'price': 88.19, 'discounts': 20.0, 'specs': {'battery': '4500 mAh', 'screen_size': '6.55 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 7}, {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-24T15:18:48.865683', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:28:47.230424', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:29:51.102609', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad1', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T09:01:22.850004', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T17:03:20.724386', 'search_count': 0}]
+2024-08-30 23:25:57,219 - INFO - 127.0.0.1 - - [30/Aug/2024 23:25:57] "GET /products/count?type=Mob HTTP/1.1" 200 -
+2024-08-30 23:27:31,434 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:27:31,650 - INFO -  * Restarting with stat
+2024-08-30 23:27:32,700 - WARNING -  * Debugger is active!
+2024-08-30 23:27:32,705 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:27:32,749 - INFO - Starting product count retrieval.
+2024-08-30 23:27:32,832 - INFO - Product count retrieved successfully: 9
+2024-08-30 23:27:32,832 - DEBUG - Product details: [{'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999.0, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-30T17:24:54.576255', 'search_count': 0}, {'uuid': UUID('3c5e37f4-8cb6-453b-94e9-926c7ffb401f'), 'type': 'mob', 'brand': 'OnePlus', 'model': '8T', 'price': 88.19, 'discounts': 20.0, 'specs': {'battery': '4500 mAh', 'screen_size': '6.55 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 7}, {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-24T15:18:48.865683', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:28:47.230424', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:29:51.102609', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad1', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T09:01:22.850004', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T17:03:20.724386', 'search_count': 0}]
+2024-08-30 23:27:36,238 - INFO - 127.0.0.1 - - [30/Aug/2024 23:27:36] "GET /products/count?type=Mob HTTP/1.1" 200 -
+2024-08-30 23:30:18,912 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:30:19,493 - INFO -  * Restarting with stat
+2024-08-30 23:30:21,254 - WARNING -  * Debugger is active!
+2024-08-30 23:30:21,259 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:30:21,303 - INFO - Starting product count retrieval.
+2024-08-30 23:30:21,402 - INFO - Product count retrieved successfully: 9
+2024-08-30 23:30:21,402 - DEBUG - Product details: [{'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999.0, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-30T17:24:54.576255', 'search_count': 0}, {'uuid': UUID('3c5e37f4-8cb6-453b-94e9-926c7ffb401f'), 'type': 'mob', 'brand': 'OnePlus', 'model': '8T', 'price': 88.19, 'discounts': 20.0, 'specs': {'battery': '4500 mAh', 'screen_size': '6.55 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 7}, {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-24T15:18:48.865683', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:28:47.230424', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:29:51.102609', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad1', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T09:01:22.850004', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T17:03:20.724386', 'search_count': 0}]
+2024-08-30 23:30:24,611 - INFO - 127.0.0.1 - - [30/Aug/2024 23:30:24] "GET /products/count?type=Mob HTTP/1.1" 200 -
+2024-08-30 23:30:42,599 - INFO - Starting product count retrieval.
+2024-08-30 23:30:42,601 - INFO - Product count retrieved successfully: 9
+2024-08-30 23:30:42,601 - DEBUG - Product details: [{'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999.0, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-30T17:24:54.576255', 'search_count': 0}, {'uuid': UUID('3c5e37f4-8cb6-453b-94e9-926c7ffb401f'), 'type': 'mob', 'brand': 'OnePlus', 'model': '8T', 'price': 88.19, 'discounts': 20.0, 'specs': {'battery': '4500 mAh', 'screen_size': '6.55 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 7}, {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-24T15:18:48.865683', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:28:47.230424', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:29:51.102609', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad1', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T09:01:22.850004', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T17:03:20.724386', 'search_count': 0}]
+2024-08-30 23:30:46,130 - INFO - 127.0.0.1 - - [30/Aug/2024 23:30:46] "GET /products/count?type=Mob HTTP/1.1" 200 -
+2024-08-30 23:35:44,074 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:35:44,333 - INFO -  * Restarting with stat
+2024-08-30 23:35:45,468 - WARNING -  * Debugger is active!
+2024-08-30 23:35:45,474 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:35:45,517 - INFO - Starting product count retrieval.
+2024-08-30 23:35:45,623 - INFO - Product count retrieved successfully: 9
+2024-08-30 23:35:45,623 - DEBUG - Product details: [{'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 99999.0, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-30T17:24:54.576255', 'search_count': 0}, {'uuid': UUID('3c5e37f4-8cb6-453b-94e9-926c7ffb401f'), 'type': 'mob', 'brand': 'OnePlus', 'model': '8T', 'price': 88.19, 'discounts': 20.0, 'specs': {'battery': '4500 mAh', 'screen_size': '6.55 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 7}, {'uuid': UUID('4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 14', 'price': 99999.99, 'discounts': 10.0, 'specs': '256GB, Blue', 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1'), 'type': 'mob', 'brand': 'Apple', 'model': 'iPhone 13', 'price': 184.58, 'discounts': 10.0, 'specs': {'battery': '3095 mAh', 'screen_size': '6.1 inches'}, 'created_at': '2024-08-24T15:17:25.420548', 'search_count': 11}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-24T15:18:48.865683', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:28:47.230424', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad', 'price': 164.07, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-25T04:29:51.102609', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'NotePad1', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T09:01:22.850004', 'search_count': 0}, {'uuid': UUID('5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8'), 'type': 'mob', 'brand': 'Vivo Plus', 'model': 'Note 8', 'price': 7598266.3, 'discounts': 5.0, 'specs': {'battery': '4000 mAh', 'screen_size': '6.2 inches'}, 'created_at': '2024-08-26T17:03:20.724386', 'search_count': 0}]
+2024-08-30 23:35:48,962 - INFO - 127.0.0.1 - - [30/Aug/2024 23:35:48] "GET /products/count?type=Mob HTTP/1.1" 200 -
+2024-08-30 23:37:03,583 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:37:03,737 - INFO -  * Restarting with stat
+2024-08-30 23:37:04,513 - WARNING -  * Debugger is active!
+2024-08-30 23:37:04,516 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:38:02,609 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:38:02,720 - INFO -  * Restarting with stat
+2024-08-30 23:38:03,705 - WARNING -  * Debugger is active!
+2024-08-30 23:38:03,710 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:38:23,618 - INFO - Starting to clear old stock.
+2024-08-30 23:38:23,743 - INFO - No products found before the cutoff date: 2024-05-05
+2024-08-30 23:38:26,967 - INFO - 127.0.0.1 - - [30/Aug/2024 23:38:26] "DELETE /products/clear_old_stock?cutoff_date=2024-05-05 HTTP/1.1" 200 -
+2024-08-30 23:39:43,655 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:39:43,827 - INFO -  * Restarting with stat
+2024-08-30 23:39:45,106 - WARNING -  * Debugger is active!
+2024-08-30 23:39:45,110 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:39:48,712 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:39:48,721 - INFO - Clearance sale is not active.
+2024-08-30 23:39:48,722 - INFO - 127.0.0.1 - - [30/Aug/2024 23:39:48] "[31m[1mPATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-29&discount_percentage=50 HTTP/1.1[0m" 400 -
+2024-08-30 23:40:26,598 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:40:26,598 - INFO - Clearance sale is not active.
+2024-08-30 23:40:26,598 - INFO - 127.0.0.1 - - [30/Aug/2024 23:40:26] "[31m[1mPATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-30&discount_percentage=5 HTTP/1.1[0m" 400 -
+2024-08-30 23:41:20,230 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:41:20,230 - INFO - Clearance sale is not active.
+2024-08-30 23:41:20,232 - INFO - 127.0.0.1 - - [30/Aug/2024 23:41:20] "[31m[1mPATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-31&discount_percentage=5 HTTP/1.1[0m" 400 -
+2024-08-30 23:42:03,582 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:42:03,772 - INFO -  * Restarting with stat
+2024-08-30 23:42:04,882 - WARNING -  * Debugger is active!
+2024-08-30 23:42:04,888 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:42:05,087 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:42:05,234 - INFO - Successfully applied a 5.0% discount to 21 old products.
+2024-08-30 23:42:08,464 - INFO - 127.0.0.1 - - [30/Aug/2024 23:42:08] "PATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-31&discount_percentage=5 HTTP/1.1" 200 -
+2024-08-30 23:43:07,710 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:43:07,925 - INFO -  * Restarting with stat
+2024-08-30 23:43:08,930 - WARNING -  * Debugger is active!
+2024-08-30 23:43:08,934 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:43:09,025 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:43:09,148 - INFO - Successfully applied a 5.0% discount to 21 old products.
+2024-08-30 23:43:12,494 - INFO - 127.0.0.1 - - [30/Aug/2024 23:43:12] "PATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-31&discount_percentage=5 HTTP/1.1" 200 -
+2024-08-30 23:44:38,133 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:44:38,291 - INFO -  * Restarting with stat
+2024-08-30 23:44:39,261 - WARNING -  * Debugger is active!
+2024-08-30 23:44:39,267 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:44:39,352 - INFO - Starting clearance sale for old stock.
+2024-08-30 23:44:39,478 - INFO - Successfully applied a 5.0% discount to 21 old products.
+2024-08-30 23:44:42,713 - INFO - 127.0.0.1 - - [30/Aug/2024 23:44:42] "PATCH /products/clearance_sale?start_date=2024-08-20&cutoff_date=2024-08-31&discount_percentage=5 HTTP/1.1" 200 -
+2024-08-30 23:46:12,013 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:46:12,126 - INFO -  * Restarting with stat
+2024-08-30 23:46:13,116 - WARNING -  * Debugger is active!
+2024-08-30 23:46:13,124 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:46:19,625 - INFO - Starting to increase product prices.
+2024-08-30 23:46:19,730 - INFO - Successfully increased prices by 5.0% for 17 products.
+2024-08-30 23:46:23,090 - INFO - 127.0.0.1 - - [30/Aug/2024 23:46:23] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-20&end_date=2024-08-29&increase_percentage=5 HTTP/1.1" 200 -
+2024-08-30 23:46:36,450 - INFO - Starting to increase product prices.
+2024-08-30 23:46:36,464 - INFO - Successfully increased prices by 50.0% for 17 products.
+2024-08-30 23:46:39,899 - INFO - 127.0.0.1 - - [30/Aug/2024 23:46:39] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-20&end_date=2024-08-29&increase_percentage=50 HTTP/1.1" 200 -
+2024-08-30 23:46:48,749 - INFO - Starting to increase product prices.
+2024-08-30 23:46:48,760 - INFO - Successfully increased prices by 500.0% for 17 products.
+2024-08-30 23:46:52,055 - INFO - 127.0.0.1 - - [30/Aug/2024 23:46:52] "PATCH /products/bulk/increase-price/by-date-range?start_date=2024-08-20&end_date=2024-08-29&increase_percentage=500 HTTP/1.1" 200 -
+2024-08-30 23:47:20,715 - INFO - Fetching most searched products.
+2024-08-30 23:47:20,728 - INFO - Most searched products fetched successfully.
+2024-08-30 23:47:24,251 - INFO - 127.0.0.1 - - [30/Aug/2024 23:47:24] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-30 23:59:42,356 - INFO -  * Detected change in 'C:\\Users\\lenovo\\PycharmProjects\\e_commerce_products\\apps\\app.py', reloading
+2024-08-30 23:59:42,606 - INFO -  * Restarting with stat
+2024-08-30 23:59:44,273 - WARNING -  * Debugger is active!
+2024-08-30 23:59:44,280 - INFO -  * Debugger PIN: 112-370-431
+2024-08-30 23:59:44,326 - INFO - Fetching most searched products.
+2024-08-30 23:59:44,420 - INFO - Most searched products fetched successfully.
+2024-08-30 23:59:47,673 - INFO - 127.0.0.1 - - [30/Aug/2024 23:59:47] "GET /products/most_searched HTTP/1.1" 200 -
+2024-08-31 00:15:39,469 - INFO - Starting to fetch products with filters.
+2024-08-31 00:15:39,475 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>]
+2024-08-31 00:15:39,475 - INFO - Products fetched successfully.
+2024-08-31 00:16:47,548 - INFO - Fetching product with UUID: f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47
+2024-08-31 00:16:47,683 - DEBUG - Product retrieved: <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>
+2024-08-31 00:17:46,234 - ERROR - Error fetching products: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)
+2024-08-31 00:18:36,746 - INFO - Starting to fetch products with filters.
+2024-08-31 00:18:36,861 - DEBUG - Products retrieved: [<Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d8>, <Product 6d92e7b1-b1de-4676-a2c2-4b4e6a8f88df>, <Product 8e3f6a48-8e7c-4df0-93d3-d8d7ed5f3f4b>, <Product 9f87c6e9-e5d1-43b5-9325-d4e8b7437c5e>, <Product a3f5f9f7-4394-4a3c-8b0d-8f4b0f79ec56>, <Product a79b5db3-742d-45b3-a654-d8a2f6b91b72>, <Product c1b5e18f-923f-42a5-8b92-0d8b2ff4f7b2>, <Product f9e5dcb9-1b9d-47a7-b7ad-487a9f1b4c47>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d9>, <Product 123e4567-e89b-12d3-a456-426614174000>, <Product 123e4567-e89b-12d3-a456-426614174001>, <Product 3c5e37f4-8cb6-453b-94e9-926c7ffb401f>, <Product 4ed37cfe-1e2f-4b8e-84a4-8e5cb4f736d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d1>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d3>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d4>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d5>, <Product 5b07c1f5-7b76-4d55-927f-8e2aeb35f5d7>, <Product 123e4567-e89b-12d3-a456-426614174005>, <Product 123e4567-e89b-12d3-a456-426614174006>, <Product 123e4567-e89b-12d3-a456-426614174007>]
+2024-08-31 00:18:36,862 - INFO - Products fetched successfully.

@@ -3,3 +3,5 @@ Flask-SQLAlchemy
 psycopg2-binary
 
 SQLAlchemy~=2.0.32
+Flask-Migrate
+
