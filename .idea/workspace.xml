@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0268e170-19a6-46a8-b20c-66299b803595" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/apps/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_connections/configurations.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_connections/configurations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email_setup/email_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/email_setup/email_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_models/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_models/tables.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +36,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Run",
-    "Python.email_config.executor": "Run",
-    "Python.tables.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.email_config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tables.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="e_commerce_products" />
