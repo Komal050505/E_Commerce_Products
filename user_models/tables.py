@@ -39,7 +39,7 @@ class Cart(db.Model):
     user_name = db.Column(db.String(50), db.ForeignKey('user_registration.username'))
     product_uuid = db.Column(UUID(as_uuid=True), db.ForeignKey('productss.uuid'))
     quantity = db.Column(db.Integer, default=1)
-
+    purchase_datetime = db.Column(db.DateTime, default=datetime.utcnow)
     # Relationships with unique backref names
     user = db.relationship('User_Registration_Form', backref='cart_items')  # Unique backref name
     product = db.relationship('Product', backref='carts')  # Unique backref name
@@ -55,7 +55,8 @@ class Cart(db.Model):
             "id": self.id,
             "user_name": self.user_name,
             "product_uuid": str(self.product_uuid) if self.product_uuid else None,
-            "quantity": self.quantity
+            "quantity": self.quantity,
+            "purchase_datetime": self.purchase_datetime
         }
 
 
@@ -75,7 +76,7 @@ class Product(db.Model):
         discounts (float): The discount applied to the product.
         specs (dict): Additional details about the product in JSON format.
         created_at (datetime): The date and time when the product was added to the database.
-
+        delivery_time_days (int): Estimated delivery time in days.
     Methods:
         to_dict: Returns a dictionary representation of the product, including all its details.
     """
@@ -89,6 +90,7 @@ class Product(db.Model):
     specs = db.Column(db.JSON)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     search_count = db.Column(db.Integer, default=0)
+    delivery_time_days = db.Column(db.Integer, default=7)  # Default delivery time 7 days / changeable accordingly
 
     # Relationship to Cart
     # cart_entries = db.relationship('Cart', backref='product')
@@ -102,7 +104,7 @@ class Product(db.Model):
         uses.
 
         Returns: dict: A dictionary containing the product's details such as UUID, type, brand, model, price,
-        discounts, specs, and creation date.
+        discounts, specs, creation date, search count, delivery time days.
         """
         return {
             "uuid": self.uuid,
@@ -113,7 +115,8 @@ class Product(db.Model):
             "discounts": self.discounts,
             "specs": self.specs,
             "created_at": self.created_at.isoformat(),
-            "search_count": self.search_count
+            "search_count": self.search_count,
+            "delivery_time_days": self.delivery_time_days
         }
 
 

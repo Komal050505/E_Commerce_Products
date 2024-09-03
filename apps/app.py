@@ -7,13 +7,17 @@ import json
 from flask import Flask, jsonify, request
 from sqlalchemy.exc import SQLAlchemyError
 
+from apps.constants import DISCOUNT_THRESHOLD
 from db_connections.configurations import DATABASE_URL, Config
-from email_setup.email_operations import notify_success, notify_failure
+from email_setup.email_operations import notify_success, notify_failure, send_email
 from user_models.tables import db, Product, ValidProductDetails, User_Registration_Form, Cart
 from logging_package.logging_utility import log_info, log_error, log_debug
-from sqlalchemy import desc, and_
+from sqlalchemy import desc, and_, func
 from datetime import datetime, timedelta
-from users_utility.utilities import validate_string_param
+from users_utility.utilities import validate_string_param, format_product_details, log_and_notify_success, \
+    add_or_update_cart_item, log_and_notify_error, get_user_by_name, handle_database_error, format_response, \
+    prepare_product_details, format_time_12hr, calculate_delivery_days, format_purchase_details, EMAIL_SUBJECT_SUCCESS, \
+    format_product_list, format_filter_query_params, fetch_product_by_uuid
 
 # Create Flask app instance
 app = Flask(__name__)
@@ -29,480 +33,547 @@ This codes is for performing actions with involvement of the actual e-commerce u
 """
 
 
-@app.route('/cart/add', methods=['POST'])
-def add_product_to_cart():
+# CART RELATED APIS
+@app.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
     """
-    Adds a product to the user's cart.
+    API to add a product to a user's cart.
 
-    JSON Body:
-        username (str): The username of the user adding the product.
-        product_uuid (str): The UUID of the product to add.
-        quantity (int): The quantity of the product to add.
+    Request Parameters:
+        - username: str
+        - product_uuid: str
+        - quantity: int
 
     Returns:
-        Response: JSON object with a success message or error details.
+        JSON response with operation status, message, product details, and time of addition if successful.
     """
-    data = request.get_json()
-    username = data.get('username')
-    product_uuid = data.get('product_uuid')
-
-    # Corrected line to avoid TypeError
-    quantity = int(data.get('quantity', 1)) if data.get('quantity') is not None else 1
-
-    log_info(f"Attempting to add product {product_uuid} to cart for user {username} with quantity {quantity}.")
+    # Retrieve parameters from the form data or query string
+    username = request.form.get("username") or request.args.get("username")
+    product_uuid = request.form.get("product_uuid") or request.args.get("product_uuid")
+    quantity = request.form.get("quantity") or request.args.get("quantity")
 
     try:
-        user = db.session.query(User_Registration_Form).filter_by(name=username).first()
-        product = db.session.query(Product).filter_by(uuid=product_uuid).first()
+        # Validate and convert inputs
+        validate_string_param(username, "username")
+        validate_string_param(product_uuid, "product_uuid")
 
+        if quantity is None:
+            raise ValueError("Quantity parameter is required.")
+
+        try:
+            quantity = int(quantity)
+        except ValueError:
+            raise ValueError("Invalid quantity parameter. Expected a positive integer.")
+
+        if quantity <= 0:
+            raise ValueError("Invalid quantity parameter. Expected a positive integer.")
+
+        # Get user and product details
+        user = get_user_by_name(username)
         if not user:
-            log_error(f"User '{username}' not found.")
-            notify_failure("Add to Cart Error", f"User '{username}' not found.")
-            return jsonify({"error": "User not found"}), 404
+            error_message = f"User {username} not found"
+            notify_failure("User Not Found", f"{error_message}\n\nUser: {username}")
+            return jsonify(format_response("error", error_message)), 404
 
+        product = fetch_product_by_uuid(product_uuid)
         if not product:
-            log_error(f"Product with UUID '{product_uuid}' not found.")
-            notify_failure("Add to Cart Error", f"Product with UUID '{product_uuid}' not found.")
-            return jsonify({"error": "Product not found"}), 404
+            error_message = f"Product {product_uuid} not found"
+            notify_failure("Product Not Found", f"{error_message}\n\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message)), 404
 
-        # Checks if the item is already in the cart or not
-        existing_cart_item = db.session.query(Cart).filter_by(user_name=username, product_uuid=product_uuid).first()
+        # Add or update cart item
+        add_or_update_cart_item(username, product_uuid, quantity)
 
-        if existing_cart_item:
-            # If item exists, update the quantity
-            existing_cart_item.quantity += quantity
-            db.session.commit()
-        else:
-            # If item does not exist, it will create a new cart item
-            cart_item = Cart(user_name=username, product_uuid=product_uuid, quantity=quantity)
-            db.session.add(cart_item)
-            db.session.commit()
+        # Get the current time in IST using the utility function
+        timestamp_ist = format_time_12hr()
 
-        # Fetch updated cart items for the user
-        cart_items = db.session.query(Cart).filter_by(user_name=username).all()
-        total_items = sum(item.quantity for item in cart_items)
+        # Log and notify success
+        product_details_str, product_details = prepare_product_details(product)
+        total_items = sum(item.quantity for item in Cart.query.filter_by(user_name=username).all())
+        success_message = f"Product: \n{product_uuid} with quantity ( {quantity} ) added to cart at \n{timestamp_ist}."
+        notify_success("Product Added to Cart",
+                       f"{success_message}\n\nProduct Details:"
+                       f"\n{product_details_str}\nTotal Items in Cart: {total_items}")
 
-        log_info(f"Product '{product_uuid}' added to cart for user '{username}' successfully.")
+        return jsonify(format_response("success", "Product added to cart successfully",
+                                       {"product_details": product_details, "total_items": total_items,
+                                        "time_of_addition": timestamp_ist})), 200
 
-        product_dict = product.to_dict()
-        product_details = (
-            f"Product details: UUID={product_dict['uuid']}, Type={product_dict['type']}, "
-            f"Brand={product_dict['brand']}, Model={product_dict['model']}, Price={product_dict['price']}, "
-            f"Discounts={product_dict['discounts']}, Specs={product_dict['specs']}, "
-            f"Created At={product_dict['created_at']}, "
-            f"Search Count={product_dict['search_count']}"
-        )
-
-        notify_success("Add to Cart Success",
-                       f"Product with uuid:\n'{product_uuid}' \n\nProduct Details : \n\n({product_details}) \n\n"
-                       f"Added to cart successfully. \n\nFor user: \n'{username}'."
-                       f" \n\nTotal items in cart: {total_items}.")
-
-        return jsonify({
-            "message": "Product added to cart successfully",
-            "product_details": product_dict,
-            "total_items_in_cart": total_items
-        }), 201
-
-    except SQLAlchemyError as e:
-        db.session.rollback()
-        log_error(f"Database error while adding product to cart: {e}")
-        notify_failure("Add to Cart Error", f"Database error while adding product to cart: {e}")
-        return jsonify({"error": "Database error occurred"}), 500
-
+    except ValueError as ve:
+        error_message = str(ve)
+        notify_failure("Input Validation Error",
+                       f"{error_message}\n\nUsername: {username}"
+                       f"\nProduct UUID: {product_uuid}\nRequested Quantity: {quantity}")
+        return jsonify(format_response("error", error_message)), 400
     except Exception as e:
-        log_error(f"Error adding product to cart: {e}")
-        notify_failure("Add to Cart Error", f"Failed to add product to cart: {e}")
-        return jsonify({"error": "Could not add product to cart."}), 500
+        error_message = handle_database_error("Add to Cart", e)
+        notify_failure("Unexpected Error", error_message)
+        return jsonify(error_message)
 
 
-@app.route('/cart/remove_quantity', methods=['POST'])
+@app.route('/remove_quantity_from_cart', methods=['DELETE'])
 def remove_quantity_from_cart():
     """
-    Removes a specific quantity of a product from the user's cart using URL parameters.
-    """
-    # Extract parameters from query string
-    username = request.args.get('username')
-    product_uuid = request.args.get('product_uuid')
-    quantity_to_remove = request.args.get('quantity', type=int, default=1)
+    API to remove a specified quantity of a product from the user's cart.
 
-    log_info(
-        f"Attempting to remove quantity {quantity_to_remove} of product {product_uuid} from cart for user {username}.")
+    Request Parameters:
+        - username: str
+        - product_uuid: str
+        - quantity: int
+
+    Returns:
+        JSON response with operation status and message.
+    """
+    # Retrieve parameters from the form data or query string
+    username = request.form.get("username") or request.args.get("username")
+    product_uuid = request.form.get("product_uuid") or request.args.get("product_uuid")
+    quantity = request.form.get("quantity") or request.args.get("quantity")
 
     try:
-        user = db.session.query(User_Registration_Form).filter_by(name=username).first()
+        # Validate and convert inputs
+        validate_string_param(username, "username")
+        validate_string_param(product_uuid, "product_uuid")
+
+        if quantity is None:
+            raise ValueError("Quantity parameter is required.")
+
+        try:
+            quantity = int(quantity)
+        except ValueError:
+            raise ValueError("Invalid quantity parameter. Expected a positive integer.")
+
+        if quantity <= 0:
+            raise ValueError("Invalid quantity parameter. Expected a positive integer.")
+
+        # Get user and product details
+        user = get_user_by_name(username)
         if not user:
-            log_error(f"User '{username}' not found.")
-            notify_failure("Remove Quantity from Cart Error", f"User '{username}' not found.")
-            return jsonify({"error": "User not found"}), 404
+            error_message = f"User {username} not found"
+            notify_failure("User Not Found", f"{error_message}\n\nUser: {username}")
+            return jsonify(format_response("error", error_message)), 404
 
-        cart_item = db.session.query(Cart).filter_by(user_name=username, product_uuid=product_uuid).first()
-        if not cart_item:
-            log_error(f"Product with UUID '{product_uuid}' not found in cart for user '{username}'.")
-            notify_failure("Remove Quantity from Cart Error",
-                           f"Product with UUID '{product_uuid}' not found in cart for user '{username}'.")
-            return jsonify({"error": "Product not found in cart"}), 404
-
-        if quantity_to_remove > cart_item.quantity:
-            log_error(
-                f"Quantity to remove {quantity_to_remove} exceeds current quantity {cart_item.quantity} "
-                f"for product {product_uuid}.")
-            notify_failure("Remove Quantity from Cart Error",
-                           f"Quantity to remove exceeds current quantity for product '{product_uuid}'.")
-            return jsonify({"error": "Quantity to remove exceeds current quantity"}), 400
-
-        # Remove or update the cart item
-        if cart_item.quantity > quantity_to_remove:
-            cart_item.quantity -= quantity_to_remove
-            db.session.commit()
-        else:
-            db.session.delete(cart_item)
-            db.session.commit()
-
-        # Fetch the updated product details
-        product = db.session.query(Product).filter_by(uuid=product_uuid).first()
+        product = fetch_product_by_uuid(product_uuid)
         if not product:
-            log_error(f"Product with UUID '{product_uuid}' not found.")
-            return jsonify({"error": "Product details could not be fetched."}), 404
+            error_message = f"Product {product_uuid} not found"
+            notify_failure("Product Not Found", f"{error_message}\n\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message)), 404
 
-        product_dict = product.to_dict()
-        product_details = (
-            f"Product details: UUID={product_dict['uuid']}, Type={product_dict['type']}, "
-            f"Brand={product_dict['brand']}, Model={product_dict['model']}, Price={product_dict['price']}, "
-            f"Discounts={product_dict['discounts']}, Specs={product_dict['specs']}, "
-            f"Created At={product_dict['created_at']}, "
-            f"Search Count={product_dict['search_count']}"
-        )
+        cart_item = Cart.query.filter_by(user_name=username, product_uuid=product_uuid).first()
+        if not cart_item:
+            error_message = f"Product {product_uuid} not found in {username}'s cart"
+            notify_failure("Product Not Found in Cart",
+                           f"{error_message}\n\nUser: {username}\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message)), 404
 
-        cart_items = db.session.query(Cart).filter_by(user_name=username).all()
-        total_items = sum(item.quantity for item in cart_items)
+        if cart_item.quantity < quantity:
+            error_message = "Quantity to remove exceeds quantity in cart"
+            notify_failure("Excess Quantity Removal Attempt",
+                           f"{error_message}\n\nCart Item Quantity: {cart_item.quantity}"
+                           f"\nRequested Removal Quantity: {quantity}")
+            return jsonify(format_response("error", error_message)), 400
 
-        log_info(
-            f"Quantity {quantity_to_remove} of product '{product_uuid}' removed from cart for "
-            f"user '{username}' successfully.")
+        # Update cart quantity
+        cart_item.quantity -= quantity
+        if cart_item.quantity == 0:
+            db.session.delete(cart_item)
+        db.session.commit()
 
-        notify_success("Remove Quantity from Cart Success",
-                       f"Quantity {quantity_to_remove} of product \n\n '{product_uuid}' and \n\n "
-                       f"Product Details: \n\n{product_details}\n\n"
-                       f"Removed from cart successfully. \n\nFor user \n'{username}'.\n\n"
-                       f"Total items left in cart: {total_items}.")
+        product_details_str, product_details = prepare_product_details(product)
+        success_message = f"Quantity of ( {quantity} ) removed from cart for product {product_uuid}."
+        notify_success("Cart Quantity Updated",
+                       f"{success_message}\n\nProduct Details:\n{product_details_str}"
+                       f"\nRemaining Quantity in Cart: {cart_item.quantity}")
+        return jsonify(format_response("success", success_message, {"product_details": product_details,
+                                                                    "remaining_quantity": cart_item.quantity})), 200
 
-        return jsonify({
-            "message": "Quantity removed from cart successfully",
-            "total_items_in_cart": total_items,
-            "product_details": product_dict
-        }), 200
-
-    except SQLAlchemyError as e:
-        db.session.rollback()
-        log_error(f"Database error while removing quantity from cart: {e}")
-        notify_failure("Remove Quantity from Cart Error",
-                       f"Database error while removing quantity from cart: {e}")
-        return jsonify({"error": "Database error occurred"}), 500
-
+    except ValueError as ve:
+        error_message = str(ve)
+        notify_failure("Input Validation Error",
+                       f"{error_message}\n\nUsername: {username}"
+                       f"\nProduct UUID: {product_uuid}\nRequested Quantity: {quantity}")
+        return jsonify(format_response("error", error_message)), 400
     except Exception as e:
-        log_error(f"Error removing quantity from cart: {e}")
-        notify_failure("Remove Quantity from Cart Error", f"Failed to remove quantity from cart: {e}")
-        return jsonify({"error": "Could not remove quantity from cart."}), 500
+        error_message = handle_database_error("Remove Quantity from Cart", e)
+        notify_failure("Unexpected Error", error_message)
+        return jsonify(error_message)
 
 
 @app.route('/purchase-single-cart-product', methods=['POST'])
 def purchase_single_cart_product():
     """
-    Purchases a single product from the user's cart.
+    API to purchase a single product from the user's cart.
 
     Query Parameters:
-        username (str): The username of the user making the purchase.
-        product_uuid (str): The UUID of the product to purchase.
+        - username: str
+        - product_uuid: str
 
     Returns:
-        Response: JSON object with a success message, product details, and cost.
+        JSON response with operation status, message, cost of item, total cost after discount,
+         time of purchase, and delivery days.
     """
-    username = request.args.get('username')
-    product_uuid = request.args.get('product_uuid')
-
-    log_info(f"Attempting to purchase product {product_uuid} from the cart for user {username}.")
+    # Retrieve parameters from query string
+    username = request.args.get("username")
+    product_uuid = request.args.get("product_uuid")
 
     try:
-        # Fetching the user details from the database
-        user = db.session.query(User_Registration_Form).filter_by(name=username).first()
+        # Validate inputs
+        validate_string_param(username, "username")
+        validate_string_param(product_uuid, "product_uuid")
 
+        # Get user and product details
+        user = get_user_by_name(username)
         if not user:
-            log_error(f"User '{username}' not found.")
-            notify_failure("Purchase Cart Error", f"User '{username}' not found.")
-            return jsonify({"error": "User not found"}), 404
+            error_message = f"User {username} not found."
+            notify_failure("User Not Found", f"{error_message}\n\nUsername: {username}")
+            return jsonify(format_response("error", error_message)), 404
 
-        # Fetching the specific cart item for the user from cart
-        cart_item = db.session.query(Cart).filter_by(user_name=username, product_uuid=product_uuid).first()
-
-        if not cart_item:
-            log_info(f"No item with UUID '{product_uuid}' in the cart for user '{username}'.")
-            notify_failure("Purchase Cart Error",
-                           f"No item with UUID '{product_uuid}' in the cart for user '{username}'.")
-            return jsonify({"error": "Product not found in the cart"}), 404
-
-        # Fetching the product details from product table in database
-        product = db.session.query(Product).filter_by(uuid=product_uuid).first()
+        product = fetch_product_by_uuid(product_uuid)
         if not product:
-            log_error(f"Product with UUID '{product_uuid}' not found in the database.")
-            notify_failure("Purchase Cart Error", f"Product with UUID '{product_uuid}' not found in the database.")
-            return jsonify({"error": f"Product with UUID '{product_uuid}' not found"}), 404
+            error_message = f"Product {product_uuid} not found."
+            notify_failure("Product Not Found", f"{error_message}\n\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message)), 404
 
-        # Calculating the cost here
-        cost = product.price * cart_item.quantity
+        cart_item = Cart.query.filter_by(user_name=username, product_uuid=product_uuid).first()
+        if not cart_item:
+            error_message = f"Product {product_uuid} not found in {username}'s cart."
+            notify_failure("Product Not Found in Cart",
+                           f"{error_message}\n\nUsername: {username}\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message)), 404
 
-        # Removing the cart item after purchase
+        # Get current time and calculate delivery days
+        time_of_purchase = format_time_12hr()
+        item_cost = product.price
+        discount_applied = product.discounts
+        total_cost_after_discount = item_cost * (1 - discount_applied / 100)
+        delivery_days = calculate_delivery_days(product)  # Implement this function based on your logic
+
+        # Simulate purchase
         db.session.delete(cart_item)
         db.session.commit()
 
-        log_info(f"Product '{product_uuid}' purchased successfully for user '{username}'. Cost: {cost}.")
-
-        # Sending success email with detailed information about the purchase
-        notify_success(
-            "Purchase Single Product From Cart Success",
-            f"Single Product '{product_uuid}' from the cart has been purchased successfully.\n\n"
-            f"For user '{username}'.\n\n"
-            f"Product details:\n"
-            f"UUID: {product.uuid}\n"
-            f"Type: {product.type}\n"
-            f"Brand: {product.brand}\n"
-            f"Model: {product.model}\n"
-            f"Price: {product.price}\n"
-            f"Quantity: {cart_item.quantity}\n"
-            f"Total cost: {cost}\n"
+        # Prepare product details
+        product_details_str, product_details = prepare_product_details(product)
+        success_message = "Product purchased successfully."
+        formatted_details = format_purchase_details(
+            success_message, product_details_str, time_of_purchase, item_cost,
+            discount_applied, total_cost_after_discount, delivery_days
         )
+        notify_success("Product Purchased", formatted_details)
 
-        return jsonify({
-            "message": "Single Purchase completed successfully",
-            "product": {
-                "uuid": product.uuid,
-                "type": product.type,
-                "brand": product.brand,
-                "model": product.model,
-                "price": product.price,
-                "quantity": cart_item.quantity,
-                "total_cost": cost
-            }
-        }), 200
-    # This is for Database error
-    except SQLAlchemyError as e:
-        db.session.rollback()
-        log_error(f"Database error while purchasing cart: {e}")
-        notify_failure("Single Product Purchase Cart Error",
-                       f"Database error while purchasing single product from cart: {e}")
-        return jsonify({"error": "Database error occurred"}), 500
-    # This is for Exception error
+        return jsonify(format_response("success", success_message, {
+            "product_details": product_details,
+            "time_of_purchase": time_of_purchase,
+            "item_cost": item_cost,
+            "discount_applied": discount_applied,
+            "total_cost_after_discount": total_cost_after_discount,
+            "delivery_days": delivery_days
+        })), 200
+
+    except ValueError as ve:
+        error_message = str(ve)
+        notify_failure("Input Validation Error",
+                       f"{error_message}\n\nUsername: {username}\nProduct UUID: {product_uuid}")
+        return jsonify(format_response("error", error_message)), 400
     except Exception as e:
-        log_error(f"Error purchasing single product: {e}")
-        notify_failure("Single Product Purchase Cart Error", f"Failed to purchase product: {e}")
-        return jsonify({"error": "Could not complete single product purchase."}), 500
+        error_message = handle_database_error("Purchase Single Cart Product", e)
+        notify_failure("Unexpected Error", error_message)
+        return jsonify(error_message)
 
 
 @app.route('/purchase-all-cart-products', methods=['POST'])
 def purchase_all_cart_products():
     """
-    Purchases all products in the user's cart.
+    API to purchase all products from the user's cart.
 
     Query Parameters:
-        username (str): The username of the user making the purchase.
+        - username: str
 
     Returns:
-        Response: JSON object with a success message, total cost, and the number of products.
+        JSON response with operation status and message.
     """
-    username = request.args.get('username')
-
-    log_info(f"Attempting to purchase all products in the cart for user {username}.")
+    # Retrieve parameters from query string
+    username = request.args.get("username")
 
     try:
-        # Fetch the user details from the database
-        user = db.session.query(User_Registration_Form).filter_by(name=username).first()
+        # Validate input
+        validate_string_param(username, "username")
 
+        # Get user details
+        user = get_user_by_name(username)
         if not user:
-            log_error(f"User '{username}' not found.")
-            notify_failure("Purchase Cart Error", f"User '{username}' not found.")
-            return jsonify({"error": "User not found"}), 404
+            error_message = f"User {username} not found"
+            notify_failure("User Not Found", f"{error_message}\n\nUsername: {username}")
+            return jsonify(format_response("error", error_message)), 404
 
         # Fetch all cart items for the user
-        cart_items = db.session.query(Cart).filter_by(user_name=username).all()
-
+        cart_items = Cart.query.filter_by(user_name=username).all()
         if not cart_items:
-            log_info(f"No items in the cart for user '{username}'.")
-            notify_failure("Purchase Cart Error", f"No items in the cart for user '{username}'.")
-            return jsonify({"error": "No items in the cart"}), 404
+            error_message = f"No products in {username}'s cart to purchase"
+            notify_failure("No Products in Cart", f"{error_message}\n\nUsername: {username}")
+            return jsonify(format_response("error", error_message)), 404
 
-        total_cost = 0.0
-        total_quantity = 0
-        purchased_items = []
+        purchased_products = []
+        total_count = 0
 
         for item in cart_items:
-            product = db.session.query(Product).filter_by(uuid=item.product_uuid).first()
+            product = fetch_product_by_uuid(item.product_uuid)
             if product:
-                cost = product.price * item.quantity
-                total_cost += cost
-                total_quantity += item.quantity
-                purchased_items.append({
-                    "uuid": product.uuid,
-                    "type": product.type,
-                    "brand": product.brand,
-                    "model": product.model,
-                    "price": product.price,
-                    "quantity": item.quantity,
-                    "total_cost": cost
-                })
-            else:
-                log_error(f"Product with UUID '{item.product_uuid}' not found in the database.")
-                notify_failure("Purchase Cart Error", f"Product with UUID '{item.product_uuid}'"
-                                                      f" not found in the database.")
-                return jsonify({"error": f"Product with UUID '{item.product_uuid}' not found"}), 404
+                # Get current time and calculate delivery days
+                time_of_purchase = format_time_12hr()
+                item_cost = product.price
+                discount_applied = product.discounts
+                total_cost_after_discount = item_cost * (1 - discount_applied / 100)
+                delivery_days = calculate_delivery_days(product)
 
-        # Clear cart after purchase
-        db.session.query(Cart).filter_by(user_name=username).delete()
+                product_details_str, product_details = prepare_product_details(product)
+                formatted_details = format_purchase_details(
+                    "\nProduct purchased successfully.", product_details_str, time_of_purchase,
+                    item_cost, discount_applied, total_cost_after_discount, delivery_days
+                )
+                purchased_products.append({
+                    "product_details": product_details,
+                    "time_of_purchase": time_of_purchase,
+                    "item_cost": item_cost,
+                    "discount_applied": discount_applied,
+                    "total_cost_after_discount": total_cost_after_discount,
+                    "delivery_days": delivery_days,
+                    "formatted_details": formatted_details
+                })
+
+                # Increment the count of purchased products
+                total_count += 1
+
+                # Delete the cart item after processing
+                db.session.delete(item)
+            else:
+                error_message = f"Product with UUID {item.product_uuid} not found"
+                notify_failure("Product Not Found", f"{error_message}\n\nUsername: {username}")
+                return jsonify(format_response("error", error_message)), 404
+
+        # Commit all deletions from cart
         db.session.commit()
 
-        log_info(f"All products purchased successfully for user '{username}'. Total cost: {total_cost}."
-                 f" Total quantity: {total_quantity}.")
+        success_message = f"All products purchased successfully. Total products purchased: {total_count}"
+        notify_success("All Products Purchased",
+                       f"{success_message}\n\nPurchased Products:"
+                       f"\n{', '.join([p['formatted_details'] for p in purchased_products])}"
+                       f"\nTotal Count: {total_count}")
 
-        # Send success email with detailed information about the purchase
-        notify_success(
-            "Purchase Cart Success",
-            f"All products in the cart have been purchased successfully \n\nFor user \n'{username}'.\n\n"
-            f"Total cost: {total_cost}\n\n"
-            f"Total number of products: {len(cart_items)}\n\n"
-            f"Total quantity of all items: {total_quantity}\n\n"
-            f"Purchased items: \n{purchased_items}"
-        )
+        return jsonify(format_response("success", success_message,
+                                       {"purchased_products": purchased_products,
+                                        "total_count": total_count})), 200
 
-        return jsonify({
-            "message": "Purchase completed successfully",
-            "total_cost": total_cost,
-            "total_products": len(cart_items),
-            "total_quantity": total_quantity,
-            "purchased_items": purchased_items
-        }), 200
+    except ValueError as ve:
+        error_message = str(ve)
+        notify_failure("Input Validation Error", f"{error_message}\n\nUsername: {username}")
+        return jsonify(format_response("error", error_message)), 400
+    except Exception as e:
+        error_message = handle_database_error("Purchase All Cart Products", e)
+        notify_failure("Unexpected Error", error_message)
+        return jsonify(format_response("error", error_message)), 500
+
+
+@app.route('/cart/delete-single-product', methods=['DELETE'])
+def delete_single_product_from_cart():
+    """
+    Deletes a specific product from the user's cart.
+
+    Query Parameters:
+        - username: str
+        - product_uuid: str
+
+    Returns:
+        JSON response with a success message or error details.
+    """
+    username = request.args.get('username')
+    product_uuid = request.args.get('product_uuid')
+
+    log_info(f"Attempting to delete product '{product_uuid}' from cart for user '{username}'.")
+
+    try:
+        # Validate inputs
+        validate_string_param(username, "username")
+        validate_string_param(product_uuid, "product_uuid")
+
+        # Get user details
+        user = get_user_by_name(username)
+        if not user:
+            error_message = f"User '{username}' not found."
+            log_error(error_message)
+            notify_failure("Delete Product from Cart Error", f"{error_message}\n\nUsername: {username}")
+            return jsonify(format_response("error", error_message, {"username": username})), 404
+
+        # Find the product in the user's cart
+        cart_item = db.session.query(Cart).filter_by(user_name=username, product_uuid=product_uuid).first()
+        if not cart_item:
+            error_message = f"Product with UUID '{product_uuid}' not found in cart for user '{username}'."
+            log_error(error_message)
+            notify_failure("Delete Product from Cart Error",
+                           f"{error_message}\n\nUsername: {username}\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message,
+                                           {"username": username, "product_uuid": product_uuid})), 404
+
+        # Get product details
+        product = fetch_product_by_uuid(product_uuid)
+        if not product:
+            error_message = f"Product with UUID '{product_uuid}' not found."
+            log_error(error_message)
+            notify_failure("Delete Product from Cart Error",
+                           f"{error_message}\n\nUsername: {username}\nProduct UUID: {product_uuid}")
+            return jsonify(format_response("error", error_message,
+                                           {"username": username, "product_uuid": product_uuid})), 404
+
+        # Delete the product from the cart
+        db.session.delete(cart_item)
+        db.session.commit()
+
+        # Format product details
+        product_details_str, product_details = prepare_product_details(product)
+        deletion_time = format_time_12hr()  # Get the current time in 12-hour format
+
+        success_message = f"Product '{product_uuid}' deleted from cart for user '{username}' successfully."
+        log_info(f"{success_message} Time of Deletion: {deletion_time}")
+
+        email_body = (f"Success: {success_message}\n\n"
+                      f"Product Details:\n{product_details_str}\n"
+                      f"Time of Deletion: {deletion_time}\n"
+                      f"Username: {username}\n")
+        notify_success("Delete Product from Cart Success", email_body)
+
+        return jsonify(format_response("success", success_message,
+                                       {"username": username, "product_uuid": product_uuid,
+                                        "product_details": product_details, "time_of_deletion": deletion_time})), 200
 
     except SQLAlchemyError as e:
         db.session.rollback()
-        log_error(f"Database error while purchasing cart: {e}")
-        notify_failure("Purchase Cart Error", f"Database error while purchasing cart: {e}")
-        return jsonify({"error": "Database error occurred"}), 500
+        return handle_database_error("Delete Product from Cart", e)
 
     except Exception as e:
-        log_error(f"Error purchasing cart: {e}")
-        notify_failure("Purchase Cart Error", f"Failed to purchase cart: {e}")
-        return jsonify({"error": "Could not complete purchase."}), 500
+        error_message = f"Error deleting product from cart for user '{username}': {e}"
+        log_error(error_message)
+        notify_failure("Delete Product from Cart Error", f"{error_message}\n\nUsername: {username}")
+        return jsonify(format_response("error",
+                                       "Could not delete product from cart.", {"username": username})), 500
 
 
-@app.route('/most-purchased-product', methods=['GET'])
-def most_purchased_product():
+@app.route('/cart/clear', methods=['DELETE'])
+def clear_user_cart():
     """
-    Retrieves the most purchased product across all users.
-
-    Returns:
-        Response: JSON object with the most purchased product details or error details.
+    Clears all items in a user's cart and sends a notification with product details and time of deletion.
+    The username is expected to be provided as a URL parameter or form data.
     """
-    log_info("Attempting to retrieve the most purchased product across all users.")
+    # Retrieve the username from form data or query string
+    username = request.form.get('username') or request.args.get('username')
+
+    if not username:
+        return log_and_notify_error("Clear Cart", "Username is required.")
+
+    log_info(f"Attempting to clear cart for user {username}.")
 
     try:
-        # Aggregate the total quantity for each product across all users
-        result = (db.session.query(Cart.product_uuid, db.func.sum(Cart.quantity).label('total_quantity')).
-                  group_by(Cart.product_uuid).order_by(db.desc('total_quantity')).first())
+        # Validate user existence
+        user = fetch_product_by_uuid(username)
+        if not user:
+            return log_and_notify_error("Clear Cart", f"User '{username}' not found.")
 
-        if not result:
-            log_error("No products found in any cart.")
-            notify_failure("Most Purchased Product Error", "No products found in any cart.")
-            return jsonify({"error": "No products found in any cart."}), 404
+        # Retrieve cart items
+        cart_items = db.session.query(Cart).filter_by(user_name=username).all()
+        if not cart_items:
+            success_message = f"Cart is already empty for user {username}."
+            log_info(success_message)
+            notify_success(EMAIL_SUBJECT_SUCCESS, success_message)
+            return jsonify({"message": success_message}), 200
 
-        product_uuid = result.product_uuid
-        total_quantity = result.total_quantity
+        # Prepare details of products to be cleared
+        product_details_list = []
+        for item in cart_items:
+            product = fetch_product_by_uuid(item.product_uuid)
+            if product:
+                product_details_str, product_details_dict = prepare_product_details(product)
+                # Add spacing between products
+                product_details_list.append(f"Product Details:\n{product_details_str}\n\n")
 
-        # Fetch product details
-        product = db.session.query(Product).filter_by(uuid=product_uuid).first()
+        # Clear the cart
+        db.session.query(Cart).filter_by(user_name=username).delete()
+        db.session.commit()
+
+        # Time of deletion
+        time_of_deletion = format_time_12hr()
+
+        # Success message
+        success_message = f"Cart cleared successfully for user {username}."
+        log_info(success_message)
+
+        # Format email body with added spacing
+        email_body = (
+                f"{success_message}\n\n"
+                f"Products Cleared:\n" + "".join(product_details_list) + "\n\n"
+                                                                         f"Time of Deletion: {time_of_deletion}"
+        )
+        notify_success(EMAIL_SUBJECT_SUCCESS, email_body)
+
+        return jsonify({"message": success_message, "time_of_deletion": time_of_deletion}), 200
+
+    except SQLAlchemyError as e:
+        return handle_database_error("Clear Cart", e)
+
+    except Exception as e:
+        return log_and_notify_error("Clear Cart", f"Error clearing cart for user {username}: {e}")
+
+
+# Delivery Details api
+@app.route('/products/delivery/<uuid>', methods=['GET'])
+def get_product_delivery_info(uuid):
+    """
+    Retrieves the estimated delivery time for a product based on its UUID.
+
+    Args:
+        uuid (str): The UUID of the product.
+
+    Returns:
+        Response: JSON object with product UUID, estimated delivery time in days, and product details.
+    """
+    log_info(f"Fetching delivery information for product UUID: {uuid}")
+
+    try:
+        # Fetch the product by UUID
+        product = db.session.query(Product).filter_by(uuid=uuid).first()
 
         if not product:
-            log_error(f"Product with UUID '{product_uuid}' not found.")
-            notify_failure(f"Most Purchased Product Error", f"Product with UUID '{product_uuid}' not found.")
-            return jsonify({"error": f"Product with UUID '{product_uuid}' not found."}), 404
+            log_info(f"Product with UUID {uuid} not found.")
+            return jsonify({"message": "Product not found."}), 404
 
-        product_dict = product.to_dict()
-        product_details = (
-            f"Product details: \nUUID={product_dict['uuid']}, Type={product_dict['type']}, "
-            f"Brand={product_dict['brand']}, Model={product_dict['model']}, Price={product_dict['price']}, "
-            f"Discounts={product_dict['discounts']}, Specs={product_dict['specs']}, "
-            f"Created At={product_dict['created_at']}, "
-            f"Search Count={product_dict['search_count']}"
-        )
+        # Prepare product details for email and response
+        product_details_str, product_details_dict = prepare_product_details(product)
 
-        log_info(f"Most purchased product across all users is '{product_uuid}' with total quantity {total_quantity}.")
-        notify_success("Most Purchased Product Success",
-                       f"Most purchased product across all users:\n\n"
-                       f"\n{product_details}\n\n"
-                       f"Total Quantity Purchased: {total_quantity}")
+        # Prepare the delivery information
+        delivery_info = {
+            "uuid": str(product.uuid),
+            "delivery_time_days": product.delivery_time_days,
+            "product_details": product_details_dict  # Include product details in the response
+        }
 
-        return jsonify({
-            "product_details": product_dict,
-            "total_quantity": total_quantity
-        }), 200
-
-    except SQLAlchemyError as e:
-        log_error(f"Database error while retrieving the most purchased product across all users: {e}")
-        notify_failure("Most Purchased Product Error",
-                       f"Database error while retrieving the most purchased product: {e}")
-        return jsonify({"error": "Database error occurred"}), 500
-
-    except Exception as e:
-        log_error(f"Error retrieving the most purchased product across all users: {e}")
-        notify_failure("Most Purchased Product Error",
-                       f"Failed to retrieve the most purchased product: {e}")
-        return jsonify({"error": "Could not retrieve the most purchased product."}), 500
-
-
-@app.route('/clear-cart', methods=['POST'])
-def clear_users_cart():
-    """
-    Clears the cart for a specified user.
-
-    JSON Body:
-        username (str): The username of the user whose cart is to be cleared.
-
-    Returns:
-        Response: JSON object with a success message or error details.
-    """
-    data = request.get_json()
-    username = data.get('username')
-
-    log_info(f"Attempting to clear cart for user '{username}'.")
-
-    try:
-        # Validate the user
-        user = db.session.query(User_Registration_Form).filter_by(name=username).first()
-
-        if not user:
-            log_error(f"User '{username}' not found.")
-            notify_failure("Clear Cart Error", f"User '{username}' not found.")
-            return jsonify({"error": "User not found"}), 404
-
-        # Clear the cart for the user
-        db.session.query(Cart).filter_by(user_name=username).delete()
-        db.session.commit()
-
-        log_info(f"Cart cleared for user '{username}' successfully.")
+        log_info(f"Delivery information for product UUID {uuid} fetched successfully.")
         notify_success(
-            "Clear Cart Success",
-            f"Cart cleared successfully for user '{username}'."
+            "Fetch Product Delivery Info Success",
+            f"Successfully fetched delivery information for product UUID: {uuid}\n\n"
+            f"Delivery Time (Days): {product.delivery_time_days}\n\n"
+            f"Product Details:\n{product_details_str}"
         )
 
-        return jsonify({"message": f"Cart cleared for user '{username}'."}), 200
-
-    except SQLAlchemyError as e:
-        db.session.rollback()
-        log_error(f"Database error while clearing cart for user '{username}': {e}")
-        notify_failure("Clear Cart Error", f"Database error while clearing cart for user '{username}': {e}")
-        return jsonify({"error": "Database error occurred"}), 500
+        return jsonify(delivery_info), 200
 
     except Exception as e:
-        log_error(f"Error clearing cart for user '{username}': {e}")
-        notify_failure("Clear Cart Error", f"Failed to clear cart for user '{username}': {e}")
-        return jsonify({"error": "Could not clear cart."}), 500
+        log_error(f"Error fetching delivery information for product UUID {uuid}: {e}")
+
+        # Include product details if available in failure notification
+        notify_failure(
+            "Fetch Product Delivery Info Error",
+            f"Failed to fetch delivery information for product UUID {uuid}: {e}\n\n"
+            f"Product Details:\n{product_details_str if 'product_details_str' in locals() else 'N/A'}"
+        )
+
+        return jsonify({"error": "Could not fetch delivery information."}), 500
 
 
 # --------------------------------------------- User_Registration Project (ending) -------------------------------------
@@ -514,40 +585,6 @@ def clear_users_cart():
 """
 This codes is for performing actions without involvement of the actual e-commerce users... [ONLY FOR DEVELOPERS]
 """
-
-
-@app.route('/products/most_searched', methods=['GET'])
-def get_most_searched_products():
-    """
-    Retrieves products sorted by their search count in descending order.
-
-    This route fetches the products with the highest search counts first.
-
-    Returns:
-        Response: JSON array of products sorted by search count.
-    """
-    log_info("Fetching most searched products.")
-
-    try:
-        # Query to fetch products sorted by search_count in descending order
-        most_searched_products = db.session.query(Product).order_by(Product.search_count.desc()).all()
-
-        if not most_searched_products:
-            log_info("No products found.")
-            return jsonify({"message": "No products found."}), 404
-
-        products_list = [product.to_dict() for product in most_searched_products]
-
-        log_info("Most searched products fetched successfully.")
-        notify_success("Fetch Most Searched Products Success",
-                       f"Successfully fetched most searched products:\n\n"
-                       f"{''.join([str(product) for product in products_list])}")
-        return jsonify(products_list)
-
-    except Exception as e:
-        log_error(f"Error fetching most searched products: {e}")
-        notify_failure("Fetch Most Searched Products Error", f"Failed to fetch most searched products: {e}")
-        return jsonify({"error": "Could not fetch most searched products."}), 500
 
 
 @app.route('/products/count', methods=['GET'])
@@ -672,10 +709,10 @@ def clearance_sale():
     Applies a discount to old stock based on the provided cutoff date and discount percentage, valid for 12 days
     from the provided start date.
 
-    Query Parameters:
-        start_date (str): The start date of the clearance sale in YYYY-MM-DD format.
-        cutoff_date (str): The cutoff date in YYYY-MM-DD format. Products created before this date will have discounts applied.
-        discount_percentage (float): The discount percentage to apply to the old products.
+    Query Parameters: start_date (str): The start date of the clearance sale in YYYY-MM-DD format. cutoff_date (str):
+    The cutoff date in YYYY-MM-DD format. Products created before this date will have discounts applied.
+
+    discount_percentage (float): The discount percentage to apply to the old products.
 
     Returns:
         JSON: A JSON object with the number of products updated and a success message.
@@ -700,7 +737,8 @@ def clearance_sale():
             start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
             cutoff_date = datetime.strptime(cutoff_date_str, '%Y-%m-%d')
         except ValueError:
-            error_message = f"Invalid date format: start_date: {start_date_str}, cutoff_date: {cutoff_date_str}. Expected YYYY-MM-DD."
+            error_message = (f"Invalid date format: start_date: {start_date_str}, cutoff_date: {cutoff_date_str}."
+                             f" Expected YYYY-MM-DD.")
             log_error(error_message)
             notify_failure("Clearance Sale Error", error_message)
             return jsonify({"error": error_message}), 400
@@ -717,7 +755,8 @@ def clearance_sale():
             if discount_percentage < 0 or discount_percentage > 100:
                 raise ValueError("Discount percentage must be between 0 and 100.")
         except ValueError:
-            error_message = f"Invalid discount percentage: {discount_percentage_str}. Must be a number between 0 and 100."
+            error_message = (f"Invalid discount percentage: {discount_percentage_str}. Must be a number between 0 and "
+                             f"100.")
             log_error(error_message)
             notify_failure("Clearance Sale Error", error_message)
             return jsonify({"error": error_message}), 400
@@ -1004,43 +1043,71 @@ def search_products():
             Product.model.ilike(f'%{query}%')
         ).all()
 
-        log_debug(f"Search results: {search_results}")
+        # Check and log the type of search_results
+        if isinstance(search_results, list):
+            log_debug("Search results are of type 'list'.")
+        else:
+            log_error(f"Search results are not a list: {search_results}")
+
+        # Calculate the total count of search results
+        total_count = len(search_results)
+        log_debug(f"Total number of products found: {total_count}")
 
         if not search_results:
             log_info("No products match the search query.")
-            notify_success("Product Search Success",
-                           "No products found matching the search criteria.")
-            return jsonify({"message": "No products found matching your search criteria."}), 200
+            notify_success(
+                "Product Search Success",
+                f"No products found matching the search criteria.\n\n"
+                f"Search Query: {query}\n"
+                f"Total Products Count: 0"
+            )
+            return jsonify({
+                "query": query,
+                "total_count": total_count,
+                "products": []
+            }), 200
 
         # Update search count for each matching product
         for product in search_results:
-            product.search_count += 1
+            if hasattr(product, 'search_count'):
+                product.search_count += 1
+            else:
+                log_error("Product object does not have 'search_count' attribute.")
         db.session.commit()
 
-        # Successfully found matching products
+        # Format the product list using the utility function
+        products_list_str = format_product_list(search_results)
+
         log_info("Products found matching the search criteria.")
-        product_details = "\n".join([f"Product UUID: {product.uuid}\n"
-                                     f"Type: {product.type}\n"
-                                     f"Brand: {product.brand}\n"
-                                     f"Model: {product.model}\n"
-                                     f"Price: {product.price}\n"
-                                     f"Discounts: {product.discounts}\n"
-                                     f"Specs: {product.specs}\n"
-                                     f"Created At: {product.created_at}\n"
-                                     f"Search Count: {product.search_count}\n"
-                                     for product in search_results])
-        email_body = (f"Successfully found {len(search_results)} products matching the search criteria:\n\n"
-                      f"{product_details}")
+        email_body = (
+            f"Successfully found {total_count} products matching the search criteria:\n\n"
+            f"Search Query: {query}\n"
+            f"Total Products Count: {total_count}\n\n"
+            f"{products_list_str}"
+        )
 
         # Notify success with the formatted product details in the email body
         notify_success("Product Search Success", email_body)
-        return jsonify([product.to_dict() for product in search_results]), 200
+        return jsonify({
+            "query": query,
+            "total_count": total_count,
+            "products": [product.to_dict() for product in search_results]
+        }), 200
 
     except Exception as e:
         # Log the error and send a failure notification email
         log_error(f"Error during product search: {e}")
-        notify_failure("Product Search Error", f"Error during product search: {e}")
-        return jsonify({"error": "Search failed"}), 500
+        notify_failure(
+            "Product Search Error",
+            f"Error during product search.\n\n"
+            f"Search Query: {query}\n"
+            f"Error Details: {e}"
+        )
+        return jsonify({
+            "error": "Search failed",
+            "query": query,
+            "total_count": 0
+        }), 500
 
 
 @app.route('/products/latest', methods=['GET'])
@@ -1051,12 +1118,15 @@ def get_latest_products():
     This route fetches products ordered by the most recent creation time.
 
     Returns:
-        Response: JSON array of the latest products.
+        Response: JSON object with total count and array of latest products.
     """
     log_info("Fetching latest products.")
     try:
         latest_products = db.session.query(Product).order_by(desc(Product.created_at)).all()
         log_debug(f"Latest products retrieved: {latest_products}")
+
+        # Calculate the total count of products
+        total_count = len(latest_products)
 
         if not latest_products:
             log_info("No latest products found.")
@@ -1065,29 +1135,21 @@ def get_latest_products():
                 "Fetch Latest Products Success",
                 "Successfully fetched latest products, but no products were found."
             )
-            return jsonify([])  # Return an empty list if no products are found
+            # Return a response with total count and empty product list
+            return jsonify({"total_count": total_count, "products": []})
 
-        # Prepare the detailed product list for the email
-        products_list = "\n".join(
-            [f"Product UUID: {product.uuid}\n"
-             f"Type: {product.type}\n"
-             f"Brand: {product.brand}\n"
-             f"Model: {product.model}\n"
-             f"Price: {product.price}\n"
-             f"Discounts: {product.discounts}\n"
-             f"Specs: {product.specs}\n"
-             f"Created At: {product.created_at}\n"
-             f"Search Count: {product.search_count}\n"
-             for product in latest_products]
-        )
+        # Prepare the detailed product list for the email using the utility function
+        products_list_str = format_product_list(latest_products)
 
         log_info("Latest products fetched successfully.")
-        # Notify success with detailed product information
+        # Notify success with detailed product information and total count
         notify_success(
             "Fetch Latest Products Success",
-            f"Successfully fetched the latest products:\n\n{products_list}"
+            f"Successfully fetched the latest products.\n\nTotal Products Count: {total_count}\n\n{products_list_str}"
         )
-        return jsonify([product.to_dict() for product in latest_products])
+
+        # Return a response with total count and product details
+        return jsonify({"total_count": total_count, "products": [product.to_dict() for product in latest_products]})
     except Exception as e:
         log_error(f"Error fetching latest products: {e}")
         notify_failure(
@@ -1102,21 +1164,24 @@ def get_latest_discounted_products():
     """
     Retrieves the latest discounted products based on their creation timestamp.
 
-    This route fetches products with discounts, ordered by the most recent creation time.
+    This route fetches products with discounts greater than the defined threshold,
+    ordered by the most recent creation time.
 
     Returns:
-        Response: JSON array of the latest discounted products.
+        Response: JSON object with total count and array of latest discounted products.
     """
     log_info("Fetching latest discounted products.")
     try:
         # Query for latest discounted products
         latest_discounted_products = (
             db.session.query(Product)
-            .filter(Product.discounts > 11)
+            .filter(Product.discounts > DISCOUNT_THRESHOLD)
             .order_by(desc(Product.created_at))
             .all()
         )
 
+        # Calculate the total count of discounted products
+        total_count = len(latest_discounted_products)
         log_debug(f"Latest discounted products retrieved: {latest_discounted_products}")
 
         if not latest_discounted_products:
@@ -1124,38 +1189,48 @@ def get_latest_discounted_products():
             # Notify success with no products found
             notify_success(
                 "Fetch Latest Discounted Products Success",
-                "Successfully fetched latest discounted products, but no products were found."
+                f"Successfully fetched latest discounted products, but no products were found.\n\n"
+                f"Discount Condition: Discounts greater than {DISCOUNT_THRESHOLD}%\n"
+                "Total Products Count: 0"
             )
-            return jsonify([])  # Return an empty list if no products are found
+            # Return a response with total count and empty product list
+            return jsonify({
+                "discount_condition": f"Discounts greater than {DISCOUNT_THRESHOLD}%",
+                "total_count": total_count,
+                "products": []
+            })
 
-        # Prepare the detailed product list for the email
-        products_list = "\n".join(
-            [f"Product UUID: {product.uuid}\n"
-             f"Type: {product.type}\n"
-             f"Brand: {product.brand}\n"
-             f"Model: {product.model}\n"
-             f"Price: {product.price}\n"
-             f"Discounts: {product.discounts}\n"
-             f"Specs: {product.specs}\n"
-             f"Created At: {product.created_at}\n"
-             f"Search Count: {product.search_count}\n"
-             for product in latest_discounted_products]
-        )
+        # Prepare the detailed product list using the utility function
+        products_list_str = format_product_list(latest_discounted_products)
 
         log_info("Latest discounted products fetched successfully.")
-        # Notify success with detailed product information
+        # Notify success with detailed product information and total count
         notify_success(
             "Fetch Latest Discounted Products Success",
-            f"Successfully fetched the latest discounted products:\n\n{products_list}"
+            f"Successfully fetched the latest discounted products.\n\n"
+            f"Discount Condition: Discounts greater than {DISCOUNT_THRESHOLD}%\n"
+            f"Total Products Count: {total_count}\n\n{products_list_str}"
         )
-        return jsonify([product.to_dict() for product in latest_discounted_products])
+
+        # Return a response with discount condition, total count, and product details
+        return jsonify({
+            "discount_condition": f"Discounts greater than {DISCOUNT_THRESHOLD}%",
+            "total_count": total_count,
+            "products": [product.to_dict() for product in latest_discounted_products]
+        })
     except Exception as e:
         log_error(f"Error fetching latest discounted products: {e}")
         notify_failure(
             "Fetch Latest Discounted Products Error",
-            f"Failed to fetch the latest discounted products due to an error.\n\nError Details: {e}"
+            f"Failed to fetch the latest discounted products due to an error.\n\n"
+            f"Discount Condition: Discounts greater than {DISCOUNT_THRESHOLD}%\n"
+            f"Error Details: {e}"
         )
-        return jsonify({"error": "Could not fetch latest discounted products"}), 500
+        return jsonify({
+            "error": "Could not fetch latest discounted products",
+            "discount_condition": f"Discounts greater than {DISCOUNT_THRESHOLD}%",
+            "total_count": 0
+        }), 500
 
 
 @app.route('/products/discounted', methods=['GET'])
@@ -1170,29 +1245,26 @@ def get_products_by_discount():
     """
     log_info("Fetching products sorted by discount.")
     try:
+        # Query for products sorted by discount
         discounted_products = db.session.query(Product).order_by(desc(Product.discounts)).all()
+
+        total_count = len(discounted_products)
         log_debug(f"Products sorted by discount retrieved: {discounted_products}")
 
         if discounted_products:
             log_info("Products sorted by discount fetched successfully.")
             # Generate a formatted message to include product details
-            product_details = "\n".join([f"Product UUID: {product.uuid}\n"
-                                         f"Type: {product.type}\n"
-                                         f"Brand: {product.brand}\n"
-                                         f"Model: {product.model}\n"
-                                         f"Price: {product.price}\n"
-                                         f"Discounts: {product.discounts}\n"
-                                         f"Specs: {product.specs}\n"
-                                         f"Created At: {product.created_at}\n"
-                                         f"Search Count: {product.search_count}\n"
-                                         for product in discounted_products])
-            email_body = (f"Successfully fetched the following products "
-                          f"sorted by discount:\n\n{product_details}")
+            product_details_str = format_product_list(discounted_products)
+            email_body = (f"Successfully fetched {total_count} products "
+                          f"sorted by discount:\n\n{product_details_str}")
 
             # Notify success with the formatted product details in the email body
             notify_success("Fetch Products by Discount Success", email_body)
 
-            return jsonify([product.to_dict() for product in discounted_products])
+            return jsonify({
+                "total_count": total_count,
+                "products": [product.to_dict() for product in discounted_products]
+            })
         else:
             log_info("No products with discounts found.")
             # Notify that no discounted products were found
@@ -1200,11 +1272,17 @@ def get_products_by_discount():
                 "Fetch Products by Discount - No Products Found",
                 "No products with discounts found."
             )
-            return jsonify({"error": "No discounted products found"}), 404
+            return jsonify({
+                "total_count": 0,
+                "message": "No discounted products found"
+            }), 404
     except Exception as e:
         log_error(f"Error fetching products sorted by discount: {e}")
         notify_failure("Fetch Products by Discount Error", f"Failed to fetch products sorted by discount: {e}")
-        return jsonify({"error": "Could not fetch products sorted by discount"}), 500
+        return jsonify({
+            "error": "Could not fetch products sorted by discount",
+            "details": str(e)
+        }), 500
 
 
 @app.route('/products/price-range', methods=['GET'])
@@ -1234,43 +1312,55 @@ def filter_by_price_range():
         products = db.session.query(Product).filter(Product.price.between(min_price, max_price)).all()
         log_debug(f"Products in price range ({min_price}, {max_price}): {products}")
 
+        # Calculate the total count of filtered products
+        total_count = len(products)
+
         if not products:
             log_info("No products found in the specified price range.")
             # Notify success with no products found
             notify_success(
                 "Filter Products by Price Range Success",
-                "Successfully filtered products by price range, but no products were found."
+                f"Successfully filtered products by price range ({min_price} - {max_price}), "
+                f"but no products were found."
             )
-            return jsonify([])  # Return an empty list if no products are found
+            return jsonify({
+                "min_price": min_price,
+                "max_price": max_price,
+                "total_count": 0,
+                "products": []
+            }), 200
 
         # Prepare the detailed product list for the email
-        products_list = "\n".join(
-            [f"Product UUID: {product.uuid}\n"
-             f"Type: {product.type}\n"
-             f"Brand: {product.brand}\n"
-             f"Model: {product.model}\n"
-             f"Price: {product.price}\n"
-             f"Discounts: {product.discounts}\n"
-             f"Specs: {product.specs}\n"
-             f"Created At: {product.created_at}\n"
-             f"Search Count: {product.search_count}\n"
-             for product in products]
-        )
+        products_list_str = format_product_list(products)
 
         log_info("Products filtered by price range successfully.")
         # Notify success with detailed product information
         notify_success(
             "Filter Products by Price Range Success",
-            f"Successfully filtered products by price range:\n\n{products_list}"
+            f"Successfully filtered products by price range ({min_price} - {max_price}):\n\n"
+            f"Total Products Count: {total_count}\n\n"
+            f"{products_list_str}"
         )
-        return jsonify([product.to_dict() for product in products])
+        return jsonify({
+            "min_price": min_price,
+            "max_price": max_price,
+            "total_count": total_count,
+            "products": [product.to_dict() for product in products]
+        }), 200
+
     except Exception as e:
         log_error(f"Error filtering products by price range: {e}")
         notify_failure(
             "Filter Products by Price Range Error",
-            f"Failed to filter products by price range due to an error.\n\nError Details: {e}"
+            f"Failed to filter products by price range due to an error.\n\n"
+            f"Price Range: ({min_price} - {max_price})\n"
+            f"Error Details: {e}"
         )
-        return jsonify({"error": "Failed to filter products by price range"}), 500
+        return jsonify({
+            "error": "Failed to filter products by price range",
+            "min_price": min_price,
+            "max_price": max_price
+        }), 500
 
 
 @app.route('/products/specs', methods=['POST'])
@@ -1386,28 +1476,23 @@ def get_recent_within_last_24hrs_products():
         # Query products created after this timestamp
         recent_products = db.session.query(Product).filter(Product.created_at >= time_24_hours_ago).all()
 
+        total_count = len(recent_products)
         log_debug(f"Recent products retrieved: {recent_products}")
 
         if recent_products:
             log_info("Products created in the last 24 hours fetched successfully.")
             # Generate a formatted message to include product details
-            product_details = "\n".join([f"Product UUID: {product.uuid}\n"
-                                         f"Type: {product.type}\n"
-                                         f"Brand: {product.brand}\n"
-                                         f"Model: {product.model}\n"
-                                         f"Price: {product.price}\n"
-                                         f"Discounts: {product.discounts}\n"
-                                         f"Specs: {product.specs}\n"
-                                         f"Created At: {product.created_at}\n"
-                                         f"Search Count: {product.search_count}\n"
-                                         for product in recent_products])
-            email_body = (f"Successfully fetched the following products "
-                          f"created in the last 24 hours:\n\n{product_details}")
+            product_details_str = format_product_list(recent_products)
+            email_body = (f"Successfully fetched {total_count} products "
+                          f"created in the last 24 hours:\n\n{product_details_str}")
 
             # Notify success with the formatted product details in the email body
             notify_success("Fetch Recent Products Success", email_body)
 
-            return jsonify([product.to_dict() for product in recent_products])
+            return jsonify({
+                "total_count": total_count,
+                "products": [product.to_dict() for product in recent_products]
+            })
         else:
             log_info("No products found created in the last 24 hours.")
             # Notify that no recent products were found
@@ -1415,11 +1500,194 @@ def get_recent_within_last_24hrs_products():
                 "Fetch Recent Products - No Products Found",
                 "No products were created in the last 24 hours."
             )
-            return jsonify({"message": "No products found created in the last 24 hours"}), 200
+            return jsonify({
+                "total_count": 0,
+                "message": "No products found created in the last 24 hours"
+            }), 200
     except Exception as e:
         log_error(f"Error fetching recent products: {e}")
         notify_failure("Fetch Recent Products Error", f"Failed to fetch recent products: {e}")
-        return jsonify({"error": "Could not fetch products created in the last 24 hours"}), 500
+        return jsonify({
+            "error": "Could not fetch products created in the last 24 hours",
+            "details": str(e)
+        }), 500
+
+
+@app.route('/products', methods=['GET'])
+def get_products():
+    """
+    Retrieves filtered products from the database based on query parameters.
+
+    This route fetches products based on the provided query parameters like brand, type, and model.
+
+    Returns:
+        Response: JSON array of filtered products or an error message if invalid input is provided.
+    """
+    log_info("Starting to fetch products with filters.")
+
+    try:
+        # Retrieve query parameters
+        brand = request.args.get('brand', default=None, type=str)
+        types = request.args.get('type', default=None, type=str)
+        model = request.args.get('model', default=None, type=str)
+
+        # Validate input parameters
+        validate_string_param(brand, 'brand')
+        validate_string_param(types, 'type')
+        validate_string_param(model, 'model')
+
+        # Start building the query
+        query = db.session.query(Product)
+
+        # Apply filters based on query parameters
+        if brand:
+            query = query.filter(Product.brand.ilike(f"%{brand}%"))
+            log_debug(f"Filtering by brand: {brand}")
+
+        if types:
+            query = query.filter(Product.type.ilike(f"%{types}%"))
+            log_debug(f"Filtering by type: {types}")
+
+        if model:
+            query = query.filter(Product.model.ilike(f"%{model}%"))
+            log_debug(f"Filtering by model: {model}")
+
+        # Execute the query
+        products = query.all()
+        total_count = len(products)
+        log_debug(f"Products retrieved: {total_count}")
+
+        if not products:
+            filters_str = format_filter_query_params(brand, types, model)
+            log_info("No products found with the provided filters.")
+            notify_failure(
+                "Fetch Products Info",
+                f"No products were found with the provided filters.\n\n{filters_str}\n\n"
+                "If you believe this is an error, please check your filters or contact support.\n\n"
+                "Best regards,\n"
+                "Komal"
+            )
+            return jsonify({"message": "No products found with the provided filters."}), 404
+
+        log_info("Products fetched successfully.")
+        products_list_str = format_product_list(products)
+
+        notify_success(
+            "Fetch Products Success",
+            f"Successfully fetched filtered products:\n\n'Total Count': {total_count}\n\n"
+            f"Product Details are: {products_list_str}"
+
+        )
+        return jsonify({
+            "total_count": total_count,
+            "products": [product.to_dict() for product in products]
+        })
+
+    except ValueError as ve:
+        return log_and_notify_error("Fetch Products", str(ve))
+
+    except SQLAlchemyError as e:
+        return handle_database_error("Fetch Products", e)
+
+    except Exception as e:
+        return log_and_notify_error("Fetch Products", str(e))
+
+
+@app.route('/products/uuids', methods=['GET'])
+def get_all_product_uuids():
+    """
+    Retrieves all product UUIDs and checks for duplicates.
+
+    Returns:
+        Response: JSON object with the count of UUIDs, list of UUIDs, and any duplicated UUIDs.
+    """
+    log_info("Fetching all product UUIDs.")
+
+    try:
+        # Fetch all products
+        products = db.session.query(Product).all()
+
+        # Extract UUIDs and convert them to strings
+        product_uuids = [str(product.uuid) for product in products]
+
+        if not product_uuids:
+            log_info("No products found.")
+            return jsonify({"message": "No products found."}), 404
+
+        # Count UUIDs and find duplicates
+        uuid_count = len(product_uuids)
+        uuid_counts = {}
+        for uuid in product_uuids:
+            if uuid in uuid_counts:
+                uuid_counts[uuid] += 1
+            else:
+                uuid_counts[uuid] = 1
+
+        duplicates = {uuid: count for uuid, count in uuid_counts.items() if count > 1}
+
+        # Prepare the UUIDs and duplicates for email notification
+        uuids_str = ', '.join(product_uuids)
+        duplicates_str = '\n'.join([f"UUID: {uuid}, Count: {count}" for uuid, count in duplicates.items()])
+
+        log_info(f"Fetched product UUIDs: {uuids_str}")
+        log_info(f"Duplicate UUIDs found: {duplicates_str}")
+
+        notify_success(
+            "Fetch Product UUIDs Success",
+            f"Successfully fetched product UUIDs:\n\n{uuids_str}\n\n"
+            f"Total UUIDs Count: {uuid_count}\n\n"
+            f"Duplicate UUIDs:\n{duplicates_str if duplicates else 'No duplicates found.'}"
+        )
+
+        return jsonify({
+            "total_uuids_count": uuid_count,
+            "uuids": product_uuids,
+            "duplicate_uuids": duplicates
+        })
+
+    except Exception as e:
+        log_error(f"Error fetching product UUIDs: {e}")
+        notify_failure("Fetch Product UUIDs Error", f"Failed to fetch product UUIDs: {e}")
+        return jsonify({"error": "Could not fetch product UUIDs."}), 500
+
+
+@app.route('/products/<product_uuid>', methods=['GET'])
+def get_product_by_uuid(product_uuid):
+    """
+    Retrieves a product by its UUID from the database.
+
+    :param product_uuid: UUID of the product
+    :return: JSON object of the product if found, otherwise a 404 error
+    """
+    log_info(f"Request to get product with UUID: {product_uuid}")
+
+    try:
+        # Retrieve the product from the database
+        product = fetch_product_by_uuid(product_uuid)
+
+        if not product:
+            log_error(f"Product with UUID {product_uuid} not found.")
+            notify_failure(
+                "Product Retrieval Failure",
+                f"Product with UUID {product_uuid} was not found in the database.\n\n"
+                "Please check the UUID and try again."
+            )
+            return jsonify({"message": "Product not found"}), 404
+
+        log_info(f"Product with UUID {product_uuid} retrieved successfully.")
+        # Prepare product details for the response
+        product_details_str, product_details = prepare_product_details(product)
+
+        notify_success(
+            "Product Retrieval Success",
+            f"Successfully retrieved product with UUID {product_uuid}.\n\n"
+            f"Product Details:\n{product_details_str}"
+        )
+
+        return jsonify(product_details)
+
+    except SQLAlchemyError as e:
+        return handle_database_error("Product Retrieval", e)
 
 
 @app.route('/create-tables', methods=['POST'])
@@ -1445,209 +1713,6 @@ def create_tables():
         return jsonify({"error": "Failed to create tables"}), 500
 
 
-@app.route('/products', methods=['GET'])
-def get_products():
-    """
-    Retrieves filtered products from the database based on query parameters.
-
-    This route fetches products based on the provided query parameters like brand, type, and model.
-
-    Returns:
-        Response: JSON array of filtered products or an error message if invalid input is provided.
-    """
-    log_info("Starting to fetch products with filters.")
-
-    try:
-        # Retrieve query parameters
-        brand = request.args.get('brand', default=None, type=str)
-        types = request.args.get('type', default=None, type=str)
-        model = request.args.get('model', default=None, type=str)
-
-        # Validate input parameters
-        if brand is not None and not brand.strip():
-            log_info("Invalid input: brand parameter is empty.")
-            notify_failure(
-                "Fetch Products Error",
-                "Failed to fetch products due to invalid brand parameter.\n\n"
-                "The brand parameter is either empty or invalid. Please provide a valid brand parameter and try "
-                "again.\n\n"
-                "If you need further assistance, contact support.\n\n"
-                "Best regards,\n"
-                "Komal"
-            )
-            return jsonify({"error": "Invalid brand parameter."}), 400
-
-        if types is not None and not types.strip():
-            log_info("Invalid input: type parameter is empty.")
-            notify_failure(
-                "Fetch Products Error",
-                "Failed to fetch products due to invalid type parameter.\n\n"
-                "The type parameter is either empty or invalid. Please provide a valid type parameter and try "
-                "again.\n\n"
-                "If you need further assistance, contact support.\n\n"
-                "Best regards,\n"
-                "Komal"
-            )
-            return jsonify({"error": "Invalid type parameter."}), 400
-
-        if model is not None and not model.strip():
-            log_info("Invalid input: model parameter is empty.")
-            notify_failure(
-                "Fetch Products Error",
-                "Failed to fetch products due to invalid model parameter.\n\n"
-                "The model parameter is either empty or invalid. Please provide a valid model parameter and try "
-                "again.\n\n"
-                "If you need further assistance, contact support.\n\n"
-                "Best regards,\n"
-                "Komal"
-            )
-            return jsonify({"error": "Invalid model parameter."}), 400
-
-        # Start building the query
-        query = db.session.query(Product)
-
-        # Apply filters based on query parameters
-        if brand:
-            query = query.filter(Product.brand.ilike(f"%{brand}%"))
-            log_debug(f"Filtering by brand: {brand}")
-
-        if types:
-            query = query.filter(Product.type.ilike(f"%{types}%"))
-            log_debug(f"Filtering by type: {types}")
-
-        if model:
-            query = query.filter(Product.model.ilike(f"%{model}%"))
-            log_debug(f"Filtering by model: {model}")
-
-        # Execute the query
-        products = query.all()
-        log_debug(f"Products retrieved: {products}")
-
-        if not products:
-            log_info("No products found with the provided filters.")
-            notify_failure(
-                "Fetch Products Info",
-                "No products were found with the provided filters.\n\n"
-                f"Filters used:\n"
-                f"Brand: {brand}\n"
-                f"Type: {types}\n"
-                f"Model: {model}\n\n"
-                "If you believe this is an error, please check your filters or contact support.\n\n"
-                "Best regards,\n"
-                "Komal"
-            )
-            return jsonify({"message": "No products found with the provided filters."}), 404
-
-        log_info("Products fetched successfully.")
-
-        products_list = "\n".join(
-            [f"Product UUID: {product.uuid}\n"
-             f"Type: {product.type}\n"
-             f"Brand: {product.brand}\n"
-             f"Model: {product.model}\n"
-             f"Price: {product.price}\n"
-             f"Discounts: {product.discounts}\n"
-             f"Specs: {product.specs}\n"
-             f"Created At: {product.created_at}\n"
-             f"Search Count: {product.search_count}\n\n"
-             for product in products]
-        )
-
-        plain_text_content = (
-            "Successfully fetched filtered products:\n\n"
-            f"{products_list}"
-        )
-
-        notify_success(
-            "Fetch Products Success",
-            plain_text_content
-        )
-        return jsonify([product.to_dict() for product in products])
-
-    except SQLAlchemyError as e:
-        log_error(f"Database error occurred while fetching products: {e}")
-        notify_failure(
-            "Fetch Products Error",
-            f"Failed to fetch products due to a database error:\n\nError Details: {e}\n\n"
-            "Please check the database and try again. If the issue persists, contact support.\n\n"
-            "Best regards,\n"
-            "Komal"
-        )
-        return jsonify({"error": "Could not fetch products due to a database error."}), 500
-
-    except Exception as e:
-        log_error(f"Error fetching products: {e}")
-        notify_failure(
-            "Fetch Products Error",
-            f"Failed to fetch products:\n\nError Details: {e}\n\n"
-            "Please check the request and try again. If the issue persists, contact support.\n\n"
-            "Best regards,\n"
-            "Komal"
-        )
-        return jsonify({"error": "Could not fetch products."}), 500
-
-
-@app.route('/products/<uuid>', methods=['GET'])
-def get_product_by_uuid(uuid):
-    """
-    Retrieves a specific product by its UUID.
-
-    This route fetches a product based on the provided UUID.
-
-    Args:
-        uuid (str): The UUID of the product to retrieve.
-
-    Returns:
-        Response: JSON object of the product if found, or an error message if the product doesn't exist.
-    """
-    log_info(f"Fetching product with UUID: {uuid}")
-    try:
-        product = db.session.get(Product, uuid)
-        log_debug(f"Product retrieved: {product}")
-
-        if product:
-            # Prepare detailed content for the email
-            product_details = (
-                f"Product UUID: {product.uuid}\n"
-                f"Type: {product.type}\n"
-                f"Brand: {product.brand}\n"
-                f"Model: {product.model}\n"
-                f"Price: {product.price}\n"
-                f"Discounts: {product.discounts}\n"
-                f"Specs: {product.specs}\n"
-                f"Created At: {product.created_at}\n"
-                f"Search Count: {product.search_count}\n"
-            )
-            notify_success(
-                "Fetch Product Success",
-                f"Successfully retrieved product with UUID: {uuid}.\n\n"
-                f"Product Details:\n\n{product_details}"
-            )
-            return jsonify(product.to_dict())
-        else:
-            log_info(f"Product with UUID {uuid} not found.")
-            notify_failure(
-                "Fetch Product Info",
-                f"Product with UUID: {uuid} was not found.\n\n"
-                "The requested product does not exist in the database.\n\n"
-                "If you believe this is an error, please verify the UUID or contact support.\n\n"
-                "Best regards,\n"
-                "Komal"
-            )
-            return jsonify({"error": "Product not found"}), 404
-    except Exception as e:
-        log_error(f"Error fetching product by UUID: {e}")
-        notify_failure(
-            "Fetch Product Error",
-            f"Failed to fetch product with UUID: {uuid}.\n\n"
-            f"Error Details: {e}\n\n"
-            "Please check the request and try again. If the issue persists, contact support.\n\n"
-            "Best regards,\n"
-            "Komal"
-        )
-        return jsonify({"error": "Could not fetch product"}), 500
-
-
 @app.route('/products/filter', methods=['GET'])
 def filter_products():
     """
@@ -1663,8 +1728,14 @@ def filter_products():
         Response: JSON array of filtered products.
     """
     log_info("Starting filter products.")
+
+    # Get query parameters
     product_type = request.args.get('type')
     brand = request.args.get('brand')
+
+    # Format filter query parameters for logging and notification
+    filter_params = format_filter_query_params(brand, product_type, None)
+
     query = db.session.query(Product)
 
     if product_type:
@@ -1683,24 +1754,30 @@ def filter_products():
             # Notify about no products found
             notify_failure(
                 "Filter Products Info",
-                "No products match the filter criteria provided. Please adjust your filters and try again."
+                f"No products match the filter criteria:\n\n{filter_params}\n\n"
+                "Please adjust your filters and try again."
             )
             return jsonify({"message": "No products found matching the filter criteria."}), 404
 
         log_info("Products filtered successfully.")
+        product_list = format_product_list(products)
+        product_count = len(products)
         # Prepare detailed content for the email
-        product_list = "\n\n".join(
-            [f"Product UUID: {product.uuid}\nType: {product.type}\nBrand: {product.brand}\n"
-             f"Model: {product.model}\nPrice: {product.price}\nDiscounts: {product.discounts}\n"
-             f"Specs: {product.specs}\nCreated At: {product.created_at}\nSearch Count: {product.search_count}"
-             for product in products]
+        plain_text_content = (
+            f"Successfully filtered products:\n\nTotal Products Found: \n{product_count}\n\n"
+            f"Filter Criteria:\n{filter_params}\n\n"
+            f"Total Products Found: \n{product_list}"
+
         )
-        plain_text_content = f"Successfully filtered products:\n\n{product_list}"
         notify_success(
             "Filter Products Success",
             plain_text_content
         )
-        return jsonify([product.to_dict() for product in products])
+        return jsonify({
+            "total_count": product_count,
+            "products": [product.to_dict() for product in products],
+
+        })
 
     except Exception as e:
         log_error(f"Error filtering products: {e}")
