@@ -13,11 +13,9 @@ Constants:
     PASSWORD (str): Password for the sender's email account.
 """
 
-SMTP_PORT = 587  # For STARTTLS
+SMTP_PORT = 587
 SMTP_SERVER = "smtp.gmail.com"
 SENDER_EMAIL = "komalsaikiran05@gmail.com"
 RECEIVER_EMAIL = ["komalsaikiran05@gmail.com"]
 ERROR_HANDLING_GROUP_EMAIL = ["komalsaikiran05@gmail.com"]
 PASSWORD = ""
-
-

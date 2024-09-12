@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0268e170-19a6-46a8-b20c-66299b803595" name="Changes" comment="done">
-      <change afterPath="$PROJECT_DIR$/apps/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/apps/main.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email_setup/email_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/email_setup/email_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_models/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_models/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users_utility/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/users_utility/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,8 @@
     &quot;Python.email_config.executor&quot;: &quot;Run&quot;,
     &quot;Python.tables.executor&quot;: &quot;Run&quot;,
     &quot;Python.utilities.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Downloads/nextgen_presentationdocs&quot;
   }
 }</component>
   <component name="RunManager">

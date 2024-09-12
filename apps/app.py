@@ -3,21 +3,28 @@ This Module is used to perform CRUD operations on e-commerce products
 
 """
 
+# Standard Library Imports
 import json
-from flask import Flask, jsonify, request
-from sqlalchemy.exc import SQLAlchemyError
+from datetime import datetime, timedelta
 
+# Flask Imports
+from flask import Flask, jsonify, request
+
+# SQLAlchemy Imports
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy import desc, and_
+
+# Project Specific Imports
 from apps.constants import DISCOUNT_THRESHOLD
 from db_connections.configurations import DATABASE_URL, Config
-from email_setup.email_operations import notify_success, notify_failure, send_email
-from user_models.tables import db, Product, ValidProductDetails, User_Registration_Form, Cart
+from email_setup.email_operations import notify_success, notify_failure
+from user_models.tables import db, Product, ValidProductDetails, Cart
 from logging_package.logging_utility import log_info, log_error, log_debug
-from sqlalchemy import desc, and_, func
-from datetime import datetime, timedelta
-from users_utility.utilities import validate_string_param, format_product_details, log_and_notify_success, \
-    add_or_update_cart_item, log_and_notify_error, get_user_by_name, handle_database_error, format_response, \
-    prepare_product_details, format_time_12hr, calculate_delivery_days, format_purchase_details, EMAIL_SUBJECT_SUCCESS, \
-    format_product_list, format_filter_query_params, fetch_product_by_uuid
+from users_utility.utilities import (validate_string_param, add_or_update_cart_item, log_and_notify_error,
+                                     get_user_by_name, handle_database_error, format_response, prepare_product_details,
+                                     format_time_12hr, calculate_delivery_days, format_purchase_details,
+                                     EMAIL_SUBJECT_SUCCESS, format_product_list, format_filter_query_params,
+                                     fetch_product_by_uuid)
 
 # Create Flask app instance
 app = Flask(__name__)
